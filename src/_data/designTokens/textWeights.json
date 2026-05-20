@@ -1,0 +1,20 @@
+{
+  "title": "Text Weights",
+  "description": "Helper classes and custom properties for common font weights",
+  "prefix": "font",
+  "meta": {},
+  "items": [
+    {
+      "name": "Regular",
+      "value": 400
+    },
+    {
+      "name": "Bold",
+      "value": 700
+    },
+    {
+      "name": "Extra Bold",
+      "value": 900
+    }
+  ]
+}
