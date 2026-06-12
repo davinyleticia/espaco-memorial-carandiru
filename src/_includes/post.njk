@@ -1,0 +1,15 @@
+---
+layout: "base.njk"
+---
+
+<main>
+    <article>
+    <h1>{{title}}</h1>
+    <br>
+    <img src={{featuredImage}} alt="img do post" />
+        <section>
+        {{ content | safe }}
+        </section>
+    </article>
+    <hr style="margin-top: 30px; margin-bottom: 15px;" />
+</main>

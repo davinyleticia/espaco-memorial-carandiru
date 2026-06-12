@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.3.0/github-markdown.min.css" crossorigin="anonymous">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #24292e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .export-container {
+      width: 100%;
+      max-width: 840px;
+      padding: 60px 40px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 840px) {
+      .export-container {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="export-container markdown-body">
+    <h1 id="resposta-do-exercício">Resposta do exercício</h1>
+<h3 id="estrutura-de-pastas-app-router">Estrutura de Pastas (App Router)</h3>
+<p>Certifique-se de que seus arquivos estejam organizados desta forma dentro da pasta <code>app</code>:</p>
+<div class="mv-code-block"><div class="mv-code-header"><span class="mv-code-lang">text</span><button class="mv-code-copy-btn" data-code="app/
+ ├── api/
+ │    ├── alunos/
+ │    │    └── route.js
+ │    └── media/
+ │         └── route.js
+ └── alunos/
+      └── page.js" title="Copy code"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div><pre><code class="hljs text">
+app/
+ ├── api/
+ │    ├── alunos/
+ │    │    └── route.js
+ │    └── media/
+ │         └── route.js
+ └── alunos/
+      └── page.js
+</code></pre></div><h3 id="1-endpoint-de-cálculo-de-média-post-apimedia">1. Endpoint de Cálculo de Média (<code>POST /api/media</code>)</h3>
+<p>Crie o arquivo <code>app/api/media/route.js</code>. Este endpoint lerá o corpo da requisição, fará o cálculo da média do array e retornará o JSON.</p>
+<div class="mv-code-block"><div class="mv-code-header"><span class="mv-code-lang">javascript</span><button class="mv-code-copy-btn" data-code="import { NextResponse } from 'next/server';
+
+export async function POST(request) {
+  try {
+    const body = await request.json();
+    const { notas } = body;
+
+    // Verifica se &quot;notas&quot; existe e é um array
+    if (!notas || !Array.isArray(notas) || notas.length === 0) {
+      return NextResponse.json(
+        { erro: &quot;Envie um array de 'notas' válido.&quot; },
+        { status: 400 }
+      );
+    }
+
+    // Calcula a média
+    const soma = notas.reduce((acc, nota) =&gt; acc + nota, 0);
+    const media = soma / notas.length;
+
+    // Retorna o resultado em JSON
+    return NextResponse.json({ media });
+
+  } catch (error) {
+    return NextResponse.json(
+      { erro: &quot;Erro ao processar a requisição.&quot; },
+      { status: 500 }
+    );
+  }
+}" title="Copy code"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">NextResponse</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'next/server'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">POST</span>(<span class="hljs-params">request</span>) {
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> body = <span class="hljs-keyword">await</span> request.<span class="hljs-title function_">json</span>();
+    <span class="hljs-keyword">const</span> { notas } = body;
+
+    <span class="hljs-comment">// Verifica se "notas" existe e é um array</span>
+    <span class="hljs-keyword">if</span> (!notas || !<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">isArray</span>(notas) || notas.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-title class_">NextResponse</span>.<span class="hljs-title function_">json</span>(
+        { <span class="hljs-attr">erro</span>: <span class="hljs-string">"Envie um array de 'notas' válido."</span> },
+        { <span class="hljs-attr">status</span>: <span class="hljs-number">400</span> }
+      );
+    }
+
+    <span class="hljs-comment">// Calcula a média</span>
+    <span class="hljs-keyword">const</span> soma = notas.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">acc, nota</span>) =&gt;</span> acc + nota, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">const</span> media = soma / notas.<span class="hljs-property">length</span>;
+
+    <span class="hljs-comment">// Retorna o resultado em JSON</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-title class_">NextResponse</span>.<span class="hljs-title function_">json</span>({ media });
+
+  } <span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-keyword">return</span> <span class="hljs-title class_">NextResponse</span>.<span class="hljs-title function_">json</span>(
+      { <span class="hljs-attr">erro</span>: <span class="hljs-string">"Erro ao processar a requisição."</span> },
+      { <span class="hljs-attr">status</span>: <span class="hljs-number">500</span> }
+    );
+  }
+}</code></pre></div><h3 id="2-endpoint-de-listagem-de-alunos-get-apialunos">2. Endpoint de Listagem de Alunos (<code>GET /api/alunos</code>)</h3>
+<p>Crie o arquivo <code>app/api/alunos/route.js</code>. Este endpoint apenas retornará a lista estática de alunos.</p>
+<div class="mv-code-block"><div class="mv-code-header"><span class="mv-code-lang">javascript</span><button class="mv-code-copy-btn" data-code="import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const alunos = [
+    { nome: &quot;Ana&quot;, idade: 18 },
+    { nome: &quot;Carlos&quot;, idade: 20 },
+    { nome: &quot;Beatriz&quot;, idade: 19 },
+    { nome: &quot;João&quot;, idade: 22 }
+  ];
+
+  return NextResponse.json(alunos);
+}" title="Copy code"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">NextResponse</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'next/server'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">GET</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> alunos = [
+    { <span class="hljs-attr">nome</span>: <span class="hljs-string">"Ana"</span>, <span class="hljs-attr">idade</span>: <span class="hljs-number">18</span> },
+    { <span class="hljs-attr">nome</span>: <span class="hljs-string">"Carlos"</span>, <span class="hljs-attr">idade</span>: <span class="hljs-number">20</span> },
+    { <span class="hljs-attr">nome</span>: <span class="hljs-string">"Beatriz"</span>, <span class="hljs-attr">idade</span>: <span class="hljs-number">19</span> },
+    { <span class="hljs-attr">nome</span>: <span class="hljs-string">"João"</span>, <span class="hljs-attr">idade</span>: <span class="hljs-number">22</span> }
+  ];
+
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">NextResponse</span>.<span class="hljs-title function_">json</span>(alunos);
+}</code></pre></div><h3 id="3-página-frontend-para-listar-alunos-alunos">3. Página Frontend para Listar Alunos (<code>/alunos</code>)</h3>
+<p>Crie o arquivo <code>app/alunos/page.js</code>. Como a atividade exige o uso de <code>useState</code> e <code>useEffect</code>, precisamos transformar esse componente em um <em>Client Component</em> adicionando a diretiva <code>"use client"</code> no topo do arquivo.</p>
+<div class="mv-code-block"><div class="mv-code-header"><span class="mv-code-lang">javascript</span><button class="mv-code-copy-btn" data-code="&quot;use client&quot;;
+
+import { useState, useEffect } from 'react';
+
+export default function AlunosPage() {
+  const [alunos, setAlunos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() =&gt; {
+    // Função para buscar os alunos na API
+    const fetchAlunos = async () =&gt; {
+      try {
+        const response = await fetch('/api/alunos');
+        const data = await response.json();
+        setAlunos(data);
+      } catch (error) {
+        console.error(&quot;Erro ao buscar alunos:&quot;, error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAlunos();
+  }, []); // Array de dependências vazio para executar apenas ao montar o componente
+
+  return (
+    &lt;div style={{ padding: '20px', fontFamily: 'sans-serif' }}&gt;
+      &lt;h1&gt;Lista de Alunos&lt;/h1&gt;
+
+      {loading ? (
+        &lt;p&gt;Carregando alunos...&lt;/p&gt;
+      ) : (
+        &lt;ul&gt;
+          {alunos.map((aluno, index) =&gt; (
+            &lt;li key={index} style={{ margin: '10px 0' }}&gt;
+              &lt;strong&gt;Nome:&lt;/strong&gt; {aluno.nome} | &lt;strong&gt;Idade:&lt;/strong&gt; {aluno.idade} anos
+            &lt;/li&gt;
+          ))}
+        &lt;/ul&gt;
+      )}
+    &lt;/div&gt;
+  );
+}" title="Copy code"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div><pre><code class="hljs javascript"><span class="hljs-string">"use client"</span>;
+
+<span class="hljs-keyword">import</span> { useState, useEffect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">AlunosPage</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> [alunos, setAlunos] = <span class="hljs-title function_">useState</span>([]);
+  <span class="hljs-keyword">const</span> [loading, setLoading] = <span class="hljs-title function_">useState</span>(<span class="hljs-literal">true</span>);
+
+  <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-comment">// Função para buscar os alunos na API</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-title function_">fetchAlunos</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; {
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/api/alunos'</span>);
+        <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();
+        <span class="hljs-title function_">setAlunos</span>(data);
+      } <span class="hljs-keyword">catch</span> (error) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">"Erro ao buscar alunos:"</span>, error);
+      } <span class="hljs-keyword">finally</span> {
+        <span class="hljs-title function_">setLoading</span>(<span class="hljs-literal">false</span>);
+      }
+    };
+
+    <span class="hljs-title function_">fetchAlunos</span>();
+  }, []); <span class="hljs-comment">// Array de dependências vazio para executar apenas ao montar o componente</span>
+
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">padding:</span> '<span class="hljs-attr">20px</span>', <span class="hljs-attr">fontFamily:</span> '<span class="hljs-attr">sans-serif</span>' }}&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Lista de Alunos<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+      {loading ? (
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Carregando alunos...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      ) : (
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+          {alunos.map((aluno, index) =&gt; (
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{index}</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">margin:</span> '<span class="hljs-attr">10px</span> <span class="hljs-attr">0</span>' }}&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Nome:<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> {aluno.nome} | <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Idade:<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> {aluno.idade} anos
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          ))}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+      )}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+</code></pre></div>
+  </div>
+</body>
+</html>
