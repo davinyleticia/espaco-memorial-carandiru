@@ -135,8 +135,7 @@ padding: 1rem;
     }
 
     .header-logos img[alt="CPS Centro Paula Souza"] {
-      height: 48px !important;
-      margin-left: 15px !important;
+          width: 92px !important;
     }
 
     .header-search {
