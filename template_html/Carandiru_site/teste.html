@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* ─── HEADER (Ajustado pelas proporções da imagem de referência) ─── */
+    header {
+      background: #ffffff;
+      border-bottom: none;
+      padding: 30px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    /* Sobrepondo os estilos inline do HTML para ajustar as proporções conforme a referência */
+    .header-logos img[alt="Espaço Memória Carandiru"] {
+      height: 56px !important;
+    }
+
+    .header-search {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .header-search input {
+      border: none;
+      outline: none;
+      padding: 10px 20px;
+      font-family: var(--fonte-corpo);
+      font-size: 15px;
+      background: transparent;
+      color: #333;
+      width: 280px;
+    }
+
+    .header-search input::placeholder {
+      color: #999;
+    }
+
+    .header-search button {
+      background: transparent;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity .2s;
+    }
+
+    .header-search button svg {
+      stroke: #c0392b;
+    }
+
+    .header-search button:hover {
+      opacity: 0.7;
+    }
+    /* ─── FOOTER ─── */
+    footer {
+        background: var(--preto);
+        color: rgba(255, 255, 255, 0.6);
+        padding: 60px 24px 30px;
+        margin-top: 64px;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    .footer-sobre {
+        max-width: 280px;
+    }
+
+    .footer-logo {
+        font-family: var(--fonte-titulo);
+        font-size: 18px;
+        font-weight: 900;
+        color: #fff;
+        margin-bottom: 16px;
+    }
+
+    .footer-sobre p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    footer h4 {
+        color: #fff;
+        font-size: 11px;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 18px;
+    }
+
+    footer ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer ul li a {
+        color: rgba(255, 255, 255, 0.55);
+        text-decoration: none;
+        font-size: 13px;
+        transition: color .2s;
+    }
+
+    footer ul li a:hover {
+        color: #fff;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.35);
+    }
+
+    .footer-bottom a {
+        color: rgba(255, 255, 255, 0.35);
+        text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+        color: rgba(255, 255, 255, 0.6);
+    }
+</style>
+
+<body>
+    <!-- GOV BAR -->
+    <link rel="stylesheet" type="text/css"
+        href="https://saopaulo.sp.gov.br/barra-govsp/css/top-padrao-govsp-v2.min.css?vs=3.0">
+    <section class="govsp-topo">
+        <div id="govsp-topbarGlobal" class="blu-e">
+            <div id="topbarGlobal">
+                <div id="topbarLink" class="govsp-black">
+                    <div class="govsp-portal">
+                        <a href="https://www.saopaulo.sp.gov.br" title="nova guia Site Governo do Estado de São Paulo"
+                            target="_blank"><img
+                                src="https://saopaulo.sp.gov.br/barra-govsp/img/logo-governo-do-estado-sp.png"
+                                alt="logomarca Governo de São Paulo" height="38" class="logo">
+                        </a>
+                    </div>
+                </div>
+                <nav class="govsp-navbar govsp-navbar-expand-lg">
+                    <a class="govsp-link digital" href="https://spmaisdigital.sp.gov.br" title="site SP + Digital">SP +
+                        Digital</a>
+
+                    <a class="govsp-social" href="https://www.flickr.com/governosp/"><img class="govsp-icon-social"
+                            src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png"
+                            alt="Flickr Governo do Estado de SP" /></a>
+
+                    <a class="govsp-social" href="https://www.linkedin.com/company/governosp/"><img
+                            class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png"
+                            alt="Linkedin Governo do Estado de SP" /></a>
+
+                    <a class="govsp-social" href="https://www.tiktok.com/@governosp"><img class="govsp-icon-social"
+                            src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png"
+                            alt="TikTok Governo do Estado de SP" /></a>
+
+                    <a class="govsp-social" href="https://www.youtube.com/governosp/"><img class="govsp-icon-social"
+                            src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png"
+                            alt="Youtube Governo do Estado de SP" /></a>
+
+                    <a class="govsp-social" href="https://www.twitter.com/governosp/"><img class="govsp-icon-social"
+                            src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png"
+                            alt="Twitter Governo do Estado de SP" /></a>
+
+                    <a class="govsp-social" href="https://www.instagram.com/governosp/"><img class="govsp-icon-social"
+                            src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png"
+                            alt="Instagram Governo do Estado de SP" /></a>
+
+                    <a class="govsp-social" href="https://www.facebook.com/governosp/"><img class="govsp-icon-social"
+                            src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png"
+                            alt="Facebook Governo do Estado de SP" /></a>
+
+                    <p class="govsp-social">/governosp</p>
+
+                    <a class="govsp-acessibilidade" title="nova guia"
+                        href="https://www.saopaulo.sp.gov.br/fale-conosco/comunicar-erros/" target="_blank"><img
+                            class="govsp-acessibilidade"
+                            src="https://saopaulo.sp.gov.br/barra-govsp/img/i-error-report.png"
+                            alt="Comunicar um erro"></a>
+                </nav>
+            </div>
+            <button class="govsp-kebab" id="govsp-kebab" aria-expanded="false"><img
+                    src="https://saopaulo.sp.gov.br/barra-govsp/img/dots-menu.png" alt="Menu"></button>
+
+            <ul class="govsp-dropdown vs3" id="govsp-dropdown" aria-hidden="true">
+                <li><a class="govsp-link digital" role="button" href="https://spmaisdigital.sp.gov.br"
+                        title="Site SP + Digital">SP + Digital</a></li>
+
+                <li><a class="govsp-social" role="button" href="https://www.flickr.com/governosp/"><img
+                            class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png"
+                            alt="Flickr Governo do Estado de SP" /></a></li>
+
+                <li><a class="govsp-social" role="button" href="https://www.linkedin.com/company/governosp/"><img
+                            class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png"
+                            alt="Linkedin Governo do Estado de SP" /></a></li>
+
+                <li><a class="govsp-social" role="button" href="https://www.tiktok.com/@governosp"><img
+                            class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png"
+                            alt="TikTok Governo do Estado de SP" /></a></li>
+
+                <li><a class="govsp-social" role="button" href="https://www.twitter.com/governosp/"><img
+                            class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png"
+                            alt="Twitter Governo do Estado de SP" /></a></li>
+
+                <li><a class="govsp-social" role="button" href="https://www.youtube.com/governosp/"><img
+                            class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png"
+                            alt="Youtube Governo do Estado de SP" /></a></li>
+
+                <li><a class="govsp-social" role="button" href="https://www.instagram.com/governosp/"><img
+                            class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png"
+                            alt="Instagram Governo do Estado de SP" /></a></li>
+
+                <li><a class="govsp-social" role="button" href="https://www.facebook.com/governosp/"><img
+                            class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png"
+                            alt="Facebook Governo do Estado de SP" /></a></li>
+
+                <li>
+                    <p class="govsp-social">/governosp</p>
+                </li>
+            </ul>
+        </div>
+
+        <script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-top-v2.js?vs=3.0"></script>
+        <noscript>
+            Seu navegador não tem suporte a JavaScript ou está desativado!</noscript>
+        <!-- HEADER -->
+        <header>
+            <div class="header-inner">
+                <div class="header-logos">
+                    <a href="carandiru-pagina1.html">
+                        <img src="logos/LogosPreto.png" alt="Espaço Memória Carandiru">
+                    </a>
+                </div>
+                <div class="header-search">
+                    <input type="text" placeholder="">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="#c0392b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div><!-- /.header-search -->
+            </div><!-- /.header-inner -->
+        </header>
+
+        <!-- NAV -->
+        <nav>
+            <a href="carandiru-pagina1.html" class="ativo">Início</a>
+            <a href="#">História</a>
+            <a href="#">Acervo e cultura</a>
+            <a href="#">Visitar</a>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <div class="hero-content-inner">
+                    <h1>Um lugar de <em>história</em>,<br><em>reflexão</em> e memória</h1>
+                    <p>O Memorial Carandiru preserva a história do Complexo
+                        Penitenciário do Carandiru e dos eventos de 2 de outubro
+                        de 1992, promovendo o debate sobre o sistema prisional,
+                        os direitos humanos e a transformação social no Brasil.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#visitar" class="btn-principal">Visitar o espaço</a>
+                    </div>
+                </div><!-- /.hero-content-inner -->
+            </div>
+            <div class="hero-scroll">Rolar</div>
+        </section>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-sobre">
+                        <div class="footer-logo">Espaço Memória Carandiru</div>
+                        <p>Um espaço de preservação da memória histórica, dedicado aos direitos humanos, à reflexão
+                            sobre o sistema
+                            prisional e à transformação social no Brasil.</p>
+                        <p style="margin-top:12px;">Gerenciado pelo Centro Paula Souza — Governo do Estado de São Paulo.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="#">Início</a></li>
+                            <li><a href="#">História</a></li>
+                            <li><a href="#">Acervo e cultura</a></li>
+                            <li><a href="#">Visitar</a></li>
+                            <li><a href="#">Imprensa</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span>© 2024 Espaço Memória Carandiru — Centro Paula Souza — Governo do Estado de São Paulo</span>
+                    <div style="display:flex;gap:20px;">
+                        <a href="#">Política de privacidade</a>
+                        <a href="#">Acessibilidade</a>
+                        <a href="#">Mapa do site</a>
+                    </div>
+                </div><!-- /.footer-bottom -->
+            </div><!-- /.footer-container -->
+
+            <link rel="stylesheet" type="text/css"
+                href="https://www.saopaulo.sp.gov.br/barra-govsp/css/rodape-padrao-govsp.min.css">
+        </footer>
+
+        <section id="govsp-rodape">
+            <div class="container">
+                <div class="linha-botoes">
+                    <div class="coluna-4">
+                        <a href="https://www.ouvidoria.sp.gov.br/Portal/Default.aspx"
+                            class="btn btn-model">Ouvidoria</a>
+                    </div>
+
+                    <div class="coluna-4">
+                        <a href="http://www.transparencia.sp.gov.br/" class="btn btn-model">Transparência</a>
+                    </div>
+
+                    <div class="coluna-4">
+                        <a href="http://www.sic.sp.gov.br/" class="btn btn-model">SIC</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container rodape">
+                <div class="logo-rodape">
+                    <a href="https://www.saopaulo.sp.gov.br/">
+                        <img src="https://www.saopaulo.sp.gov.br/barra-govsp/img/logo-rodape-governo-do-estado-sp.png"
+                            alt="site do Governo de São Paulo" width="206" height="38">
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+</body>
+
+</html>
