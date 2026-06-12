@@ -4,9 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "watch:css": "sass src/styles.scss _site/styles.css --watch",
-        "build:css": "sass src/styles.scss _site/styles.css --no-source-map",
-        "build": "pnpm build:css && eleventy && npx pagefind --site _site",
+        "build": "pnpm eleventy && npx pagefind --site _site",
         "start": "eleventy --serve"
     },
     "keywords": [],
