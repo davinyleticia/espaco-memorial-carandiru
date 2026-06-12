@@ -27,7 +27,7 @@
     }
 
 
-    
+
     /* ─── BARRA GOV SP ─── */
     .gov-bar {
       background: #ffffff;
@@ -197,13 +197,20 @@
       font-weight: 800;
     }
 
+
+      .menu{
+      background: #c0392b;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+
     /* ─── HERO ─── */
     .hero {
       position: relative;
       height: 520px;
       overflow: hidden;
       background: var(--preto);
-      margin-top: 64px;
     }
 
     .hero-bg {
