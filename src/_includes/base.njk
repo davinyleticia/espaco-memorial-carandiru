@@ -19,6 +19,68 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
      <link rel="stylesheet" href="https://espaco-memorial-carandiru.netlify.app/assets/styles.css">
+
+
+     <style>
+    /* Alinha o container e remove estruturas de grid que o pagefind força */
+    #search .pagefind-ui__search-container {
+      display: block !important;
+      position: relative !important;
+      width: 100% !important;
+    }
+
+    /* Estiliza o input para o formato de pílula arredondada */
+    #search .pagefind-ui__search-input {
+      height: 54px !important;
+      border-radius: 50px !important; /* Totalmente arredondado */
+      border: 1.5px solid #dcdcdc !important;
+      padding: 0 60px 0 24px !important; /* Dá o recuo correto para o texto e para a lupa */
+      background-color: #ffffff !important;
+      font-family: 'DM Sans', sans-serif !important; /* Mantendo a sua fonte */
+      font-size: 16px !important;
+      color: #333333 !important;
+      outline: none !important;
+
+      /* Injeta a lupa vermelha na direita */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c93b2b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E") !important;
+      background-repeat: no-repeat !important;
+      background-position: calc(100% - 24px) center !important;
+      background-size: 22px !important;
+      box-shadow: none !important;
+    }
+
+    /* Força o desaparecimento da lupa cinza padrão da esquerda */
+    #search .pagefind-ui__search-icon {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+
+    /* Ajusta o botão de limpar (X) para não sumir e nem ficar em cima da lupa vermelha */
+    #search .pagefind-ui__search-clear {
+      right: 55px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      margin: 0 !important;
+    }
+
+    /* 1. Força a ocultação da lupa cinza (pegando tanto a classe quanto a tag SVG diretamente) */
+#search .pagefind-ui__search-icon,
+#search svg.pagefind-ui__search-icon,
+.pagefind-ui__search-icon {
+    display: none !important;
+}
+
+/* 2. Remove o "buraco" invisível na esquerda e puxa o texto/cursor mais para a borda */
+#search .pagefind-ui__search-input {
+    padding-left: 20px !important; 
+}
+
+
+.pagefind-ui__form.svelte-e9gkc3:before {
+    background-color: transparent !important }
+
+  </style>
  
 </head>
 
@@ -136,7 +198,12 @@
           <img src="http://espaco-memorial-carandiru.netlify.app/_images/logos/logoCps_preto.png" alt="CPS Centro Paula Souza" style="height: 40px; display: block; margin-left: 10px;">
         </a>
       </div>
-      <div class="header-search">
+
+      <div  id="search"></div>
+
+
+
+        <!-- <div class="header-search" id="search">
         <input type="text" placeholder="">
         <button>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -144,7 +211,9 @@
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </button>
-      </div><!-- /.header-search -->
+      </div> -->
+      
+      <!-- /.header-search -->
     </div><!-- /.header-inner -->
   </header>
 
@@ -158,9 +227,9 @@
 
 
 
-  <div class="box-search nav-box">
-    <div class="box" id="search"></div>
-  </div>
+    <!-- <div class="box-search nav-box">-->
+    <!--<div class="box" id="search"></div>-->
+  <!--</div> -->
 
   <div class="content-wrapper">
     <div class="box" data-pagefind-body>
