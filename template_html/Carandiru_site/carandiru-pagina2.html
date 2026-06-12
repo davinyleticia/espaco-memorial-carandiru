@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalhes — Espaço Memória Carandiru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --preto: #111111;
+    --branco: #f5f0e8;
+    --teal: #1a5c5a;
+    --teal-escuro: #0d3a38;
+    --teal-claro: #e8f0ef;
+    --vermelho: #c0392b;
+    --cinza: #888;
+    --cinza-claro: #ececec;
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-corpo: 'DM Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--fonte-corpo);
+    background: var(--branco);
+    color: var(--preto);
+    overflow-x: hidden;
+  }
+
+  /* ─── BARRA GOV ─── */
+  .gov-bar {
+    background: #111;
+    color: #fff;
+    font-size: 11px;
+    padding: 6px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sp-flag {
+    width: 28px; height: 20px;
+    background: #c0392b;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 2px;
+    font-weight: 900; font-size: 12px; color: #fff;
+  }
+  .logo-sp { display: flex; align-items: center; gap: 8px; }
+
+  /* ─── HEADER ─── */
+  header {
+    background: var(--branco);
+    border-bottom: 1px solid #ddd;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .header-logos { display: flex; align-items: center; gap: 20px; }
+  .logo-carandiru {
+    font-family: var(--fonte-titulo);
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+  .logo-divider { width: 1px; height: 36px; background: #ccc; }
+
+  /* ─── NAV ─── */
+  nav {
+    background: var(--preto);
+    display: flex;
+    justify-content: center;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 36px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    transition: background .2s;
+  }
+  nav a:first-child { border-left: 1px solid rgba(255,255,255,0.12); }
+  nav a:hover { background: var(--teal); }
+  nav a.ativo { background: var(--teal); }
+
+  /* ─── BREADCRUMB ─── */
+  .breadcrumb {
+    padding: 18px 80px;
+    background: var(--cinza-claro);
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--cinza);
+  }
+  .breadcrumb a { color: var(--teal); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { color: #bbb; }
+
+  /* ─── HERO DETALHE ─── */
+  .hero-detalhe {
+    background: var(--preto);
+    padding: 70px 80px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-detalhe::before {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 400px;
+    height: 400px;
+    border: 60px solid rgba(255,255,255,0.03);
+    border-radius: 50%;
+  }
+  .hero-detalhe::after {
+    content: '';
+    position: absolute;
+    right: 80px;
+    bottom: -100px;
+    width: 250px;
+    height: 250px;
+    border: 40px solid rgba(255,255,255,0.025);
+    border-radius: 50%;
+  }
+  .detalhe-categoria {
+    font-size: 11px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--vermelho);
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .detalhe-categoria::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--vermelho);
+  }
+  .detalhe-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 58px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: -.03em;
+    margin-bottom: 16px;
+    max-width: 800px;
+  }
+  .detalhe-subtitulo {
+    font-family: var(--fonte-titulo);
+    font-size: 22px;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 30px;
+  }
+  .detalhe-meta {
+    display: flex;
+    gap: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px;
+    margin-top: 10px;
+  }
+  .detalhe-meta .meta-item .label {
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 4px;
+  }
+  .detalhe-meta .meta-item .valor {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+
+  /* ─── LAYOUT CONTEÚDO ─── */
+  .conteudo-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 0;
+    min-height: 60vh;
+  }
+  .conteudo-principal {
+    padding: 60px 80px;
+    border-right: 1px solid #ddd;
+  }
+  .conteudo-lateral {
+    padding: 40px 36px;
+    background: #fff;
+    position: sticky;
+    top: 120px;
+    align-self: start;
+  }
+
+  /* ─── CORPO DO ARTIGO ─── */
+  .lead {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 36px;
+    border-left: 4px solid var(--teal);
+    padding-left: 24px;
+  }
+  .corpo h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 28px;
+    font-weight: 700;
+    margin: 48px 0 18px;
+    color: var(--preto);
+    letter-spacing: -.01em;
+  }
+  .corpo h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 32px 0 12px;
+    color: var(--teal-escuro);
+  }
+  .corpo p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .corpo blockquote {
+    background: var(--teal-claro);
+    border-left: 4px solid var(--teal);
+    padding: 24px 28px;
+    margin: 32px 0;
+    font-family: var(--fonte-titulo);
+    font-size: 20px;
+    font-style: italic;
+    color: var(--teal-escuro);
+    line-height: 1.5;
+  }
+  .corpo blockquote cite {
+    display: block;
+    margin-top: 12px;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-family: var(--fonte-corpo);
+    font-weight: 600;
+  }
+
+  /* ─── GALERIA ─── */
+  .galeria {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 36px 0;
+  }
+  .galeria .img-placeholder {
+    aspect-ratio: 4/3;
+    background: var(--cinza-claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    color: #bbb;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .galeria .img-placeholder:first-child {
+    grid-column: span 2;
+    aspect-ratio: 16/7;
+  }
+  .galeria .img-placeholder:hover { background: #e0dcdc; }
+  .galeria .img-placeholder svg { width: 32px; height: 32px; opacity: .4; }
+  .galeria .img-placeholder span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; opacity: .5; }
+
+  /* ─── LINHA DO TEMPO VERTICAL (dentro da pág 2) ─── */
+  .timeline-v {
+    margin: 40px 0;
+    position: relative;
+    padding-left: 30px;
+  }
+  .timeline-v::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--cinza-claro);
+  }
+  .tv-item {
+    position: relative;
+    margin-bottom: 32px;
+  }
+  .tv-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--branco);
+    border: 2px solid var(--cinza-claro);
+    transition: border-color .2s;
+  }
+  .tv-item.destaque::before {
+    background: var(--vermelho);
+    border-color: var(--vermelho);
+  }
+  .tv-item .tv-ano {
+    font-family: var(--fonte-titulo);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 4px;
+  }
+  .tv-item .tv-titulo {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .tv-item .tv-desc {
+    font-size: 13px;
+    color: var(--cinza);
+    line-height: 1.6;
+  }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar-bloco {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--cinza-claro);
+  }
+  .sidebar-bloco:last-child { border-bottom: none; }
+  .sidebar-titulo {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--cinza);
+    margin-bottom: 16px;
+  }
+  .sidebar-tag {
+    display: inline-block;
+    background: var(--teal-claro);
+    color: var(--teal-escuro);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin: 3px;
+    text-decoration: none;
+    transition: background .2s;
+  }
+  .sidebar-tag:hover { background: var(--teal); color: #fff; }
+
+  /* Card relacionado */
+  .card-rel {
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--cinza-claro);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity .2s;
+  }
+  .card-rel:hover { opacity: .7; }
+  .card-rel:last-child { border-bottom: none; }
+  .card-rel-img {
+    width: 60px;
+    height: 60px;
+    background: var(--cinza-claro);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-rel-img svg { width: 24px; height: 24px; opacity: .4; }
+  .card-rel-info .cat {
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--vermelho);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .card-rel-info h4 {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--preto);
+  }
+
+  /* ─── NAVEGAÇÃO ENTRE ITENS ─── */
+  .nav-itens {
+    background: var(--preto);
+    padding: 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+  .nav-item-link {
+    text-decoration: none;
+    color: rgba(255,255,255,0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: color .2s;
+    max-width: 280px;
+  }
+  .nav-item-link:hover { color: #fff; }
+  .nav-item-link .dir {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--cinza);
+  }
+  .nav-item-link .nome {
+    font-family: var(--fonte-titulo);
+    font-size: 20px;
+    font-weight: 700;
+    color: inherit;
+  }
+  .nav-sep {
+    width: 1px;
+    height: 50px;
+    background: rgba(255,255,255,0.15);
+    flex-shrink: 0;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #0a0a0a;
+    color: rgba(255,255,255,0.5);
+    padding: 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  footer a:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- GOV BAR -->
+<div class="gov-bar">
+  <div class="logo-sp">
+    <div class="sp-flag">SP</div>
+    <div>
+      <div style="font-size:9px;opacity:.7;letter-spacing:.08em;">GOVERNO DO ESTADO</div>
+      <div style="font-size:11px;">SÃO PAULO É TODOS</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:10px;color:#aaa;font-size:11px;">
+    <a href="#" style="color:#aaa;">fb</a>
+    <a href="#" style="color:#aaa;">in</a>
+    <a href="#" style="color:#aaa;">X</a>
+    <span style="color:#555;margin:0 4px;">|</span>
+    <a href="#" style="color:#aaa;">/governasp</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-logos">
+    <div class="logo-carandiru">
+      <span style="font-size:8px;letter-spacing:.15em;color:#888;font-family:var(--fonte-corpo);font-weight:400;text-transform:uppercase;">Espaço Memória</span><br>
+      CARANDIRU <span style="font-family:monospace;font-size:13px;letter-spacing:-1px;color:#555;">||||||||</span>
+    </div>
+    <div class="logo-divider"></div>
+    <div style="font-family:var(--fonte-titulo);font-size:22px;font-weight:900;letter-spacing:-.04em;">
+      C<span style="font-style:italic;">ps</span>
+      <div style="font-size:9px;letter-spacing:.1em;font-family:var(--fonte-corpo);font-weight:400;color:#888;text-transform:uppercase;">Centro Paula Souza</div>
+    </div>
+  </div>
+  <a href="carandiru-pagina1.html" style="color:var(--teal);text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.05em;">← Voltar ao início</a>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="carandiru-pagina1.html">Início</a>
+  <a href="#" class="ativo">História</a>
+  <a href="#">Acervo e cultura</a>
+  <a href="#">Visitar</a>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="carandiru-pagina1.html">Início</a>
+  <span class="sep">›</span>
+  <a href="#">História</a>
+  <span class="sep">›</span>
+  <span id="bc-atual">Massacre de 1992</span>
+</div>
+
+<!-- HERO DETALHE -->
+<div class="hero-detalhe">
+  <div class="detalhe-categoria" id="det-categoria">Evento histórico</div>
+  <div class="detalhe-titulo" id="det-titulo">Massacre do Carandiru</div>
+  <div class="detalhe-subtitulo" id="det-subtitulo">2 de outubro de 1992 — Pavilhão 9</div>
+  <div class="detalhe-meta">
+    <div class="meta-item">
+      <div class="label">Período</div>
+      <div class="valor" id="det-periodo">02/10/1992</div>
+    </div>
+    <div class="meta-item">
+      <div class="label">Categoria</div>
+      <div class="valor" id="det-tipo">Direitos Humanos</div>
+    </div>
+    <div class="meta-item">
+      <div class="label">Localização</div>
+      <div class="valor">Pavilhão 9 — Carandiru, SP</div>
+    </div>
+    <div class="meta-item">
+      <div class="label">Acervo</div>
+      <div class="valor">Documentos, fotografias, depoimentos</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<div class="conteudo-wrapper">
+  <div class="conteudo-principal">
+
+    <p class="lead">Em 2 de outubro de 1992, uma rebelião no Pavilhão 9 do Complexo Penitenciário do Carandiru resultou na morte de 111 detentos durante a intervenção da Polícia Militar do Estado de São Paulo — um dos maiores massacres carcerários da história do Brasil e do mundo.</p>
+
+    <div class="galeria">
+      <div class="galeria .img-placeholder" style="grid-column:span 2;aspect-ratio:16/7;background:#e8e4dc;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:#bbb;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="width:40px;height:40px;opacity:.35;">
+          <path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="12" cy="13" r="3"/>
+        </svg>
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.4;">Imagem histórica do complexo</span>
+      </div>
+      <div class="galeria .img-placeholder" style="aspect-ratio:4/3;background:#dedad2;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:#bbb;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="width:28px;height:28px;opacity:.35;"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.4;">Mapa do pavilhão</span>
+      </div>
+      <div class="galeria .img-placeholder" style="aspect-ratio:4/3;background:#dedad2;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:#bbb;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="width:28px;height:28px;opacity:.35;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+        <span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.4;">Depoimentos</span>
+      </div>
+    </div>
+
+    <div class="corpo">
+      <h2>O contexto do massacre</h2>
+      <p>O Complexo Penitenciário do Carandiru, inaugurado em 1920 para abrigar 1.200 presos, tinha em 1992 mais de 7.200 detentos — quase seis vezes acima de sua capacidade. As condições precárias, a superlotação e a ausência de políticas penitenciárias adequadas criaram um ambiente de permanente tensão.</p>
+      <p>Na tarde de 2 de outubro de 1992, uma briga entre detentos no Pavilhão 9 rapidamente evoluiu para uma rebelião. Aproximadamente 2.000 presos estavam envolvidos no tumulto quando a Polícia Militar foi acionada.</p>
+
+      <blockquote>
+        "Entramos no Carandiru para restaurar a ordem. O que aconteceu ali é uma tragédia que o Brasil precisou encarar de frente."
+        <cite>— Testemunho de um agente penitenciário presente no dia</cite>
+      </blockquote>
+
+      <h2>A intervenção policial</h2>
+      <p>Às 14h30, cerca de 350 policiais militares, incluindo o Grupo de Intervenção Rápida (GIR) e cães farejadores, adentraram o complexo. A operação, comandada pelo então coronel Ubiratan Guimarães, foi marcada pelo uso desproporcional de força.</p>
+      <p>Em menos de três horas, 111 detentos haviam sido mortos. Perícias posteriores apontaram que a maioria das vítimas foi atingida por disparos de arma de fogo em zonas letais, sugerindo execuções sumárias. Nenhum policial foi morto durante a operação.</p>
+
+      <h3>As vítimas</h3>
+      <p>Das 111 vítimas fatais, 84 foram identificadas imediatamente. A maioria era composta por homens jovens, negros e pobres, cumprindo penas por crimes patrimoniais. Muitos eram réus primários ou aguardavam julgamento. As famílias das vítimas passaram décadas buscando reparação e reconhecimento oficial.</p>
+
+      <h2>Repercussão e legado</h2>
+      <p>O massacre gerou ampla comoção nacional e internacional. Organizações de direitos humanos como a Anistia Internacional e a ONU condenaram o episódio e exigiram investigações independentes. No Brasil, o caso acirrou o debate sobre a violência policial, o sistema prisional e os direitos dos encarcerados.</p>
+
+      <div class="timeline-v">
+        <div class="tv-item destaque">
+          <div class="tv-ano">02/10/1992</div>
+          <div class="tv-titulo">O massacre — 111 mortos</div>
+          <div class="tv-desc">Rebelião e intervenção policial no Pavilhão 9 resultam nas mortes.</div>
+        </div>
+        <div class="tv-item">
+          <div class="tv-ano">1993</div>
+          <div class="tv-titulo">Inquérito policial aberto</div>
+          <div class="tv-desc">Investigações são iniciadas, mas encontram forte resistência das autoridades.</div>
+        </div>
+        <div class="tv-item">
+          <div class="tv-ano">1999</div>
+          <div class="tv-titulo">Processo criminal</div>
+          <div class="tv-desc">Coronel Ubiratan Guimarães é indiciado pelo Ministério Público.</div>
+        </div>
+        <div class="tv-item">
+          <div class="tv-ano">2006</div>
+          <div class="tv-titulo">Condenação e absolvição</div>
+          <div class="tv-desc">Guimarães é condenado e em seguida absolvido pelo Tribunal de Justiça de SP.</div>
+        </div>
+        <div class="tv-item">
+          <div class="tv-ano">2023</div>
+          <div class="tv-titulo">Corte Interamericana de Direitos Humanos</div>
+          <div class="tv-desc">Brasil é condenado pela CIDH a indenizar famílias das vítimas e adotar medidas reparadoras.</div>
+        </div>
+        <div class="tv-item">
+          <div class="tv-ano">2024</div>
+          <div class="tv-titulo">Espaço Memória inaugurado</div>
+          <div class="tv-desc">O governo de SP inaugura o memorial para preservar a história e homenagear as vítimas.</div>
+        </div>
+      </div>
+
+      <h2>O papel do Memorial</h2>
+      <p>O Espaço Memória Carandiru foi criado com a missão de preservar a memória dessas vítimas, documentar os fatos históricos com rigor e promover o debate permanente sobre direitos humanos, justiça e reforma do sistema prisional brasileiro. O acervo reúne documentos oficiais, fotografias, objetos pessoais e depoimentos de sobreviventes, familiares e testemunhas.</p>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="conteudo-lateral">
+    <div class="sidebar-bloco">
+      <div class="sidebar-titulo">Temas relacionados</div>
+      <div>
+        <a href="carandiru-pagina2.html?item=direitos" class="sidebar-tag">Direitos humanos</a>
+        <a href="carandiru-pagina2.html?item=prisional" class="sidebar-tag">Sistema prisional</a>
+        <a href="carandiru-pagina2.html?item=violencia" class="sidebar-tag">Violência policial</a>
+        <a href="carandiru-pagina2.html?item=sp" class="sidebar-tag">São Paulo</a>
+        <a href="carandiru-pagina2.html?item=justica" class="sidebar-tag">Justiça</a>
+        <a href="carandiru-pagina2.html?item=memoria" class="sidebar-tag">Memória</a>
+      </div>
+    </div>
+
+    <div class="sidebar-bloco">
+      <div class="sidebar-titulo">Itens do acervo</div>
+      <a class="card-rel" href="carandiru-pagina2.html?item=doc1">
+        <div class="card-rel-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.5" style="width:22px;height:22px;"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <div class="card-rel-info">
+          <div class="cat">Documento</div>
+          <h4>Laudo pericial — IML, outubro de 1992</h4>
+        </div>
+      </a>
+      <a class="card-rel" href="carandiru-pagina2.html?item=foto1">
+        <div class="card-rel-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.5" style="width:22px;height:22px;"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="12" cy="13" r="3"/></svg>
+        </div>
+        <div class="card-rel-info">
+          <div class="cat">Fotografia</div>
+          <h4>Pavilhão 9 — registros fotográficos</h4>
+        </div>
+      </a>
+      <a class="card-rel" href="carandiru-pagina2.html?item=dep1">
+        <div class="card-rel-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.5" style="width:22px;height:22px;"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </div>
+        <div class="card-rel-info">
+          <div class="cat">Depoimento</div>
+          <h4>Testemunho de sobrevivente — Pavilhão 9</h4>
+        </div>
+      </a>
+    </div>
+
+    <div class="sidebar-bloco">
+      <div class="sidebar-titulo">Referências</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:12px;line-height:1.6;color:#555;">
+          <strong style="color:#333;">Dráuzio Varella</strong><br>
+          <em>Estação Carandiru</em> — Companhia das Letras, 1999
+        </div>
+        <div style="font-size:12px;line-height:1.6;color:#555;">
+          <strong style="color:#333;">Relatório da Comissão Teotônio Vilela</strong><br>
+          Direitos Humanos no Brasil, 1993
+        </div>
+        <div style="font-size:12px;line-height:1.6;color:#555;">
+          <strong style="color:#333;">CIDH — Corte Interamericana</strong><br>
+          Caso Carandiru vs. Brasil, 2023
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--teal);padding:20px;color:#fff;">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.7;margin-bottom:10px;">Visitar o memorial</div>
+      <div style="font-family:var(--fonte-titulo);font-size:18px;font-weight:700;margin-bottom:14px;line-height:1.2;">Conheça o espaço pessoalmente</div>
+      <div style="font-size:12px;opacity:.8;margin-bottom:18px;line-height:1.6;">Visitas guiadas disponíveis de terça a domingo. Entrada gratuita.</div>
+      <a href="#" style="display:block;text-align:center;background:#fff;color:var(--teal-escuro);text-decoration:none;padding:11px;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;transition:opacity .2s;">Agendar visita</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVEGAÇÃO ENTRE ITENS -->
+<div class="nav-itens">
+  <a href="carandiru-pagina2.html?ev=1920" class="nav-item-link">
+    <div class="dir">← Anterior</div>
+    <div class="nome">Inauguração do Complexo (1920)</div>
+  </a>
+  <div class="nav-sep"></div>
+  <a href="carandiru-pagina2.html?ev=1999" class="nav-item-link" style="text-align:right;">
+    <div class="dir">Próximo →</div>
+    <div class="nome">Início da Desativação (1999)</div>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <strong style="color:rgba(255,255,255,0.7);">Espaço Memória Carandiru</strong> — Centro Paula Souza — Governo do Estado de São Paulo
+  </div>
+  <div style="display:flex;gap:20px;">
+    <a href="carandiru-pagina1.html">Início</a>
+    <a href="#">Política de privacidade</a>
+    <a href="#">Acessibilidade</a>
+  </div>
+</footer>
+
+<script>
+// Pega parâmetros da URL para customizar o conteúdo da página
+const params = new URLSearchParams(window.location.search);
+const evento = params.get('ev');
+const item = params.get('item');
+
+const dados = {
+  '1920': {
+    categoria: 'Evento histórico',
+    titulo: 'Inauguração do Complexo',
+    subtitulo: '1920 — Fundação do Carandiru',
+    periodo: '1920',
+    tipo: 'Patrimônio histórico',
+    bc: 'Inauguração (1920)'
+  },
+  '1992': {
+    categoria: 'Evento histórico',
+    titulo: 'Massacre do Carandiru',
+    subtitulo: '2 de outubro de 1992 — Pavilhão 9',
+    periodo: '02/10/1992',
+    tipo: 'Direitos Humanos',
+    bc: 'Massacre de 1992'
+  },
+  '2002': {
+    categoria: 'Transformação urbana',
+    titulo: 'Implosão do Carandiru',
+    subtitulo: '8 de dezembro de 2002 — São Paulo',
+    periodo: '08/12/2002',
+    tipo: 'Patrimônio e urbanismo',
+    bc: 'Implosão (2002)'
+  },
+  '2024': {
+    categoria: 'Memória e cultura',
+    titulo: 'Espaço Memória Carandiru',
+    subtitulo: '2024 — Inauguração do memorial',
+    periodo: '2024',
+    tipo: 'Patrimônio cultural',
+    bc: 'Espaço Memória (2024)'
+  }
+};
+
+const itemDados = {
+  'documentos': {
+    categoria: 'Arquivo histórico',
+    titulo: 'Documentos e registros',
+    subtitulo: 'Acervo documental do complexo',
+    periodo: '1920–2002',
+    tipo: 'Arquivo',
+    bc: 'Documentos'
+  },
+  'fotografias': {
+    categoria: 'Fotografia',
+    titulo: 'Acervo fotográfico',
+    subtitulo: 'Registros visuais históricos',
+    periodo: '1940–2002',
+    tipo: 'Fotografia',
+    bc: 'Fotografias'
+  },
+  'depoimentos': {
+    categoria: 'Memória oral',
+    titulo: 'Depoimentos e memórias',
+    subtitulo: 'Vozes de sobreviventes e familiares',
+    periodo: '1992–presente',
+    tipo: 'Memória oral',
+    bc: 'Depoimentos'
+  },
+  'arte': {
+    categoria: 'Expressão artística',
+    titulo: 'Arte e cultura no Carandiru',
+    subtitulo: 'Produções culturais do complexo',
+    periodo: '1960–2002',
+    tipo: 'Cultura e arte',
+    bc: 'Arte e cultura'
+  }
+};
+
+function aplicarDados(d) {
+  if (!d) return;
+  document.getElementById('det-categoria').textContent = d.categoria;
+  document.getElementById('det-titulo').textContent = d.titulo;
+  document.getElementById('det-subtitulo').textContent = d.subtitulo;
+  document.getElementById('det-periodo').textContent = d.periodo;
+  document.getElementById('det-tipo').textContent = d.tipo;
+  document.getElementById('bc-atual').textContent = d.bc;
+  document.title = d.titulo + ' — Espaço Memória Carandiru';
+}
+
+if (evento && dados[evento]) aplicarDados(dados[evento]);
+else if (item && itemDados[item]) aplicarDados(itemDados[item]);
+</script>
+
+</body>
+</html>
