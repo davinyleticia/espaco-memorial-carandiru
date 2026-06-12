@@ -1,0 +1,19 @@
+{
+  "title": "Leading",
+  "description": "Ratio-based leading/line-height values",
+  "prefix": "leading",
+  "items": [
+    {
+      "name": "Flat",
+      "value": 1
+    },
+    {
+      "name": "Fine",
+      "value": 1.2
+    },
+    {
+      "name": "Standard",
+      "value": 1.4
+    }
+  ]
+}
