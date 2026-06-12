@@ -32,12 +32,16 @@
     display: flex;
     justify-content: center;
    gap: 44px;
-    padding: 1rem;
+
 }
+
+  .menu1 a{
+    padding: 1rem;
+  }
 
 
   .menu1 a:hover {
-      padding: 16px 30px;
+padding: 1rem;
     }
 
 
@@ -198,7 +202,6 @@
     }
 
     nav a:first-child {
-      border-left: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     nav a:hover {
