@@ -27,33 +27,7 @@
     }
 
 
-    /* 1. Altera o container do input para ficar totalmente arredondado */
-#search .pagefind-ui__search-input {
-    border-radius: 50px !important; /* Deixa as pontas circulares */
-    border: 1px solid #dcdcdc !important; /* Cor da borda cinza suave */
-    padding: 12px 50px 12px 24px !important; /* Aumenta o espaço interno (mais espaço na direita para a lupa) */
-    background-color: #ffffff !important;
     
-    /* 2. Adiciona a nova lupa vermelha na lateral direita como background */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c93b2b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E") !important;
-    background-repeat: no-repeat !important;
-    background-position: calc(100% - 20px) center !important; /* Posiciona a lupa na direita */
-    background-size: 22px !important; /* Tamanho da lupa */
-}
-
-/* 3. Esconde o ícone da lupa padrão cinza que fica na esquerda */
-#search .pagefind-ui__search-clear::before,
-#search .pagefind-ui__search-input + .pagefind-ui__search-icon, 
-#search [class*="search-icon"] {
-    display: none !important;
-}
-
-/* 4. Ajusta o efeito de foco (quando o usuário clica para digitar) */
-#search .pagefind-ui__search-input:focus {
-    outline: none !important;
-    border-color: #b5b5b5 !important; /* Muda levemente a cor da borda ao focar */
-}
-
     /* ─── BARRA GOV SP ─── */
     .gov-bar {
       background: #ffffff;
