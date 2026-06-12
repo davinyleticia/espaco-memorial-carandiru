@@ -27,6 +27,13 @@
     }
 
 
+.menu1 {
+    background: #c0392b !important;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
 
     /* ─── BARRA GOV SP ─── */
     .gov-bar {
@@ -197,15 +204,6 @@
       font-weight: 800;
     }
 
-
-      .menu{
-      background: #c0392b;
-      display: flex;
-      justify-content: center;
-      gap: 0;
-          padding: 1rem;
-    }
-
     /* ─── HERO ─── */
     .hero {
       position: relative;
@@ -369,7 +367,7 @@
     /* ─── RESPONSIVIDADE PARA O HEADER E HERO ─── */
     @media (max-width: 992px) {
       .hero h1 { font-size: 54px; }
-      nav a { padding: 16px 30px; font-size: 14px; }
+      nav a {font-size: 14px; }
     }
 
     @media (max-width: 768px) {
