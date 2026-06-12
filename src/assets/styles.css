@@ -36,6 +36,11 @@
 }
 
 
+  .menu1 a:hover {
+      padding: 16px 30px;
+    }
+
+
     /* ─── BARRA GOV SP ─── */
     .gov-bar {
       background: #ffffff;
