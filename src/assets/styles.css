@@ -31,8 +31,14 @@
     background: #c0392b !important;
     display: flex;
     justify-content: center;
-    gap: 0;
+   gap: 44px;
+    padding: 1rem;
 }
+
+
+  .menu1 a:hover {
+      padding: 16px 30px;
+    }
 
 
     /* ─── BARRA GOV SP ─── */
@@ -187,7 +193,6 @@
       font-size: 15px;
       font-weight: 600;
       letter-spacing: .04em;
-      border-right: 1px solid rgba(255, 255, 255, 0.25);
       transition: background .2s, color .2s;
       position: relative;
     }
