@@ -63,6 +63,18 @@
       transform: translateY(-50%) !important;
       margin: 0 !important;
     }
+
+    /* 1. Força a ocultação da lupa cinza (pegando tanto a classe quanto a tag SVG diretamente) */
+#search .pagefind-ui__search-icon,
+#search svg.pagefind-ui__search-icon,
+.pagefind-ui__search-icon {
+    display: none !important;
+}
+
+/* 2. Remove o "buraco" invisível na esquerda e puxa o texto/cursor mais para a borda */
+#search .pagefind-ui__search-input {
+    padding-left: 20px !important; 
+}
   </style>
  
 </head>
