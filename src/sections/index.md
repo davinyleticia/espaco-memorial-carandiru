@@ -1,12 +1,9 @@
 ---
-title: "Intro"
+title: "Espaco Memorial Carandiru"
 layout: "base.njk"
 permalink: "/"
 order: 1
 ---
- 
-
-
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
