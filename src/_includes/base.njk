@@ -1,44 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ title | safe }} - Dáviny Letícia Vidal</title>
+  <title>{{ title | safe }}</title>
   <link rel="stylesheet" href="/styles.css" />
   
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="/_images/inco.png">
   <script src="/pagefind/pagefind-ui.js"></script>
 
-  <meta property="og:title" content="{{ title | safe }} - Dáviny Letícia Vidal" />
+  <meta property="og:title" content="{{ title | safe }}" />
   <meta property="og:description" content="Write here..." />
-  <meta property="og:url" content="https://github.com/CLCK0622/11ty-Serene" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <script src="/main.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+     <link rel="stylesheet" href="http://localhost:8080/assets/styles.css">
+  <script src="http://localhost:8080//main.js"></script>
 </head>
+
+
 <body class="main-body">
 
-  <div class="box nav-box">
-    <nav class="nav-bar">
-      <div style=" display: flex " class="nav-title"><img style="width: 40px" src="/_images/inco.png" alt="ico" /> Dáviny Letícia Vidal</div>
-      <div class="nav-links">
-        {% for page in collections.pages %}
-          <a href="{{ page.url }}" class="nav-link">{{ page.data.title }}</a>
-        {% endfor %} 
-        <a href="https://vidal.press//#blog" class="nav-link">Blog</a>
-        <a href="https://vidal.press/secao/contents" class="nav-link">Contents</a>
-        <a href="https://vidal.press/secao/projects" class="nav-link">Projects</a>
+
+
+
+ <link rel="stylesheet" type="text/css"
+    href="https://saopaulo.sp.gov.br/barra-govsp/css/top-padrao-govsp-v2.min.css?vs=3.0">
+  <section class="govsp-topo">
+    <div id="govsp-topbarGlobal" class="blu-e">
+      <div id="topbarGlobal">
+        <div id="topbarLink" class="govsp-black">
+          <div class="govsp-portal">
+            <a href="https://www.saopaulo.sp.gov.br" title="nova guia Site Governo do Estado de São Paulo"
+              target="_blank"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/logo-governo-do-estado-sp.png"
+                alt="logomarca Governo de São Paulo" height="38" class="logo">
+            </a>
+          </div>
+        </div>
+        <nav class="govsp-navbar govsp-navbar-expand-lg">
+          <a class="govsp-link digital" href="https://spmaisdigital.sp.gov.br" title="site SP + Digital">SP +
+            Digital</a>
+
+          <a class="govsp-social" href="https://www.flickr.com/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png" alt="Flickr Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.linkedin.com/company/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png"
+              alt="Linkedin Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.tiktok.com/@governosp"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png" alt="TikTok Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.youtube.com/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png"
+              alt="Youtube Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.twitter.com/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png"
+              alt="Twitter Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.instagram.com/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png"
+              alt="Instagram Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.facebook.com/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png"
+              alt="Facebook Governo do Estado de SP" /></a>
+
+          <p class="govsp-social">/governosp</p>
+
+          <a class="govsp-acessibilidade" title="nova guia"
+            href="https://www.saopaulo.sp.gov.br/fale-conosco/comunicar-erros/" target="_blank"><img
+              class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-error-report.png"
+              alt="Comunicar um erro"></a>
+        </nav>
       </div>
-      <span class="dark-toggle">
-        <span class="material-symbols-outlined">light_mode</span>
-        <label class="switch">
-          <input type="checkbox" id="darkmode" onclick="change_mode()" aria-labelledby="darkmodelabel" />
-          <span class="slider round"></span>
-        </label>
-        <span class="material-symbols-outlined">dark_mode</span>
-      </span>
-    </nav>
-  </div>
+      <button class="govsp-kebab" id="govsp-kebab" aria-expanded="false"><img
+          src="https://saopaulo.sp.gov.br/barra-govsp/img/dots-menu.png" alt="Menu"></button>
+
+      <ul class="govsp-dropdown vs3" id="govsp-dropdown" aria-hidden="true">
+        <li><a class="govsp-link digital" role="button" href="https://spmaisdigital.sp.gov.br"
+            title="Site SP + Digital">SP + Digital</a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.flickr.com/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png"
+              alt="Flickr Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.linkedin.com/company/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png"
+              alt="Linkedin Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.tiktok.com/@governosp"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png"
+              alt="TikTok Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.twitter.com/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png"
+              alt="Twitter Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.youtube.com/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png"
+              alt="Youtube Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.instagram.com/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png"
+              alt="Instagram Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.facebook.com/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png"
+              alt="Facebook Governo do Estado de SP" /></a></li>
+
+        <li>
+          <p class="govsp-social">/governosp</p>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-top-v2.js?vs=3.0"></script>
+    <noscript>
+      Seu navegador não tem suporte a JavaScript ou está desativado!</noscript>
+  </section>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="header-logos">
+        <a href="carandiru-pagina1.html">
+          <img src="http://localhost:8080/_images/logos/logoMemorial_preto.png" alt="Espaço Memória Carandiru" style="height: 48px; display: block;">
+        </a>
+        <a href="#">
+          <img src="http://localhost:8080/_images/logos/logoCps_preto.png" alt="CPS Centro Paula Souza" style="height: 40px; display: block; margin-left: 10px;">
+        </a>
+      </div>
+      <div class="header-search">
+        <input type="text" placeholder="">
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div><!-- /.header-search -->
+    </div><!-- /.header-inner -->
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <a href="carandiru-pagina1.html" class="ativo">Início</a>
+    <a href="#">História</a>
+    <a href="#">Acervo e cultura</a>
+    <a href="#">Visitar</a>
+  </nav>
+
+
 
   <div class="box-search nav-box">
     <div class="box" id="search"></div>
@@ -49,11 +167,71 @@
       {{ content | safe }}
     </div>
 
-    <div class="box footer footer-box">
-      <p class="footer-text">© Dáviny Letícia Vidal 🩷 2021 - 2026 - <a href="/policy/">Política Privacidade</a> - hello@vidal.press </p> 
-      <p class="footer-text">Built with <a href="https://www.11ty.dev/" class="link" target="_blank">11ty</a>. Powered by <a href="https://netlifycom/" class="link" target="_blank">netlify</a>. - Theme <a href="https://github.com/CLCK0622/11ty-Serene" class="link" target="_blank">11ty-Serene</a>.</p>
+<!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-sobre">
+          <div class="footer-logo">Espaço Memória Carandiru</div>
+          <p>Um espaço de preservação da memória histórica, dedicado aos direitos humanos, à reflexão sobre o sistema
+            prisional e à transformação social no Brasil.</p>
+          <p style="margin-top:12px;">Gerenciado pelo Centro Paula Souza — Governo do Estado de São Paulo.</p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">História</a></li>
+            <li><a href="#">Acervo e cultura</a></li>
+            <li><a href="#">Visitar</a></li>
+            <li><a href="#">Imprensa</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Espaço Memória Carandiru — Centro Paula Souza — Governo do Estado de São Paulo</span>
+        <div style="display:flex;gap:20px;">
+          <a href="#">Política de privacidade</a>
+          <a href="#">Acessibilidade</a>
+          <a href="#">Mapa do site</a>
+        </div>
+      </div><!-- /.footer-bottom -->
+    </div><!-- /.footer-container -->
+
+    <link rel="stylesheet" type="text/css"
+      href="https://www.saopaulo.sp.gov.br/barra-govsp/css/rodape-padrao-govsp.min.css">
+  </footer>
+
+  <section id="govsp-rodape">
+    <div class="container">
+      <div class="linha-botoes">
+        <div class="coluna-4">
+          <a href="https://www.ouvidoria.sp.gov.br/Portal/Default.aspx" class="btn btn-model">Ouvidoria</a>
+        </div>
+
+        <div class="coluna-4">
+          <a href="http://www.transparencia.sp.gov.br/" class="btn btn-model">Transparência</a>
+        </div>
+
+        <div class="coluna-4">
+          <a href="http://www.sic.sp.gov.br/" class="btn btn-model">SIC</a>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <div class="container rodape">
+      <div class="logo-rodape">
+        <a href="https://www.saopaulo.sp.gov.br/">
+          <img src="https://www.saopaulo.sp.gov.br/barra-govsp/img/logo-rodape-governo-do-estado-sp.png"
+            alt="site do Governo de São Paulo" width="206" height="38">
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+
 
   <script>
     window.addEventListener('DOMContentLoaded', (event) => {
@@ -76,5 +254,34 @@
         });
     });
   </script>
+
+
+  <script>
+    function ativarEvento(el, ano, titulo, texto) {
+      document.querySelectorAll('.evento').forEach(e => e.classList.remove('ativo'));
+      el.classList.add('ativo');
+      document.getElementById('td-ano').textContent = ano;
+      document.getElementById('td-titulo').textContent = titulo;
+      document.getElementById('td-texto').textContent = texto;
+    }
+
+    // Animação suave ao rolar
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.numero-item, .editorial, .acervo-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  </script>
+
 </body>
 </html>

@@ -14,11 +14,12 @@ module.exports = function (eleventyConfig) {
 
 
 
-    eleventyConfig.addPassthroughCopy("src/styles.css");
+    // eleventyConfig.addPassthroughCopy("src/styles.css");
+    eleventyConfig.addPassthroughCopy("src/assets/styles.css");
     eleventyConfig.addPassthroughCopy("src/main.js");
 
     eleventyConfig.addPassthroughCopy("src/_images");
-    eleventyConfig.addPassthroughCopy("src/_storege");
+    eleventyConfig.addPassthroughCopy("src/_storage");
     eleventyConfig.addPassthroughCopy("src/_data");
 
     eleventyConfig.addPlugin(pluginRss);
@@ -33,67 +34,8 @@ module.exports = function (eleventyConfig) {
         });
     });
 
-    eleventyConfig.addCollection("aulas-cjovem", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/aulas-cjovem/*");
-    });
-
-    eleventyConfig.addCollection("ds2", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/aulas-etec/ds2/*.md").sort((a, b) => {
-            return b.date - a.date;
-        });
-    });
-    eleventyConfig.addCollection("poo", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/aulas-etec/poo/*.md").sort((a, b) => {
-            return b.date - a.date;
-        });
-    });
-    eleventyConfig.addCollection("pam1", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/aulas-etec/pam1/*.md").sort((a, b) => {
-            return b.date - a.date;
-        });
-    });
-        eleventyConfig.addCollection("pam2", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/aulas-etec/pam2/*.md").sort((a, b) => {
-            return b.date - a.date;
-        });
-    });
-     eleventyConfig.addCollection("pdm", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/aulas-etec/pdm/*.md").sort((a, b) => {
-            return b.date - a.date;
-        });
-    });
-
-     eleventyConfig.addCollection("tiaa", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/aulas-etec/tiaa/*.md").sort((a, b) => {
-            return b.date - a.date;
-        });
-    });
 
 
-     eleventyConfig.addCollection("pw1", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/aulas-etec/pw1/*.md").sort((a, b) => {
-            return b.date - a.date;
-        });
-    });
-
-         eleventyConfig.addCollection("comum", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/aulas-etec/comum/*.md").sort((a, b) => {
-            return b.date - a.date;
-        });
-    });
-
-
-     eleventyConfig.addCollection("pw3", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/aulas-etec/pw3/*.md").sort((a, b) => {
-            return b.date - a.date;
-        });
-    });
-
-    eleventyConfig.addCollection("aulas-fiap", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/aulas-fiap/**/*.md").sort((a, b) => {
-            return b.date - a.date;
-        });
-    });
 
 
     eleventyConfig.addFilter("date", (dateObj, format = "yyyy-MM-dd") => {
