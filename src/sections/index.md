@@ -210,15 +210,5 @@ order: 1
     </div><!-- /.visitar-inner -->
   </section>
 
-  <!-- NEWSLETTER -->
-  <section class="newsletter">
-    <div class="newsletter-inner">
-      <h2>Receba novidades sobre exposições e eventos</h2>
-      <div class="newsletter-form">
-        <input type="email" placeholder="Seu e-mail">
-        <button>Inscrever-se</button>
-      </div>
-    </div>
-  </section>
 
   
