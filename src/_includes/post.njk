@@ -1,15 +1,97 @@
 ---
-layout: "base.njk"
+layout: base.njk
 ---
 
-<main>
-    <article>
-    <h1>{{title}}</h1>
-    <br>
-    <img src={{featuredImage}} alt="img do post" />
-        <section>
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="/">Início</a>
+  <span class="sep">›</span>
+  <a href="#">{{ categoria }}</a>
+  <span class="sep">›</span>
+  <span>{{ titulo }}</span>
+</div>
+
+<!-- HERO DETALHE -->
+<div class="hero-detalhe">
+  <div class="detalhe-categoria">{{ categoria }}</div>
+  <div class="detalhe-titulo">{{ titulo }}</div>
+  <div class="detalhe-subtitulo">{{ subtitulo }}</div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="conteudo-site">
+  <div class="conteudo-wrapper">
+
+    <!-- COLUNA PRINCIPAL (808px) -->
+    <div class="conteudo-principal">
+
+      {% if lead %}
+      <p class="lead">{{ lead }}</p>
+      {% endif %}
+
+      {% if imagem %}
+      <div class="galeria">
+        <img
+          src="{{ imagem }}"
+          alt="{{ imagem_alt }}"
+          width="808"
+          height="455"
+          style="width:808px;height:455px;object-fit:cover;display:block;"
+        >
+      </div>
+      {% endif %}
+
+      <div class="corpo">
         {{ content | safe }}
-        </section>
-    </article>
-    <hr style="margin-top: 30px; margin-bottom: 15px;" />
-</main>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR (328px) -->
+    <div class="conteudo-lateral">
+
+      {% if temas %}
+      <div class="sidebar-bloco">
+        <div class="sidebar-titulo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82zM7 7h.01"/>
+          </svg>
+          Temas relacionados
+        </div>
+        <div>
+          {% for tema in temas %}
+            <a href="/temas/{{ tema | slug }}" class="sidebar-tag">{{ tema }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if referencias %}
+      <div class="sidebar-bloco">
+        <div class="sidebar-titulo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          Referências
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          {% for ref in referencias %}
+          <div style="font-size:12px;line-height:1.6;color:#555;">
+            <strong style="color:#333;font-weight:700;">{{ ref.autor }}</strong><br>
+            <em>{{ ref.titulo }}</em>{% if ref.editora %} — {{ ref.editora }}{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="cta-box">
+        <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.8;margin-bottom:10px;font-weight:700;">Visitar o memorial</div>
+        <h4>Conheça o espaço pessoalmente</h4>
+        <p>Visitas guiadas disponíveis de terça a domingo. Entrada gratuita.</p>
+        <a href="/visitar" class="cta-btn">Agendar visita</a>
+      </div>
+
+    </div>
+  </div>
+</div>
