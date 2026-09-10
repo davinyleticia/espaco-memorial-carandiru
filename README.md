@@ -1,6 +1,6 @@
 # 11ty-Serene
 
-A minimal theme for a landing page, featuring a simple structure.
+A minimal theme for a landing page, featuring a simple structure
 
 Built with [11ty](https://www.11ty.dev/) and [Sass](https://sass-lang.com/).
 
