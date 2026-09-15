@@ -104,6 +104,89 @@ order: 1
     </div>
   </div>
 
+  <!-- GALERIA DE ACERVO MEMORIAL DO CARANDIRU -->
+  <section class="galeria-acervo-secao" id="galeria-mosaico">
+    <header class="galeria-acervo__cabecalho">
+      <div class="galeria-acervo__titulos">
+        <h2>Nosso <em>acervo</em></h2>
+        <p>Registros históricos e peças do acervo do Memorial do Carandiru.</p>
+      </div>
+
+      <a href="carandiru-pagina2.html" class="galeria-acervo__link-top">
+        VER GALERIA COMPLETA &rarr;
+      </a>
+    </header>
+
+    <div class="galeria-acervo__mosaico">
+      <button type="button" class="galeria-acervo__item" data-index="0" title="Clique para ampliar">
+        <span class="galeria-acervo__tag-num">#01</span>
+        <img src="carandiru_escultura_cabeca_capuz_azul.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2301+Escultura+de+Cabe%C3%A7a+Encapuzada';" alt="Escultura de uma cabeça encapuzada em tecido azul">
+        <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+      </button>
+
+      <button type="button" class="galeria-acervo__item" data-index="1" title="Clique para ampliar">
+        <span class="galeria-acervo__tag-num">#02</span>
+        <img src="carandiru_maquete_tatil_sao_jorge.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2302+Maquete+T%C3%A1til+S%C3%A3o+Jorge';" alt="Maquete tátil em relevo de São Jorge e o dragão">
+        <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+      </button>
+
+      <button type="button" class="galeria-acervo__item" data-index="2" title="Clique para ampliar">
+        <span class="galeria-acervo__tag-num">#03</span>
+        <img src="carandiru_painel_cartas_reivindicacoes.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2303+Painel+de+Cartas+e+Reivindica%C3%A7%C3%B5es';" alt="Painel com cartas e reivindicações de sobreviventes">
+        <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+      </button>
+
+      <button type="button" class="galeria-acervo__item" data-index="3" title="Clique para ampliar">
+        <span class="galeria-acervo__tag-num">#04</span>
+        <img src="carandiru_painel_exposicao_esporte.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2304+Exposi%C3%A7%C3%A3o+sobre+Esporte';" alt="Painel da exposição sobre esporte no complexo">
+        <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+      </button>
+
+      <button type="button" class="galeria-acervo__item" data-index="4" title="Clique para ampliar">
+        <span class="galeria-acervo__tag-num">#05</span>
+        <img src="carandiru_porta_cela_salmo_david.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2305+Porta+de+Cela+Salmo+de+Davi';" alt="Porta de cela com o Salmo de Davi pintado">
+        <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+      </button>
+
+      <button type="button" class="galeria-acervo__item" data-index="5" title="Clique para ampliar">
+        <span class="galeria-acervo__tag-num">#06</span>
+        <img src="carandiru_quadro_populacao_carceraria_pv04.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2306+Quadro+Popula%C3%A7%C3%A3o+Pavilh%C3%A3o+4';" alt="Quadro de controle da população carcerária do Pavilhão 4">
+        <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+      </button>
+
+      <button type="button" class="galeria-acervo__item" data-index="6" title="Clique para ampliar">
+        <span class="galeria-acervo__tag-num">#07</span>
+        <img src="carandiru_porta_cela_olho.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2307+Porta+de+Cela+Pintura+Olho';" alt="Porta de cela pintada com um olho">
+        <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+      </button>
+    </div>
+
+    <footer class="galeria-acervo__rodape">
+      <div class="galeria-acervo__info-extra">
+        Exibindo prévia resumida do acervo (7 itens catalogados).
+      </div>
+      <span class="galeria-acervo__creditos">Registros por Vinícius Santos (ETEC São Mateus)</span>
+    </footer>
+  </section>
+
+  <!-- Lightbox Modal da Galeria -->
+  <div class="galeria-acervo__lightbox" id="galeriaLightbox">
+    <div class="galeria-acervo__lightbox-topo">
+      <button type="button" class="galeria-acervo__fechar" id="galeriaFechar" aria-label="Fechar">&times;</button>
+    </div>
+    <button type="button" class="galeria-acervo__nav galeria-acervo__nav--anterior" id="galeriaAnterior" aria-label="Foto anterior">&#10094;</button>
+    <button type="button" class="galeria-acervo__nav galeria-acervo__nav--proximo" id="galeriaProximo" aria-label="Próxima foto">&#10095;</button>
+    <figure class="galeria-acervo__figura">
+      <img src="" alt="" id="galeriaImagemGrande">
+      <figcaption>
+        <span class="galeria-acervo__contador" id="galeriaContador"></span>
+        <div class="galeria-acervo__titulo-detalhado" id="galeriaTituloDetalhado"></div>
+        <p class="galeria-acervo__descricao-texto" id="galeriaLegenda"></p>
+        <div class="galeria-acervo__credito-lightbox">Fotografia por Vinícius Santos (2026)</div>
+      </figcaption>
+    </figure>
+  </div>
+
   <!-- ACERVO -->
   <section class="secao" id="acervo">
     <div class="secao-header">
@@ -206,6 +289,105 @@ order: 1
       </div>
     </div><!-- /.visitar-inner -->
   </section>
+  
+<script>
+  (function () {
+    var itensAcervo = [
+      {
+        titulo: 'Escultura de Cabeça Encapuzada',
+        descricao: 'Obra tridimensional confeccionada em tecido de tom azul e materiais adaptados. A escultura integra a coleção de artes visuais do acervo e simboliza sentimentos de invisibilidade, enclausuramento e opressão vivenciados no cotidiano carcerário da Casa de Detenção.'
+      },
+      {
+        titulo: 'Maquete Tátil de São Jorge e o Dragão',
+        descricao: 'Peça escultórica tátil em relevo desenvolvida para proporcionar acessibilidade sensorial a visitantes céticos e com baixa visão. A imagem de São Jorge possui grande devoção popular no ambiente prisional, associada à proteção espiritual e à superação de adversidades.'
+      },
+      {
+        titulo: 'Painel de Cartas e Reivindicações',
+        descricao: 'Compilação de documentos originais, manuscritos, bilhetes e cartas datografadas por internos e familiares. O acervo registra denúncias de superlotação, cobranças por assistência jurídica e relatos históricos produzidos no período que antecedeu e sucedeu o massacre de 1992.'
+      },
+      {
+        titulo: 'Painel da Exposição sobre Práticas Esportivas',
+        descricao: 'Expositor temático reunindo artigos originais como luvas de boxe, troféus de torneios internos e flâmulas organizadas pelos próprios detentos. As atividades esportivas eram elementos centrais de convivência, disciplina e organização comunitária nos pavilhões.'
+      },
+      {
+        titulo: 'Porta de Cela com Salmo de Davi',
+        descricao: 'Porta original retirada de uma das galerias do complexo. Preserva a pintura artesanal com versículos bíblicos do Salmo de Davi, inscrita à mão por um interno como expressão de fé, conforto espiritual e preservação da identidade durante o cumprimento da pena.'
+      },
+      {
+        titulo: 'Quadro de Controle Populacional - Pavilhão 4',
+        descricao: 'Painel oficial de madeira utilizado pela Diretoria do Serviço de Vigilância da Casa de Detenção. O quadro servia para fazer a contagem manual diária, controle de transferências e mapeamento da população carcerária alojada nas celas e andares do Pavilhão 4.'
+      },
+      {
+        titulo: 'Porta de Cela com Pintura do Olho',
+        descricao: 'Elemento arquitetônico preservado que exibe um olho expressivo pintado sobre a estrutura metálica próximo ao visor da cela. A pintura reflete o tema da vigilância constante — tanto do Estado sobre os detentos quanto do olhar vigilante dos reclusos sobre o corredor.'
+      }
+    ];
 
+    var botoes = document.querySelectorAll('.galeria-acervo__item');
+    var lightbox = document.getElementById('galeriaLightbox');
+    var imagemGrande = document.getElementById('galeriaImagemGrande');
+    var tituloDetalhado = document.getElementById('galeriaTituloDetalhado');
+    var legenda = document.getElementById('galeriaLegenda');
+    var contador = document.getElementById('galeriaContador');
+    var fechar = document.getElementById('galeriaFechar');
+    var anterior = document.getElementById('galeriaAnterior');
+    var proximo = document.getElementById('galeriaProximo');
+    var indiceAtual = 0;
 
+    function abrirLightbox(indice) {
+      indiceAtual = parseInt(indice, 10);
+      var img = botoes[indiceAtual].querySelector('img');
+      var item = itensAcervo[indiceAtual];
+      imagemGrande.src = img.src;
+      imagemGrande.alt = img.alt;
+      tituloDetalhado.textContent = item.titulo;
+      legenda.textContent = item.descricao;
+      contador.textContent = 'REGISTRO DE ACERVO #' + (indiceAtual + 1 < 10 ? '0' : '') + (indiceAtual + 1) + ' • ' + (indiceAtual + 1) + ' de ' + itensAcervo.length;
+      lightbox.classList.add('aberto');
+    }
+
+    function fecharLightbox() {
+      lightbox.classList.remove('aberto');
+    }
+
+    function irPara(passo) {
+      indiceAtual = (indiceAtual + passo + botoes.length) % botoes.length;
+      abrirLightbox(indiceAtual);
+    }
+
+    botoes.forEach(function (botao) {
+      botao.addEventListener('click', function () {
+        var idx = this.getAttribute('data-index');
+        abrirLightbox(idx);
+      });
+    });
+
+    if (fechar) fechar.addEventListener('click', fecharLightbox);
+    if (anterior) anterior.addEventListener('click', function () { irPara(-1); });
+    if (proximo) proximo.addEventListener('click', function () { irPara(1); });
+
+    if (lightbox) {
+      lightbox.addEventListener('click', function (evento) {
+        if (evento.target === lightbox) {
+          fecharLightbox();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', function (evento) {
+      if (!lightbox || !lightbox.classList.contains('aberto')) {
+        return;
+      }
+      if (evento.key === 'Escape') {
+        fecharLightbox();
+      }
+      if (evento.key === 'ArrowLeft') {
+        irPara(-1);
+      }
+      if (evento.key === 'ArrowRight') {
+        irPara(1);
+      }
+    });
+  })();
+  </script>
   
