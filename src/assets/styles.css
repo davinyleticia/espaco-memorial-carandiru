@@ -556,7 +556,7 @@ padding: 1rem;
       padding-bottom: 2px;
     }
 /* ==========================================================================
-   GALERIA DE ACERVO - MEMORIAL DO CARANDIRU (CÓDIGO COMPLETO AJUSTADO)
+   GALERIA DE ACERVO - MEMORIAL DO CARANDIRU (CÓDIGO COMPLETO CORRIGIDO)
    ========================================================================== */
 
 .galeria-acervo-secao {
@@ -568,12 +568,12 @@ padding: 1rem;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  background-color: #f7f1e8; /* Fundo contínuo */
+  background-color: #f7f1e8;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-/* Cabeçalho sem fundo de card */
+/* Cabeçalho */
 .galeria-acervo__cabecalho {
   max-width: 1280px;
   width: 100%;
@@ -637,11 +637,11 @@ padding: 1rem;
   width: 100%;
   margin: 0 auto;
   flex: 1;
-  min-height: 0; /* Permite encolher para caber exatamente na viewport */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 12px;
+  min-height: 0;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-template-rows: repeat(2, 1fr) !important;
+  gap: 12px !important;
 }
 
 .galeria-acervo__item {
@@ -726,17 +726,17 @@ padding: 1rem;
   color: #ffffff;
 }
 
-/* POSICIONAMENTO DESKTOP (Linha 1: cards 1 a 3 | Linha 2: cards 4 a 7) */
-.galeria-acervo__item:nth-child(1) { grid-column: 1 / span 2; grid-row: 1; }
-.galeria-acervo__item:nth-child(2) { grid-column: 3 / span 1; grid-row: 1; }
-.galeria-acervo__item:nth-child(3) { grid-column: 4 / span 1; grid-row: 1; }
+/* POSICIONAMENTO DESKTOP (VINCULADO AO DATA-INDEX) */
+.galeria-acervo__item[data-index="0"] { grid-column: 1 / span 2 !important; grid-row: 1 !important; }
+.galeria-acervo__item[data-index="1"] { grid-column: 3 / span 1 !important; grid-row: 1 !important; }
+.galeria-acervo__item[data-index="2"] { grid-column: 4 / span 1 !important; grid-row: 1 !important; }
 
-.galeria-acervo__item:nth-child(4) { grid-column: 1 / span 1; grid-row: 2; }
-.galeria-acervo__item:nth-child(5) { grid-column: 2 / span 1; grid-row: 2; }
-.galeria-acervo__item:nth-child(6) { grid-column: 3 / span 1; grid-row: 2; }
-.galeria-acervo__item:nth-child(7) { grid-column: 4 / span 1; grid-row: 2; }
+.galeria-acervo__item[data-index="3"] { grid-column: 1 / span 1 !important; grid-row: 2 !important; }
+.galeria-acervo__item[data-index="4"] { grid-column: 2 / span 1 !important; grid-row: 2 !important; }
+.galeria-acervo__item[data-index="5"] { grid-column: 3 / span 1 !important; grid-row: 2 !important; }
+.galeria-acervo__item[data-index="6"] { grid-column: 4 / span 1 !important; grid-row: 2 !important; }
 
-/* Rodapé sem fundo de card */
+/* Rodapé */
 .galeria-acervo__rodape {
   max-width: 1280px;
   width: 100%;
@@ -775,26 +775,25 @@ padding: 1rem;
   }
 
   .galeria-acervo__mosaico {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: auto !important;
+    gap: 10px !important;
   }
 
-  /* Reseta os travamentos fixos do desktop */
-  .galeria-acervo__item:nth-child(1),
-  .galeria-acervo__item:nth-child(2),
-  .galeria-acervo__item:nth-child(3),
-  .galeria-acervo__item:nth-child(4),
-  .galeria-acervo__item:nth-child(5),
-  .galeria-acervo__item:nth-child(6),
-  .galeria-acervo__item:nth-child(7) {
-    grid-column: auto;
-    grid-row: auto;
+  .galeria-acervo__item[data-index="0"] {
+    grid-column: span 2 !important;
+    grid-row: auto !important;
+  }
+
+  .galeria-acervo__item[data-index="1"],
+  .galeria-acervo__item[data-index="2"],
+  .galeria-acervo__item[data-index="3"],
+  .galeria-acervo__item[data-index="4"],
+  .galeria-acervo__item[data-index="5"],
+  .galeria-acervo__item[data-index="6"] {
+    grid-column: auto !important;
+    grid-row: auto !important;
     height: 220px;
-  }
-
-  .galeria-acervo__item:nth-child(1) {
-    grid-column: span 2;
   }
 
   .galeria-acervo__rodape {
