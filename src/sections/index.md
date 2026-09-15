@@ -168,7 +168,7 @@ order: 1
       <span class="galeria-acervo__creditos">Registros por Vinícius Santos (ETEC São Mateus)</span>
     </footer>
   </section>
-  
+
   <!-- ACERVO -->
   <section class="secao" id="acervo">
     <div class="secao-header">
