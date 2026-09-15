@@ -168,25 +168,7 @@ order: 1
       <span class="galeria-acervo__creditos">Registros por Vinícius Santos (ETEC São Mateus)</span>
     </footer>
   </section>
-
-  <!-- Lightbox Modal da Galeria -->
-  <div class="galeria-acervo__lightbox" id="galeriaLightbox">
-    <div class="galeria-acervo__lightbox-topo">
-      <button type="button" class="galeria-acervo__fechar" id="galeriaFechar" aria-label="Fechar">&times;</button>
-    </div>
-    <button type="button" class="galeria-acervo__nav galeria-acervo__nav--anterior" id="galeriaAnterior" aria-label="Foto anterior">&#10094;</button>
-    <button type="button" class="galeria-acervo__nav galeria-acervo__nav--proximo" id="galeriaProximo" aria-label="Próxima foto">&#10095;</button>
-    <figure class="galeria-acervo__figura">
-      <img src="" alt="" id="galeriaImagemGrande">
-      <figcaption>
-        <span class="galeria-acervo__contador" id="galeriaContador"></span>
-        <div class="galeria-acervo__titulo-detalhado" id="galeriaTituloDetalhado"></div>
-        <p class="galeria-acervo__descricao-texto" id="galeriaLegenda"></p>
-        <div class="galeria-acervo__credito-lightbox">Fotografia por Vinícius Santos (2026)</div>
-      </figcaption>
-    </figure>
-  </div>
-
+  
   <!-- ACERVO -->
   <section class="secao" id="acervo">
     <div class="secao-header">
@@ -289,7 +271,7 @@ order: 1
       </div>
     </div><!-- /.visitar-inner -->
   </section>
-  
+
 <script>
   (function () {
     var itensAcervo = [

@@ -555,39 +555,42 @@ padding: 1rem;
       border-bottom: 1px solid #7fc6c4;
       padding-bottom: 2px;
     }
-
-    /* ==========================================================================
-   GALERIA DE ACERVO - MEMORIAL DO CARANDIRU (ESCOPADO)
+/* ==========================================================================
+   GALERIA DE ACERVO - MEMORIAL DO CARANDIRU (AJUSTADO PARA VIEWPORT)
    ========================================================================== */
 
 .galeria-acervo-secao {
   width: 100%;
-  min-height: 100vh;
-  padding: 28px 36px 20px;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 20px 36px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  background-color: #f7f1e8;
+  background-color: #f7f1e8; /* Fundo geral contínuo */
   box-sizing: border-box;
+  overflow: hidden;
 }
 
+/* Cabeçalho sem fundo próprio/card */
 .galeria-acervo__cabecalho {
   max-width: 1280px;
   width: 100%;
-  margin: 0 auto 16px;
+  margin: 0 auto 12px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  background: transparent;
   border-bottom: 1px solid rgba(31, 31, 31, 0.15);
-  padding-bottom: 12px;
+  padding-bottom: 10px;
   flex-shrink: 0;
 }
 
 .galeria-acervo__titulos h2 {
   font-family: Georgia, 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #1f1f1f;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -600,21 +603,21 @@ padding: 1rem;
 }
 
 .galeria-acervo__titulos p {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: #5a5752;
   margin-top: 4px;
   margin-bottom: 0;
 }
 
 .galeria-acervo__link-top {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #2e5c53;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-decoration: none;
   border-bottom: 2px solid #2e5c53;
-  padding-bottom: 3px;
+  padding-bottom: 2px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -628,16 +631,17 @@ padding: 1rem;
   transform: translateX(2px);
 }
 
+/* Mosaico ajustado em 4 colunas x 2 linhas proporcionais */
 .galeria-acervo__mosaico {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
   flex: 1;
-  min-height: 0;
+  min-height: 0; /* Permite encolher para caber exatamente na viewport */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 14px;
+  gap: 12px;
 }
 
 .galeria-acervo__item {
@@ -651,7 +655,7 @@ padding: 1rem;
   overflow: hidden;
   cursor: pointer;
   background: #1e1c1a;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
   transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s ease, border-color 0.25s ease;
   text-align: left;
 }
@@ -667,16 +671,16 @@ padding: 1rem;
 
 .galeria-acervo__tag-num {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 8px;
+  left: 8px;
   z-index: 2;
   background: rgba(31, 31, 31, 0.85);
   backdrop-filter: blur(4px);
   color: #f7f1e8;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  padding: 3px 8px;
+  padding: 2px 6px;
   border-radius: 3px;
   border-left: 2px solid #b23b30;
   transition: background 0.3s ease;
@@ -684,14 +688,14 @@ padding: 1rem;
 
 .galeria-acervo__lupa {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: #2e5c53;
   color: #f7f1e8;
-  font-size: 1.1rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -702,13 +706,13 @@ padding: 1rem;
 }
 
 .galeria-acervo__item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
   border-color: #2e5c53;
 }
 
 .galeria-acervo__item:hover img {
-  transform: scale(1.06);
+  transform: scale(1.04);
   opacity: 1;
 }
 
@@ -722,203 +726,70 @@ padding: 1rem;
   color: #ffffff;
 }
 
-.galeria-acervo__item:nth-child(1) {
-  grid-column: span 2;
-  grid-row: span 1;
-}
+/* Mapeamento exato das posições conforme o Anexo 2 */
+.galeria-acervo__item:nth-child(1) { grid-column: 1 / span 2; grid-row: 1; }
+.galeria-acervo__item:nth-child(2) { grid-column: 3 / span 1; grid-row: 1; }
+.galeria-acervo__item:nth-child(3) { grid-column: 4 / span 1; grid-row: 1; }
 
-.galeria-acervo__item:nth-child(2),
-.galeria-acervo__item:nth-child(3),
-.galeria-acervo__item:nth-child(4),
-.galeria-acervo__item:nth-child(5),
-.galeria-acervo__item:nth-child(6),
-.galeria-acervo__item:nth-child(7) {
-  grid-column: span 1;
-  grid-row: span 1;
-}
+.galeria-acervo__item:nth-child(4) { grid-column: 1 / span 1; grid-row: 2; }
+.galeria-acervo__item:nth-child(5) { grid-column: 2 / span 1; grid-row: 2; }
+.galeria-acervo__item:nth-child(6) { grid-column: 3 / span 1; grid-row: 2; }
+.galeria-acervo__item:nth-child(7) { grid-column: 4 / span 1; grid-row: 2; }
 
+/* Rodapé sem fundo próprio/card */
 .galeria-acervo__rodape {
   max-width: 1280px;
   width: 100%;
-  margin: 12px auto 0;
+  margin: 10px auto 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: transparent;
   flex-shrink: 0;
 }
 
 .galeria-acervo__info-extra {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: #6b665f;
 }
 
 .galeria-acervo__creditos {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #7a756e;
   font-style: italic;
 }
 
-/* Lightbox Modal */
-.galeria-acervo__lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background: rgba(20, 16, 14, 0.95);
-  backdrop-filter: blur(6px);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.galeria-acervo__lightbox.aberto {
-  display: flex;
-}
-
-.galeria-acervo__lightbox-topo {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  z-index: 1010;
-}
-
-.galeria-acervo__fechar {
-  background: rgba(255, 255, 255, 0.12);
-  border: none;
-  color: #f7f1e8;
-  font-size: 1.8rem;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-  line-height: 1;
-}
-
-.galeria-acervo__fechar:hover {
-  background: #b23b30;
-  transform: scale(1.05);
-}
-
-.galeria-acervo__figura {
-  max-width: 85vw;
-  max-height: 85vh;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.galeria-acervo__figura img {
-  max-width: 82vw;
-  max-height: 52vh;
-  object-fit: contain;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
-  border-radius: 4px;
-}
-
-.galeria-acervo__figura figcaption {
-  color: #f7f1e8;
-  font-size: 0.9rem;
-  text-align: left;
-  max-width: 650px;
-  margin-top: 16px;
-  line-height: 1.5;
-  background: rgba(31, 28, 26, 0.9);
-  padding: 16px 20px;
-  border-radius: 6px;
-  border-left: 3px solid #b23b30;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.galeria-acervo__contador {
-  display: inline-block;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  color: #b23b30;
-  margin-bottom: 2px;
-}
-
-.galeria-acervo__titulo-detalhado {
-  font-family: Georgia, 'Playfair Display', serif;
-  font-size: 1.18rem;
-  font-weight: 700;
-  color: #f7f1e8;
-  margin: 2px 0 6px;
-}
-
-.galeria-acervo__descricao-texto {
-  color: #d1c9be;
-  font-size: 0.88rem;
-  margin: 0;
-}
-
-.galeria-acervo__credito-lightbox {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px dashed rgba(247, 241, 232, 0.15);
-  font-size: 0.75rem;
-  color: #a8a095;
-  font-style: italic;
-}
-
-.galeria-acervo__nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #2e5c53;
-  border: none;
-  color: #f7f1e8;
-  font-size: 1.3rem;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.galeria-acervo__nav:hover {
-  background: #397066;
-  transform: translateY(-50%) scale(1.08);
-}
-
-.galeria-acervo__nav--anterior {
-  left: 20px;
-}
-
-.galeria-acervo__nav--proximo {
-  right: 20px;
-}
-
+/* Adaptatividade para telas menores */
 @media (max-width: 900px) {
   .galeria-acervo-secao {
     height: auto;
-    min-height: 100vh;
     max-height: none;
     padding: 24px 16px;
+    overflow: visible;
   }
 
   .galeria-acervo__cabecalho {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 10px;
   }
 
   .galeria-acervo__mosaico {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     gap: 10px;
-    min-height: 500px;
+  }
+
+  .galeria-acervo__item:nth-child(1),
+  .galeria-acervo__item:nth-child(2),
+  .galeria-acervo__item:nth-child(3),
+  .galeria-acervo__item:nth-child(4),
+  .galeria-acervo__item:nth-child(5),
+  .galeria-acervo__item:nth-child(6),
+  .galeria-acervo__item:nth-child(7) {
+    grid-column: auto;
+    grid-row: auto;
+    height: 220px;
   }
 
   .galeria-acervo__item:nth-child(1) {
@@ -927,7 +798,7 @@ padding: 1rem;
 
   .galeria-acervo__rodape {
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     align-items: flex-start;
   }
 }
