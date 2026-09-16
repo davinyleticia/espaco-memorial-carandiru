@@ -161,6 +161,7 @@ order: 1
       </button>
     </div>
 
+<<<<<<< HEAD
 <!-- LIGHTBOX DA GALERIA DE ACERVO -->
 <div class="galeria-acervo__lightbox" id="galeriaLightbox">
   <div class="galeria-acervo__lightbox-caixa">
@@ -182,6 +183,8 @@ order: 1
   </div>
 </div>
 
+=======
+>>>>>>> origin/main
     <footer class="galeria-acervo__rodape">
       <div class="galeria-acervo__info-extra">
         Exibindo prévia resumida do acervo (7 itens catalogados).
