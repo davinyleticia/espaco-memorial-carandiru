@@ -24,96 +24,90 @@ order: 1
 
   <!-- LINHA DO TEMPO -->
   <section class="secao" id="historia">
-    <div class="secao-header">
-      <h2 class="secao-titulo">Linha do tempo <span>histórica</span></h2>
-      <a href="carandiru-pagina2.html" class="ver-mais">Ver história completa →</a>
+  <div class="secao-header">
+    <h2 class="secao-titulo">Linha do tempo <span>histórica</span></h2>
+    <a href="carandiru-pagina2.html" class="ver-mais">Ver história completa →</a>
+  </div>
+
+  <div class="timeline-wrapper">
+    <div class="timeline-track" id="timeline">
+  <a class="evento" href="carandiru-pagina2.html?ev=1833"
+    onclick="ativarEvento(this,'1833','As Primeiras Cadeias de São Paulo','A história começa em 1833 com a antiga Cadeia Pública da cidade, chamada popularmente de Cadeia da Casa. Ela abrigava presos e organizava trabalhos manuais, sendo o primeiro passo do sistema prisional paulista que mais tarde daria origem ao Carandiru.');return false;">
+    <div class="ano">1833</div>
+    <h3>As Primeiras Cadeias</h3>
+    <p>Origens da antiga cadeia pública da cidade</p>
+  </a>
+
+  <a class="evento" href="carandiru-pagina2.html?ev=1904"
+    onclick="ativarEvento(this,'1904','O Planejamento do Novo Prédio','Com o crescimento da cidade, a antiga cadeia ficou superlotada. Em 1904, o governo fez um concurso de arquitetura para projetar uma nova penitenciária no bairro do Carandiru, focada em um espaço mais organizado e higiênico.');return false;">
+    <div class="ano">1904</div>
+    <h3>O Planejamento</h3>
+    <p>Concurso para a nova penitenciária no Carandiru</p>
+  </a>
+
+  <a class="evento ativo" href="carandiru-pagina2.html?ev=1920"
+    onclick="ativarEvento(this,'1920','A Inauguração do Complexo','O local foi aberto em 1920 com capacidade para 1.200 presos. A estrutura foi planejada com base nas ideias do médico legista e professor da USP Flamínio Fávero, que defendia a presença da medicina e de condições sanitárias dentro das prisões.');return false;">
+    <div class="ano">1920</div>
+    <h3>A Casa de Detenção</h3>
+    <p>Fundação do complexo e ideias de Flamínio Fávero</p>
+  </a>
+
+  <a class="evento" href="carandiru-pagina2.html?ev=1956"
+    onclick="ativarEvento(this,'1956','O Prédio Central e o Pavilhão 2','Em 1956, foram entregues a administração central e o Pavilhão 2. Nessa fase de expansão, a lei estadual deu ao local o nome oficial de Complexo Penitenciário Professor Flamínio Fávero, oficializando a referência ao médico que participou da elaboração de regras do sistema prisional.');return false;">
+    <div class="ano">1956</div>
+    <h3>O Pavilhão 2</h3>
+    <p>Prédio central e nome oficial do complexo</p>
+  </a>
+
+  <a class="evento" href="carandiru-pagina2.html?ev=1961"
+    onclick="ativarEvento(this,'1961','A Abertura do Pavilhão 9','O Pavilhão 9 foi inaugurado em 1961, projetado para 536 pessoas. Com o passar do tempo e o aumento constante de presos na capital, esse prédio acabou se tornando um dos setores mais populosos do Carandiru.');return false;">
+    <div class="ano">1961</div>
+    <h3>O Pavilhão 9</h3>
+    <p>Abertura do pavilhão para 536 detentos</p>
+  </a>
+
+  <a class="evento" href="carandiru-pagina2.html?ev=1978"
+    onclick="ativarEvento(this,'1978','Novos Pavilhões e Debates','A abertura dos pavilhões 4 e 7 aumentou a capacidade para 3.250 vagas. No mesmo ano, São Paulo sediou um congresso nacional sobre administração de presídios para discutir os problemas do aumento da população carcerária.');return false;">
+    <div class="ano">1978</div>
+    <h3>Novos Pavilhões</h3>
+    <p>Ampliação e debates sobre gestão de presídios</p>
+  </a>
+
+  <a class="evento" href="carandiru-pagina2.html?ev=1992"
+    onclick="ativarEvento(this,'1992','A Intervenção no Pavilhão 9','Em 2 de outubro de 1992, uma intervenção policial para conter uma rebelião no Pavilhão 9 terminou com a morte de 111 detentos. O fato marcou a história do país e gerou debates no mundo todo sobre direitos humanos e segurança pública.');return false;">
+    <div class="ano">1992</div>
+    <h3>O Evento de 1992</h3>
+    <p>Intervenção no Pavilhão 9 e direitos humanos</p>
+  </a>
+
+  <a class="evento" href="carandiru-pagina2.html?ev=2002"
+    onclick="ativarEvento(this,'2002','A Implosão e o Parque','O complexo foi desativado e seus prédios foram implodidos em 2002. A área foi transformada no Parque da Juventude, um espaço público com áreas verdes, lazer, escolas e centros culturais.');return false;">
+    <div class="ano">2002</div>
+    <h3>A Transformação</h3>
+    <p>Implosão do complexo e Parque da Juventude</p>
+  </a>
+
+  <a class="evento" href="carandiru-pagina2.html?ev=hoje"
+    onclick="ativarEvento(this,'Hoje','O Espaço Memória do Carandiru','Atualmente, o Espaço Memória guarda documentos, fotos e objetos do antigo presídio. O objetivo é preservar essa história para promover a reflexão sobre cidadania e direitos humanos.');return false;">
+    <div class="ano">Hoje</div>
+    <h3>O Memorial Hoje</h3>
+    <p>Preservação e salvaguarda da memória</p>
+  </a>
+
+</div>
+
+<div class="timeline-detalhe" id="timeline-detalhe">
+  <div class="td-ano" id="td-ano">1920</div>
+  <div>
+    <div class="td-titulo" id="td-titulo">A Inauguração do Complexo</div>
+    <div class="td-texto" id="td-texto">
+      O local foi aberto em 1920 com capacidade para 1.200 presos. A estrutura foi planejada com base nas ideias do médico legista e professor da USP Flamínio Fávero, que defendia a presença da medicina e de condições sanitárias dentro das prisões.
     </div>
-
-    <div class="timeline-wrapper">
-      <div class="timeline-track" id="timeline">
-        
-        <!-- TÓPICO 1: 1833 -->
-      <a class="evento" href="carandiru-pagina2.html?ev=1833"
-        onclick="ativarEvento(this,'1833','As Primeiras Cadeias de São Paulo','A história começa em 1833 com a antiga Cadeia Pública da cidade, chamada popularmente de Cadeia da Casa. Ela abrigava presos e organizava trabalhos manuais, sendo o primeiro passo do sistema prisional paulista que mais tarde daria origem ao Carandiru.');
-        return false;">
-        <div class="ano">1833</div>
-        <h3>As Primeiras Cadeias</h3>
-        <p>Origens da antiga cadeia pública da cidade</p>
-      </a>
-
-      <!-- TÓPICO 2: 1904 -->
-      <a class="evento" href="carandiru-pagina2.html?ev=1904"
-        onclick="ativarEvento(this,'1904','O Planejamento do Novo Prédio','Com o crescimento da cidade, a antiga cadeia ficou superlotada. Em 1904, o governo fez um concurso de arquitetura para projetar uma nova penitenciária no bairro do Carandiru, focada em um espaço mais organizado e higiênico.');
-        return false;">
-        <div class="ano">1904</div>
-        <h3>O Planejamento</h3>
-        <p>Concurso para a nova penitenciária no Carandiru</p>
-      </a>
-
-      <!-- TÓPICO 3: 1920 -->
-      <a class="evento ativo" href="carandiru-pagina2.html?ev=1920"
-        onclick="ativarEvento(this,'1920','A Inauguração do Complexo','O local foi aberto em 1920 com capacidade para 1.200 presos. A estrutura foi planejada com base nas ideias do médico legista e professor da USP Flamínio Fávero, que defendia a presença da medicina e de condições sanitárias dentro das prisões.');return false;">
-        <div class="ano">1920</div>
-        <h3>A Casa de Detenção</h3>
-        <p>Fundação do complexo e ideias de Flamínio Fávero</p>
-      </a>
-
-      <!-- TÓPICO 4: 1956 -->
-      <a class="evento" href="carandiru-pagina2.html?ev=1956"
-        onclick="ativarEvento(this,'1956','O Prédio Central e o Pavilhão 2','Em 1956, foram entregues a administração central e o Pavilhão 2. Nessa fase de expansão, a lei estadual deu ao local o nome oficial de Complexo Penitenciário Professor Flamínio Fávero, oficializando a referência ao médico que participou da elaboração de regras do sistema prisional.');return false;">
-        <div class="ano">1956</div>
-        <h3>O Pavilhão 2</h3>
-        <p>Prédio central e nome oficial do complexo</p>
-      </a>
-
-      <!-- TÓPICO 5: 1961 -->
-      <a class="evento" href="carandiru-pagina2.html?ev=1961"
-        onclick="ativarEvento(this,'1961','A Abertura do Pavilhão 9','O Pavilhão 9 foi inaugurado em 1961, projetado para 536 pessoas. Com o passar do tempo e o aumento constante de presos na capital, esse prédio acabou se tornando um dos setores mais populosos do Carandiru.');
-        return false;">
-        <div class="ano">1961</div>
-        <h3>O Pavilhão 9</h3>
-        <p>Abertura do pavilhão para 536 detentos</p>
-      </a>
-
-      <!-- TÓPICO 6: 1978 -->
-      <a class="evento" href="carandiru-pagina2.html?ev=1978"
-        onclick="ativarEvento(this,'1978','Novos Pavilhões e Debates','A abertura dos pavilhões 4 e 7 aumentou a capacidade para 3.250 vagas. No mesmo ano, São Paulo sediou um congresso nacional sobre administração de presídios para discutir os problemas do aumento da população carcerária.');
-        return false;">
-        <div class="ano">1978</div>
-        <h3>Novos Pavilhões</h3>
-        <p>Ampliação e debates sobre gestão de presídios</p>
-      </a>
-
-      <!-- TÓPICO 7: 1992 -->
-      <a class="evento" href="carandiru-pagina2.html?ev=1992"
-        onclick="ativarEvento(this,'1992','A Intervenção no Pavilhão 9','Em 2 de outubro de 1992, uma intervenção policial para conter uma rebelião no Pavilhão 9 terminou com a morte de 111 detentos. O fato marcou a história do país e gerou debates no mundo todo sobre direitos humanos e segurança pública.');
-        return false;">
-        <div class="ano">1992</div>
-        <h3>O Evento de 1992</h3>
-        <p>Intervenção no Pavilhão 9 e direitos humanos</p>
-      </a>
-
-      <!-- TÓPICO 8: 2002 -->
-      <a class="evento" href="carandiru-pagina2.html?ev=2002"
-        onclick="ativarEvento(this,'2002','A Implosão e o Parque','O complexo foi desativado e seus prédios foram implodidos em 2002. A área foi transformada no Parque da Juventude, um espaço público com áreas verdes, lazer, escolas e centros culturais.');
-        return false;">
-        <div class="ano">2002</div>
-        <h3>A Transformação</h3>
-        <p>Implosão do complexo e Parque da Juventude</p>
-      </a>
-
-      <!-- TÓPICO 9: Hoje -->
-      <a class="evento" href="carandiru-pagina2.html?ev=hoje"
-        onclick="ativarEvento(this,'Hoje','O Espaço Memória do Carandiru','Atualmente, o Espaço Memória guarda documentos, fotos e objetos do antigo presídio. O objetivo é preservar essa história para promover a reflexão sobre cidadania e direitos humanos.');return false;">
-        <div class="ano">Hoje</div>
-        <h3>O Memorial Hoje</h3>
-        <p>Preservação e salvaguarda da memória</p>
-      </a>
-
-      </div>
-      </div>
-    </div>
-  </section>
+    <a href="carandiru-pagina2.html" class="td-link" id="td-link">Ler mais sobre este período →</a>
+  </div>
+</div>
+  </div>
+</section>
 
   <!-- EDITORIAL -->
   <div class="editorial">
@@ -187,7 +181,6 @@ order: 1
       </button>
     </div>
 
-<<<<<<< HEAD
 <!-- LIGHTBOX DA GALERIA DE ACERVO -->
 <div class="galeria-acervo__lightbox" id="galeriaLightbox">
   <div class="galeria-acervo__lightbox-caixa">
@@ -208,9 +201,6 @@ order: 1
     </div>
   </div>
 </div>
-
-=======
->>>>>>> origin/main
     <footer class="galeria-acervo__rodape">
       <div class="galeria-acervo__info-extra">
         Exibindo prévia resumida do acervo (7 itens catalogados).
