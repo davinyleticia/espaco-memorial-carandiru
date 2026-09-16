@@ -327,29 +327,6 @@
    background: rgba(255, 255, 255, 0.1);
  }
 
- .hero-scroll {
-   position: absolute;
-   bottom: 30px;
-   left: 50%;
-   transform: translateX(-50%);
-   color: rgba(255, 255, 255, 0.5);
-   font-size: 11px;
-   letter-spacing: .15em;
-   text-transform: uppercase;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 8px;
-   animation: bob 2s ease-in-out infinite;
- }
-
- .hero-scroll::after {
-   content: '';
-   width: 1px;
-   height: 30px;
-   background: rgba(255, 255, 255, 0.3);
- }
-
  @keyframes bob {
 
    0%,
@@ -2042,29 +2019,6 @@ padding: 1rem;
     .btn-secundario:hover {
       border-color: #fff;
       background: rgba(255, 255, 255, 0.1);
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 11px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      animation: bob 2s ease-in-out infinite;
-    }
-
-    .hero-scroll::after {
-      content: '';
-      width: 1px;
-      height: 30px;
-      background: rgba(255, 255, 255, 0.3);
     }
 
     @keyframes bob {
