@@ -1,0 +1,15 @@
+name: Daily Netlify Clean Build
+
+on:
+  schedule:
+    - cron: "35 11 * * 0"
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Netlify Clean Build
+        run: |
+          curl -X POST -d '{}' ${{ secrets.NETLIFY_BUILD_HOOK }}

@@ -1,0 +1,23 @@
+{
+    "name": "Homepage",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "pnpm eleventy && npx pagefind --site _site",
+        "start": "eleventy --serve"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@11ty/eleventy": "^3.1.2",
+        "@11ty/eleventy-fetch": "^5.1.1",
+        "@11ty/eleventy-plugin-rss": "^2.0.2",
+        "jsdom": "^25.0.1",
+        "luxon": "^3.5.0",
+        "pagefind": "^1.4.0",
+        "sass": "^1.80.4",
+        "scrollreveal": "^4.0.9"
+    }
+}

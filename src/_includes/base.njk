@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title | safe }}</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+
+  
+  
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/_images/inco.png">
+  <script src="/pagefind/pagefind-ui.js"></script>
+
+  <meta property="og:title" content="{{ title | safe }}" />
+  <meta property="og:description" content="Write here..." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+     <link rel="stylesheet" href="https://espaco-memorial-carandiru.netlify.app/assets/styles.css">
+
+
+     <style>
+    /* Alinha o container e remove estruturas de grid que o pagefind força */
+    #search .pagefind-ui__search-container {
+      display: block !important;
+      position: relative !important;
+      width: 100% !important;
+    }
+
+    /* Estiliza o input para o formato de pílula arredondada */
+    #search .pagefind-ui__search-input {
+      height: 54px !important;
+      border-radius: 50px !important; /* Totalmente arredondado */
+      border: 1.5px solid #dcdcdc !important;
+      padding: 0 60px 0 24px !important; /* Dá o recuo correto para o texto e para a lupa */
+      background-color: #ffffff !important;
+      font-family: 'DM Sans', sans-serif !important; /* Mantendo a sua fonte */
+      font-size: 16px !important;
+      color: #333333 !important;
+      outline: none !important;
+
+      /* Injeta a lupa vermelha na direita */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c93b2b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E") !important;
+      background-repeat: no-repeat !important;
+      background-position: calc(100% - 24px) center !important;
+      background-size: 22px !important;
+      box-shadow: none !important;
+    }
+
+    /* Força o desaparecimento da lupa cinza padrão da esquerda */
+    #search .pagefind-ui__search-icon {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+
+    /* Ajusta o botão de limpar (X) para não sumir e nem ficar em cima da lupa vermelha */
+    #search .pagefind-ui__search-clear {
+      right: 55px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      margin: 0 !important;
+    }
+
+    /* 1. Força a ocultação da lupa cinza (pegando tanto a classe quanto a tag SVG diretamente) */
+#search .pagefind-ui__search-icon,
+#search svg.pagefind-ui__search-icon,
+.pagefind-ui__search-icon {
+    display: none !important;
+}
+
+/* 2. Remove o "buraco" invisível na esquerda e puxa o texto/cursor mais para a borda */
+#search .pagefind-ui__search-input {
+    padding-left: 20px !important; 
+}
+
+
+.pagefind-ui__form.svelte-e9gkc3:before {
+    background-color: transparent !important }
+
+  </style>
+ 
+</head>
+
+
+<body>
+
+
+
+
+ <link rel="stylesheet" type="text/css"
+    href="https://saopaulo.sp.gov.br/barra-govsp/css/top-padrao-govsp-v2.min.css?vs=3.0">
+  <section class="govsp-topo">
+    <div id="govsp-topbarGlobal" class="blu-e">
+      <div id="topbarGlobal">
+        <div id="topbarLink" class="govsp-black">
+          <div class="govsp-portal">
+            <a href="https://www.saopaulo.sp.gov.br" title="nova guia Site Governo do Estado de São Paulo"
+              target="_blank"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/logo-governo-do-estado-sp.png"
+                alt="logomarca Governo de São Paulo" height="38" class="logo">
+            </a>
+          </div>
+        </div>
+        <nav class="govsp-navbar govsp-navbar-expand-lg">
+          <a class="govsp-link digital" href="https://spmaisdigital.sp.gov.br" title="site SP + Digital">SP +
+            Digital</a>
+
+          <a class="govsp-social" href="https://www.flickr.com/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png" alt="Flickr Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.linkedin.com/company/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png"
+              alt="Linkedin Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.tiktok.com/@governosp"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png" alt="TikTok Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.youtube.com/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png"
+              alt="Youtube Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.twitter.com/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png"
+              alt="Twitter Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.instagram.com/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png"
+              alt="Instagram Governo do Estado de SP" /></a>
+
+          <a class="govsp-social" href="https://www.facebook.com/governosp/"><img class="govsp-icon-social"
+              src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png"
+              alt="Facebook Governo do Estado de SP" /></a>
+
+          <p class="govsp-social">/governosp</p>
+
+          <a class="govsp-acessibilidade" title="nova guia"
+            href="https://www.saopaulo.sp.gov.br/fale-conosco/comunicar-erros/" target="_blank"><img
+              class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-error-report.png"
+              alt="Comunicar um erro"></a>
+        </nav>
+      </div>
+      <button class="govsp-kebab" id="govsp-kebab" aria-expanded="false"><img
+          src="https://saopaulo.sp.gov.br/barra-govsp/img/dots-menu.png" alt="Menu"></button>
+
+      <ul class="govsp-dropdown vs3" id="govsp-dropdown" aria-hidden="true">
+        <li><a class="govsp-link digital" role="button" href="https://spmaisdigital.sp.gov.br"
+            title="Site SP + Digital">SP + Digital</a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.flickr.com/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png"
+              alt="Flickr Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.linkedin.com/company/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png"
+              alt="Linkedin Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.tiktok.com/@governosp"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png"
+              alt="TikTok Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.twitter.com/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png"
+              alt="Twitter Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.youtube.com/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png"
+              alt="Youtube Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.instagram.com/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png"
+              alt="Instagram Governo do Estado de SP" /></a></li>
+
+        <li><a class="govsp-social" role="button" href="https://www.facebook.com/governosp/"><img
+              class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png"
+              alt="Facebook Governo do Estado de SP" /></a></li>
+
+        <li>
+          <p class="govsp-social">/governosp</p>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-top-v2.js?vs=3.0"></script>
+    <noscript>
+      Seu navegador não tem suporte a JavaScript ou está desativado!</noscript>
+  </section>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="header-logos">
+        <a href="carandiru-pagina1.html">
+          <img src="http://espaco-memorial-carandiru.netlify.app/_images/logos/logoMemorial_preto.png" alt="Espaço Memória Carandiru" style="height: 48px; display: block;">
+        </a>
+        <a href="#">
+          <img src="http://espaco-memorial-carandiru.netlify.app/_images/logos/logoCps_preto.png" alt="CPS Centro Paula Souza">
+        </a>
+      </div>
+
+      <div  id="search"></div>
+
+
+
+        <!-- <div class="header-search" id="search">
+        <input type="text" placeholder="">
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div> -->
+      
+      <!-- /.header-search -->
+    </div><!-- /.header-inner -->
+  </header>
+
+  <!-- NAV -->
+  <nav class="menu1">
+    <a href="https://espaco-memorial-carandiru.netlify.app" class="ativo">Início</a>
+    <a href="#">História</a>
+    <a href="#">Acervo e cultura</a>
+    <a href="#visitar">Visitar</a>
+  </nav>
+
+
+
+    <!-- <div class="box-search nav-box">-->
+    <!--<div class="box" id="search"></div>-->
+  <!--</div> -->
+
+  <div class="content-wrapper">
+    <div class="box" data-pagefind-body>
+      {{ content | safe }}
+    </div>
+
+<!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-sobre">
+          <div class="footer-logo">Espaço Memória Carandiru</div>
+          <p>Um espaço de preservação da memória histórica, dedicado aos direitos humanos, à reflexão sobre o sistema
+            prisional e à transformação social no Brasil.</p>
+          <p style="margin-top:12px;">Gerenciado pelo Centro Paula Souza — Governo do Estado de São Paulo.</p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">História</a></li>
+            <li><a href="#">Acervo e cultura</a></li>
+            <li><a href="#">Visitar</a></li>
+            <li><a href="#">Imprensa</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Espaço Memória Carandiru — Centro Paula Souza — Governo do Estado de São Paulo</span>
+        <div style="display:flex;gap:20px;">
+          <a href="#">Política de privacidade</a>
+          <a href="#">Acessibilidade</a>
+          <a href="#">Mapa do site</a>
+        </div>
+      </div><!-- /.footer-bottom -->
+    </div><!-- /.footer-container -->
+
+    <link rel="stylesheet" type="text/css"
+      href="https://www.saopaulo.sp.gov.br/barra-govsp/css/rodape-padrao-govsp.min.css">
+  </footer>
+
+  <section id="govsp-rodape">
+    <div class="container">
+      <div class="linha-botoes">
+        <div class="coluna-4">
+          <a href="https://www.ouvidoria.sp.gov.br/Portal/Default.aspx" class="btn btn-model">Ouvidoria</a>
+        </div>
+
+        <div class="coluna-4">
+          <a href="http://www.transparencia.sp.gov.br/" class="btn btn-model">Transparência</a>
+        </div>
+
+        <div class="coluna-4">
+          <a href="http://www.sic.sp.gov.br/" class="btn btn-model">SIC</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container rodape">
+      <div class="logo-rodape">
+        <a href="https://www.saopaulo.sp.gov.br/">
+          <img src="https://www.saopaulo.sp.gov.br/barra-govsp/img/logo-rodape-governo-do-estado-sp.png"
+            alt="site do Governo de São Paulo" width="206" height="38">
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ 
+            element: "#search", 
+            showImages: false,
+            translations: {
+                placeholder: "Buscar no site...",
+                clear_search: "Limpar",
+                load_more: "Ver mais resultados",
+                search_label: "Busca",
+                filters_label: "Filtros",
+                zero_results: "Nenhum resultado encontrado para [SEARCH_TERM]",
+                many_results: "[COUNT] resultados encontrados para [SEARCH_TERM]",
+                one_result: "[COUNT] resultado encontrado para [SEARCH_TERM]",
+                alt_search: "Nenhum resultado para [SEARCH_TERM]. Mostrando resultados para [DIFFERENT_TERM] no lugar.",
+                search_suggestion: "Nenhum resultado para [SEARCH_TERM]. Tente um dos seguintes termos:",
+                searching: "Buscando por [SEARCH_TERM]..."
+            }
+        });
+    });
+  </script>
+
+
+  <script>
+    function ativarEvento(el, ano, titulo, texto) {
+      document.querySelectorAll('.evento').forEach(e => e.classList.remove('ativo'));
+      el.classList.add('ativo');
+      document.getElementById('td-ano').textContent = ano;
+      document.getElementById('td-titulo').textContent = titulo;
+      document.getElementById('td-texto').textContent = texto;
+    }
+
+    // Animação suave ao rolar
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.numero-item, .editorial, .acervo-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
