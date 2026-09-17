@@ -1,5 +1,4 @@
  *,
-<<<<<<< HEAD
  *::before,
  *::after {
    box-sizing: border-box;
@@ -1692,7 +1691,6 @@
      font-size: 20px;
    }
  }
-=======
     *::before,
     *::after {
       box-sizing: border-box;
@@ -3196,4 +3194,4 @@ padding: 1rem;
     font-size: 20px;
   }
 }
->>>>>>> origin/main
+
