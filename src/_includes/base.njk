@@ -352,219 +352,154 @@
   </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const itensGaleria = document.querySelectorAll(
-      ".galeria-acervo__item"
-    );
+document.addEventListener("DOMContentLoaded", () => {
+  const itensGaleria = document.querySelectorAll(".galeria-acervo__item");
+  if (!itensGaleria.length) return;
 
-    if (!itensGaleria.length) return;
+  // Dados completos catalogados para o modal do acervo
+  const dadosAcervo = [
+    {
+      categoria: "REGISTRO DE ACERVO #01 • 1 DE 7",
+      titulo: "Escultura de Cabeça Encapuzada",
+      descricao: "Obra tridimensional confeccionada em tecido de tom azul e materiais adaptados. A escultura integra a coleção de artes visuais do acervo e simboliza sentimentos de invisibilidade, enclausuramento e opressão vivenciados no cotidiano carcerário da Casa de Detenção.",
+      credito: "Fotografia por Vinícius Santos (2026)"
+    },
+    {
+      categoria: "REGISTRO DE ACERVO #02 • 2 DE 7",
+      titulo: "Maquete Tátil São Jorge",
+      descricao: "Maquete tátil em relevo retratando São Jorge e o dragão, desenvolvida como peça de acessibilidade e representação religiosa do acervo memorial.",
+      credito: "Fotografia por Vinícius Santos (2026)"
+    },
+    {
+      categoria: "REGISTRO DE ACERVO #03 • 3 DE 7",
+      titulo: "Painel de Cartas e Reivindicações",
+      descricao: "Painel expositivo reunindo cartas originais, relatos e reivindicações registradas por sobreviventes e familiares.",
+      credito: "Fotografia por Vinícius Santos (2026)"
+    },
+    {
+      categoria: "REGISTRO DE ACERVO #04 • 4 DE 7",
+      titulo: "Exposição sobre Esporte",
+      descricao: "Painel da exposição que documenta as práticas esportivas, torneios internos e a convivência entre os detentos no complexo.",
+      credito: "Fotografia por Vinícius Santos (2026)"
+    },
+    {
+      categoria: "REGISTRO DE ACERVO #05 • 5 DE 7",
+      titulo: "Porta de Cela Salmo de Davi",
+      descricao: "Porta de cela preservada contendo inscrições bíblicas e versículos do Salmo de Davi pintados à mão pelos detentos.",
+      credito: "Fotografia por Vinícius Santos (2026)"
+    },
+    {
+      categoria: "REGISTRO DE ACERVO #06 • 6 DE 7",
+      titulo: "Quadro População Pavilhão 4",
+      descricao: "Quadro oficial de controle e registro da população carcerária do Pavilhão 4, peça histórica de organização administrative.",
+      credito: "Fotografia por Vinícius Santos (2026)"
+    },
+    {
+      categoria: "REGISTRO DE ACERVO #07 • 7 DE 7",
+      titulo: "Porta de Cela Pintura Olho",
+      descricao: "Porta de cela original com pintura artística de um olho em vigilância, elemento expressivo da arte carcerária do Carandiru.",
+      credito: "Fotografia por Vinícius Santos (2026)"
+    }
+  ];
 
-    const imagens = Array.from(itensGaleria).map((item) => {
-      const img = item.querySelector("img");
+  let indiceAtual = 0;
 
-      return {
-        src: img ? img.src : "",
-        alt: img ? img.alt : "",
-      };
-    });
-
-    let indiceAtual = 0;
-
-    /*
-     * Cria o lightbox apenas quando a galeria existir.
-     * Assim ele não interfere nas outras páginas do site.
-     */
-    const lightbox = document.createElement("div");
-
-    lightbox.className = "galeria-lightbox";
-
-    lightbox.innerHTML = `
-      <div class="galeria-lightbox__conteudo" role="dialog" aria-modal="true" aria-label="Visualização da imagem">
-        
-        <button
-          type="button"
-          class="galeria-lightbox__fechar"
-          aria-label="Fechar imagem"
-        >
-          &times;
-        </button>
-
-        <button
-          type="button"
-          class="galeria-lightbox__anterior"
-          aria-label="Imagem anterior"
-        >
-          &#10094;
-        </button>
-
-        <figure class="galeria-lightbox__figura">
-          <img
-            class="galeria-lightbox__imagem"
-            src=""
-            alt=""
-          >
-
-          <figcaption class="galeria-lightbox__legenda">
-            <span class="galeria-lightbox__contador"></span>
-            <span class="galeria-lightbox__descricao"></span>
-          </figcaption>
-        </figure>
-
-        <button
-          type="button"
-          class="galeria-lightbox__proxima"
-          aria-label="Próxima imagem"
-        >
-          &#10095;
-        </button>
-
+  // Montagem do container Lightbox com o Card
+  const lightbox = document.createElement("div");
+  lightbox.className = "galeria-lightbox";
+  lightbox.innerHTML = `
+    <button type="button" class="galeria-lightbox__fechar" aria-label="Fechar">&times;</button>
+    <button type="button" class="galeria-lightbox__anterior" aria-label="Anterior">&#10094;</button>
+    
+    <div class="galeria-lightbox__card" role="dialog" aria-modal="true">
+      <div class="galeria-lightbox__tag-header">
+        <span class="galeria-lightbox__categoria"></span>
       </div>
-    `;
+      <h3 class="galeria-lightbox__titulo"></h3>
+      <img class="galeria-lightbox__preview-img" src="" alt="" />
+      <p class="galeria-lightbox__descricao"></p>
+      <hr class="galeria-lightbox__divisor">
+      <div class="galeria-lightbox__credito"></div>
+    </div>
 
-    document.body.appendChild(lightbox);
+    <button type="button" class="galeria-lightbox__proxima" aria-label="Próxima">&#10095;</button>
+  `;
 
-    const imagemLightbox = lightbox.querySelector(
-      ".galeria-lightbox__imagem"
-    );
+  document.body.appendChild(lightbox);
 
-    const contador = lightbox.querySelector(
-      ".galeria-lightbox__contador"
-    );
+  const elCategoria = lightbox.querySelector(".galeria-lightbox__categoria");
+  const elTitulo = lightbox.querySelector(".galeria-lightbox__titulo");
+  const elImg = lightbox.querySelector(".galeria-lightbox__preview-img");
+  const elDescricao = lightbox.querySelector(".galeria-lightbox__descricao");
+  const elCredito = lightbox.querySelector(".galeria-lightbox__credito");
 
-    const descricao = lightbox.querySelector(
-      ".galeria-lightbox__descricao"
-    );
+  const btnFechar = lightbox.querySelector(".galeria-lightbox__fechar");
+  const btnAnterior = lightbox.querySelector(".galeria-lightbox__anterior");
+  const btnProxima = lightbox.querySelector(".galeria-lightbox__proxima");
 
-    const botaoFechar = lightbox.querySelector(
-      ".galeria-lightbox__fechar"
-    );
+  function atualizarModal() {
+    const dados = dadosAcervo[indiceAtual];
+    const itemDom = itensGaleria[indiceAtual];
+    const imgDom = itemDom ? itemDom.querySelector("img") : null;
 
-    const botaoAnterior = lightbox.querySelector(
-      ".galeria-lightbox__anterior"
-    );
+    if (!dados) return;
 
-    const botaoProxima = lightbox.querySelector(
-      ".galeria-lightbox__proxima"
-    );
+    elCategoria.textContent = dados.categoria;
+    elTitulo.textContent = dados.titulo;
+    elDescricao.textContent = dados.descricao;
+    elCredito.textContent = dados.credito;
 
-    /*
-     * Atualiza a imagem exibida.
-     */
-    function atualizarImagem() {
-      const item = imagens[indiceAtual];
-
-      if (!item) return;
-
-      imagemLightbox.src = item.src;
-      imagemLightbox.alt = item.alt;
-
-      contador.textContent =
-        `${String(indiceAtual + 1).padStart(2, "0")} / ${String(imagens.length).padStart(2, "0")}`;
-
-      descricao.textContent = item.alt || "Imagem do acervo";
+    if (imgDom) {
+      elImg.src = imgDom.src;
+      elImg.alt = imgDom.alt;
+      elImg.style.display = "block";
+    } else {
+      elImg.style.display = "none";
     }
+  }
 
-    /*
-     * Abre o lightbox.
-     */
-    function abrirGaleria(indice) {
-      indiceAtual = indice;
+  function abrirGaleria(indice) {
+    indiceAtual = indice;
+    atualizarModal();
+    lightbox.classList.add("is-aberto");
+    document.body.classList.add("galeria-lightbox-aberta");
+    btnFechar.focus();
+  }
 
-      atualizarImagem();
+  function fecharGaleria() {
+    lightbox.classList.remove("is-aberto");
+    document.body.classList.remove("galeria-lightbox-aberta");
+  }
 
-      lightbox.classList.add("is-aberto");
+  function imagemAnterior() {
+    indiceAtual = (indiceAtual - 1 + dadosAcervo.length) % dadosAcervo.length;
+    atualizarModal();
+  }
 
-      document.body.classList.add("galeria-lightbox-aberta");
+  function proximaImagem() {
+    indiceAtual = (indiceAtual + 1) % dadosAcervo.length;
+    atualizarModal();
+  }
 
-      botaoFechar.focus();
-    }
-
-    /*
-     * Fecha o lightbox.
-     */
-    function fecharGaleria() {
-      lightbox.classList.remove("is-aberto");
-
-      document.body.classList.remove("galeria-lightbox-aberta");
-    }
-
-    /*
-     * Vai para a imagem anterior.
-     */
-    function imagemAnterior() {
-      indiceAtual =
-        (indiceAtual - 1 + imagens.length) % imagens.length;
-
-      atualizarImagem();
-    }
-
-    /*
-     * Vai para a próxima imagem.
-     */
-    function proximaImagem() {
-      indiceAtual =
-        (indiceAtual + 1) % imagens.length;
-
-      atualizarImagem();
-    }
-
-    /*
-     * Clique nas imagens da galeria.
-     */
-    itensGaleria.forEach((item, indice) => {
-      item.addEventListener("click", () => {
-        abrirGaleria(indice);
-      });
-    });
-
-    /*
-     * Botões de navegação.
-     */
-    botaoFechar.addEventListener("click", fecharGaleria);
-
-    botaoAnterior.addEventListener(
-      "click",
-      imagemAnterior
-    );
-
-    botaoProxima.addEventListener(
-      "click",
-      proximaImagem
-    );
-
-    /*
-     * Clique no fundo escuro fecha a imagem.
-     */
-    lightbox.addEventListener("click", (evento) => {
-      if (evento.target === lightbox) {
-        fecharGaleria();
-      }
-    });
-
-    /*
-     * Teclado:
-     * ESC   = fechar
-     * ←     = anterior
-     * →     = próxima
-     */
-    document.addEventListener("keydown", (evento) => {
-      if (!lightbox.classList.contains("is-aberto")) {
-        return;
-      }
-
-      if (evento.key === "Escape") {
-        fecharGaleria();
-      }
-
-      if (evento.key === "ArrowLeft") {
-        imagemAnterior();
-      }
-
-      if (evento.key === "ArrowRight") {
-        proximaImagem();
-      }
-    });
+  itensGaleria.forEach((item, indice) => {
+    item.addEventListener("click", () => abrirGaleria(indice));
   });
+
+  btnFechar.addEventListener("click", fecharGaleria);
+  btnAnterior.addEventListener("click", imagemAnterior);
+  btnProxima.addEventListener("click", proximaImagem);
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) fecharGaleria();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("is-aberto")) return;
+    if (e.key === "Escape") fecharGaleria();
+    if (e.key === "ArrowLeft") imagemAnterior();
+    if (e.key === "ArrowRight") proximaImagem();
+  });
+});
 </script>
 
 </body>
