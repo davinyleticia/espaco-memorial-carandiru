@@ -322,160 +322,103 @@
         });
     });
   </script>
-  
-  <script>
-    function ativarEvento(el, ano, titulo, texto) {
-      document.querySelectorAll('.evento').forEach(e => e.classList.remove('ativo'));
-      el.classList.add('ativo');
-      document.getElementById('td-ano').textContent = ano;
-      document.getElementById('td-titulo').textContent = titulo;
-      document.getElementById('td-texto').textContent = texto;
-    }
 
-    // Animação suave ao rolar
-    document.addEventListener("DOMContentLoaded", () => {
-  const itensGaleria = document.querySelectorAll(".galeria-acervo__item");
-  if (!itensGaleria.length) return;
-
-  const dadosAcervo = [
+ <script>
+(function () {
+  var itensAcervo = [
     {
-      categoria: "REGISTRO DE ACERVO #01 • 1 DE 7",
-      titulo: "Escultura de Cabeça Encapuzada",
-      descricao: "Obra tridimensional confeccionada em tecido de tom azul e materiais adaptados. A escultura integra a coleção de artes visuais do acervo e simboliza sentimentos de invisibilidade, enclausuramento e opressão vivenciados no cotidiano carcerário.",
-      credito: "Fotografia por Vinícius Santos (2026)"
+      titulo: 'Escultura de Cabeça Encapuzada',
+      descricao: 'Obra tridimensional confeccionada em tecido de tom azul e materiais adaptados. A escultura integra a coleção de artes visuais do acervo e simboliza sentimentos de invisibilidade, enclausuramento e opressão vivenciados no cotidiano carcerário da Casa de Detenção.'
     },
     {
-      categoria: "REGISTRO DE ACERVO #02 • 2 DE 7",
-      titulo: "Maquete Tátil em Relevo de São Jorge e o Dragão",
-      descricao: "Maquete tátil em relevo retratando São Jorge e o dragão, desenvolvida como peça de acessibilidade e representação religiosa do acervo memorial.",
-      credito: "Fotografia por Vinícius Santos (2026)"
+      titulo: 'Maquete Tátil de São Jorge e o Dragão',
+      descricao: 'Peça escultórica tátil em relevo desenvolvida para proporcionar acessibilidade sensorial a visitantes céticos e com baixa visão. A imagem de São Jorge possui grande devoção popular no ambiente prisional, associada à proteção espiritual e à superação de adversidades.'
     },
     {
-      categoria: "REGISTRO DE ACERVO #03 • 3 DE 7",
-      titulo: "Painel com Cartas e Reivindicações de Sobreviventes",
-      descricao: "Painel expositivo reunindo cartas originais, relatos e reivindicações registradas por sobreviventes e familiares.",
-      credito: "Fotografia por Vinícius Santos (2026)"
+      titulo: 'Painel de Cartas e Reivindicações',
+      descricao: 'Compilação de documentos originais, manuscritos, bilhetes e cartas datografadas por internos e familiares. O acervo registra denúncias de superlotação, cobranças por assistência jurídica e relatos históricos produzidos no período que antecedeu e sucedeu o massacre de 1992.'
     },
     {
-      categoria: "REGISTRO DE ACERVO #04 • 4 DE 7",
-      titulo: "Painel da Exposição sobre Esporte no Complexo",
-      descricao: "Painel da exposição que documenta as práticas esportivas, torneios internos e a convivência entre os detentos no complexo.",
-      credito: "Fotografia por Vinícius Santos (2026)"
+      titulo: 'Painel da Exposição sobre Práticas Esportivas',
+      descricao: 'Expositor temático reunindo artigos originais como luvas de boxe, troféus de torneios internos e flâmulas organizadas pelos próprios detentos. As atividades esportivas eram elementos centrais de convivência, disciplina e organização comunitária nos pavilhões.'
     },
     {
-      categoria: "REGISTRO DE ACERVO #05 • 5 DE 7",
-      titulo: "Porta de Cela com o Salmo de Davi Pintado",
-      descricao: "Porta de cela preservada contendo inscrições bíblicas e versículos do Salmo de Davi pintados à mão pelos detentos.",
-      credito: "Fotografia por Vinícius Santos (2026)"
+      titulo: 'Porta de Cela com Salmo de Davi',
+      descricao: 'Porta original retirada de uma das galerias do complexo. Preserva a pintura artesanal com versículos bíblicos do Salmo de Davi, inscrita à mão por um interno como expressão de fé, conforto espiritual e preservação da identidade durante o cumprimento da pena.'
     },
     {
-      categoria: "REGISTRO DE ACERVO #06 • 6 DE 7",
-      titulo: "Quadro de Controle da População Carcerária do Pavilhão 4",
-      descricao: "Quadro oficial de controle e registro da população carcerária do Pavilhão 4, peça histórica de organização administrativa.",
-      credito: "Fotografia por Vinícius Santos (2026)"
+      titulo: 'Quadro de Controle Populacional - Pavilhão 4',
+      descricao: 'Painel oficial de madeira utilizado pela Diretoria do Serviço de Vigilância da Casa de Detenção. O quadro servia para fazer a contagem manual diária, controle de transferências e mapeamento da população carcerária alojada nas celas e andares do Pavilhão 4.'
     },
     {
-      categoria: "REGISTRO DE ACERVO #07 • 7 DE 7",
-      titulo: "Porta de Cela Pintada com um Olho",
-      descricao: "Porta de cela original com pintura artística de um olho em vigilância, elemento expressivo da arte carcerária do Carandiru.",
-      credito: "Fotografia por Vinícius Santos (2026)"
+      titulo: 'Porta de Cela com Pintura do Olho',
+      descricao: 'Elemento arquitetônico preservado que exibe um olho expressivo pintado sobre a estrutura metálica próximo ao visor da cela. A pintura reflete o tema da vigilância constante — tanto do Estado sobre os detentos quanto do olhar vigilante dos reclusos sobre o corredor.'
     }
   ];
 
-  let indiceAtual = 0;
+  var botoes = document.querySelectorAll('.galeria-acervo__item');
+  var lightbox = document.getElementById('galeriaLightbox');
+  var imagemGrande = document.getElementById('galeriaImagemGrande');
+  var tituloDetalhado = document.getElementById('galeriaTituloDetalhado');
+  var legenda = document.getElementById('galeriaLegenda');
+  var contador = document.getElementById('galeriaContador');
+  var fechar = document.getElementById('galeriaFechar');
+  var anterior = document.getElementById('galeriaAnterior');
+  var proximo = document.getElementById('galeriaProximo');
+  var indiceAtual = 0;
 
-  const lightbox = document.createElement("div");
-  lightbox.className = "galeria-lightbox";
-  lightbox.innerHTML = `
-    <button type="button" class="galeria-lightbox__fechar" aria-label="Fechar">&times;</button>
-    <button type="button" class="galeria-lightbox__anterior" aria-label="Anterior">&#10094;</button>
-    
-    <div class="galeria-lightbox__card" role="dialog" aria-modal="true">
-      <div class="galeria-lightbox__tag-header">
-        <span class="galeria-lightbox__categoria"></span>
-      </div>
-      <h3 class="galeria-lightbox__titulo"></h3>
-      <img class="galeria-lightbox__preview-img" src="" alt="" />
-      <p class="galeria-lightbox__descricao"></p>
-      <hr class="galeria-lightbox__divisor">
-      <div class="galeria-lightbox__credito"></div>
-    </div>
-
-    <button type="button" class="galeria-lightbox__proxima" aria-label="Próxima">&#10095;</button>
-  `;
-
-  document.body.appendChild(lightbox);
-
-  const elCategoria = lightbox.querySelector(".galeria-lightbox__categoria");
-  const elTitulo = lightbox.querySelector(".galeria-lightbox__titulo");
-  const elImg = lightbox.querySelector(".galeria-lightbox__preview-img");
-  const elDescricao = lightbox.querySelector(".galeria-lightbox__descricao");
-  const elCredito = lightbox.querySelector(".galeria-lightbox__credito");
-
-  const btnFechar = lightbox.querySelector(".galeria-lightbox__fechar");
-  const btnAnterior = lightbox.querySelector(".galeria-lightbox__anterior");
-  const btnProxima = lightbox.querySelector(".galeria-lightbox__proxima");
-
-  function atualizarModal() {
-    const dados = dadosAcervo[indiceAtual];
-    const itemDom = itensGaleria[indiceAtual];
-    const imgDom = itemDom ? itemDom.querySelector("img") : null;
-
-    if (!dados) return;
-
-    elCategoria.textContent = dados.categoria;
-    elTitulo.textContent = dados.titulo;
-    elDescricao.textContent = dados.descricao;
-    elCredito.textContent = dados.credito;
-
-    if (imgDom) {
-      elImg.src = imgDom.src;
-      elImg.alt = imgDom.alt;
-    }
-  }
-
-  function abrirGaleria(indice) {
+  function abrirLightbox(indice) {
     indiceAtual = indice;
-    atualizarModal();
-    lightbox.classList.add("is-aberto");
-    document.body.classList.add("galeria-lightbox-aberta");
-    btnFechar.focus();
+    var img = botoes[indiceAtual].querySelector('img');
+    var item = itensAcervo[indiceAtual];
+    imagemGrande.src = img.src;
+    imagemGrande.alt = img.alt;
+    tituloDetalhado.textContent = item.titulo;
+    legenda.textContent = item.descricao;
+    contador.textContent = 'REGISTRO DE ACERVO #' + (indiceAtual + 1 < 10 ? '0' : '') + (indiceAtual + 1) + ' • ' + (indiceAtual + 1) + ' de ' + botoes.length;
+    lightbox.classList.add('aberto');
   }
 
-  function fecharGaleria() {
-    lightbox.classList.remove("is-aberto");
-    document.body.classList.remove("galeria-lightbox-aberta");
+  function fecharLightbox() {
+    lightbox.classList.remove('aberto');
   }
 
-  function imagemAnterior() {
-    indiceAtual = (indiceAtual - 1 + dadosAcervo.length) % dadosAcervo.length;
-    atualizarModal();
+  function irPara(passo) {
+    indiceAtual = (indiceAtual + passo + botoes.length) % botoes.length;
+    abrirLightbox(indiceAtual);
   }
 
-  function proximaImagem() {
-    indiceAtual = (indiceAtual + 1) % dadosAcervo.length;
-    atualizarModal();
-  }
-
-  itensGaleria.forEach((item, indice) => {
-    item.addEventListener("click", () => abrirGaleria(indice));
+  botoes.forEach(function (botao, indice) {
+    botao.addEventListener('click', function () {
+      abrirLightbox(indice);
+    });
   });
 
-  btnFechar.addEventListener("click", fecharGaleria);
-  btnAnterior.addEventListener("click", imagemAnterior);
-  btnProxima.addEventListener("click", proximaImagem);
+  fechar.addEventListener('click', fecharLightbox);
+  anterior.addEventListener('click', function () { irPara(-1); });
+  proximo.addEventListener('click', function () { irPara(1); });
 
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) fecharGaleria();
+  lightbox.addEventListener('click', function (evento) {
+    if (evento.target === lightbox) {
+      fecharLightbox();
+    }
   });
 
-  document.addEventListener("keydown", (e) => {
-    if (!lightbox.classList.contains("is-aberto")) return;
-    if (e.key === "Escape") fecharGaleria();
-    if (e.key === "ArrowLeft") imagemAnterior();
-    if (e.key === "ArrowRight") proximaImagem();
+  document.addEventListener('keydown', function (evento) {
+    if (!lightbox.classList.contains('aberto')) {
+      return;
+    }
+    if (evento.key === 'Escape') {
+      fecharLightbox();
+    }
+    if (evento.key === 'ArrowLeft') {
+      irPara(-1);
+    }
+    if (evento.key === 'ArrowRight') {
+      irPara(1);
+    }
   });
-});
+})();
 </script>
 
 </body>

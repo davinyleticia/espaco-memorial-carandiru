@@ -600,395 +600,361 @@
    padding-bottom: 2px;
  }
 
-/* ==========================================================
-   SEÇÃO GALERIA MOSAICO DO ACERVO (3 COLUNAS)
-   ========================================================== */
-.galeria-acervo-secao {
-  width: 100%;
-  min-height: 100vh;
-  padding: 24px 36px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  background-color: #f7f1e8;
-  box-sizing: border-box;
-}
+.galeria-acervo {
+      position: relative;
+      background-color: #f7f1e8;
+      padding: 64px 24px 72px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-.galeria-acervo__cabecalho {
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto 16px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(31, 31, 31, 0.15);
-  padding-bottom: 12px;
-  flex-shrink: 0;
-}
+    .galeria-acervo__cabecalho {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      text-align: left;
+    }
 
-.galeria-acervo__titulos h2 {
-  font-family: Georgia, "Playfair Display", serif;
-  font-weight: 700;
-  font-size: 1.8rem;
-  color: #1f1f1f;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
+    .galeria-acervo__cabecalho h2 {
+      font-family: Georgia, 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2.3rem;
+      color: #1f1f1f;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
 
-.galeria-acervo__titulos h2 em {
-  font-style: italic;
-  color: #b23b30;
-}
+    .galeria-acervo__cabecalho h2 em {
+      font-style: italic;
+      color: #b23b30;
+    }
 
-.galeria-acervo__titulos p {
-  font-size: 0.88rem;
-  color: #5a5752;
-  margin-top: 4px;
-  margin-bottom: 0;
-}
+    .galeria-acervo__cabecalho p {
+      font-size: 1.05rem;
+      color: #5a5752;
+      margin: 0;
+      font-weight: 400;
+    }
 
-.galeria-acervo__link-top {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #2e5c53;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  border-bottom: 2px solid #2e5c53;
-  padding-bottom: 2px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
+    .galeria-acervo__creditos {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #7a756e;
+      font-style: italic;
+    }
 
-.galeria-acervo__link-top:hover {
-  color: #b23b30;
-  border-color: #b23b30;
-  transform: translateX(2px);
-}
+    /* ==========================================================
+       MOSAICO DE 3 COLUNAS E 6 LINHAS
+       ========================================================== */
+    .galeria-acervo__mosaico {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      /* Coluna 1 mais larga (1.8fr), Colunas 2 e 3 iguais (1fr cada) */
+      grid-template-columns: 1.8fr 1fr 1fr;
+      /* Divisão em 6 frações de linha de 110px */
+      grid-template-rows: repeat(6, 110px);
+      gap: 16px;
+    }
 
-.galeria-acervo__mosaico {
-  display: grid !important;
-  grid-template-columns: 2.2fr 1fr 1fr !important; 
-  grid-template-rows: repeat(6, 1fr) !important;   
-  gap: 14px !important;
-  width: 100% !important;
-  max-width: 1280px !important;
-  height: 640px !important;                         
-  margin: 0 auto !important;
-  box-sizing: border-box !important;
-}
+    .galeria-acervo__item {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 1px solid rgba(31, 31, 31, 0.12);
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #1e1c1a;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    }
 
-.galeria-acervo__item {
-  position: relative !important;
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border-radius: 8px !important;
-  overflow: hidden !important;
-  background: #1e1c1a !important;
-  border: 1px solid rgba(0, 0, 0, 0.12) !important;
-  box-sizing: border-box !important;
-}
+    .galeria-acervo__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease, opacity 0.3s ease;
+      opacity: 0.92;
+    }
 
-.galeria-acervo__item img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  display: block !important;
-}
+    /* ==========================================================
+       POSICIONAMENTO EXATO DOS CARDS NO GRID
+       ========================================================== */
 
-.galeria-acervo__tag-num {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 2;
-  background: rgba(26, 24, 22, 0.88);
-  backdrop-filter: blur(4px);
-  color: #ffffff;
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 3px 8px;
-  border-radius: 3px;
-  border-left: 3px solid #b23b30;
-  transition: background 0.3s ease;
-}
+    /* COLUNA 1: 2 FOTOS (1ª Maior [4 linhas] / 2ª Menor [2 linhas]) */
+    .galeria-acervo__item[data-index="0"] {
+      grid-column: 1;
+      grid-row: 1 / span 4; /* #01 */
+    }
+    .galeria-acervo__item[data-index="4"] {
+      grid-column: 1;
+      grid-row: 5 / span 2; /* #05 */
+    }
 
-.galeria-acervo__lupa {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #2e5c53;
-  color: #ffffff;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
+    /* COLUNA 2: 2 FOTOS (1ª Menor [2 linhas] / 2ª Maior [4 linhas]) */
+    .galeria-acervo__item[data-index="1"] {
+      grid-column: 2;
+      grid-row: 1 / span 2; /* #02 */
+    }
+    .galeria-acervo__item[data-index="3"] {
+      grid-column: 2;
+      grid-row: 3 / span 4; /* #04 */
+    }
 
-.galeria-acervo__item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
-  border-color: #2e5c53;
-}
+    /* COLUNA 3: 3 FOTOS COM TAMANHOS IGUAIS (2 linhas cada) */
+    .galeria-acervo__item[data-index="2"] {
+      grid-column: 3;
+      grid-row: 1 / span 2; /* #03 */
+    }
+    .galeria-acervo__item[data-index="5"] {
+      grid-column: 3;
+      grid-row: 3 / span 2; /* #06 */
+    }
+    .galeria-acervo__item[data-index="6"] {
+      grid-column: 3;
+      grid-row: 5 / span 2; /* #07 */
+    }
 
-.galeria-acervo__item:hover img {
-  transform: scale(1.04);
-  opacity: 1;
-}
+    /* Tag de numeração de acervo */
+    .galeria-acervo__tag-num {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      background: rgba(31, 31, 31, 0.75);
+      backdrop-filter: blur(4px);
+      color: #f7f1e8;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 4px 8px;
+      border-radius: 2px;
+      border-left: 2px solid #b23b30;
+      transition: background 0.3s ease;
+    }
 
-.galeria-acervo__item:hover .galeria-acervo__lupa {
-  opacity: 1;
-  transform: scale(1);
-}
+    .galeria-acervo__lupa {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #2e5c53;
+      color: #f7f1e8;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
 
-.galeria-acervo__item:hover .galeria-acervo__tag-num {
-  background: #b23b30;
-}
+    /* Efeitos de HOVER */
+    .galeria-acervo__item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+      border-color: #2e5c53;
+    }
 
-.galeria-acervo__item[data-index="0"] {
-  grid-column: 1 !important;
-  grid-row: 1 / span 4 !important;
-}
-.galeria-acervo__item[data-index="4"] {
-  grid-column: 1 !important;
-  grid-row: 5 / span 2 !important;
-}
+    .galeria-acervo__item:hover img {
+      transform: scale(1.07);
+      opacity: 1;
+    }
 
-.galeria-acervo__item[data-index="1"] {
-  grid-column: 2 !important;
-  grid-row: 1 / span 2 !important; 
-}
-.galeria-acervo__item[data-index="3"] {
-  grid-column: 2 !important;
-  grid-row: 3 / span 4 !important; 
-}
+    .galeria-acervo__item:hover .galeria-acervo__lupa {
+      opacity: 1;
+      transform: scale(1);
+    }
 
-.galeria-acervo__item[data-index="2"] {
-  grid-column: 3 !important;
-  grid-row: 1 / span 2 !important; 
-}
-.galeria-acervo__item[data-index="5"] {
-  grid-column: 3 !important;
-  grid-row: 3 / span 2 !important; 
-}
-.galeria-acervo__item[data-index="6"] {
-  grid-column: 3 !important;
-  grid-row: 5 / span 2 !important; 
-}
+    .galeria-acervo__item:hover .galeria-acervo__tag-num {
+      background: #b23b30;
+      color: #ffffff;
+    }
 
-.galeria-acervo__rodape {
-  max-width: 1280px;
-  width: 100%;
-  margin: 14px auto 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-shrink: 0;
-}
+    /* ==========================================================
+       MODAL LIGHTBOX (FOTO 100% INTEIRA SEM CORTES)
+       ========================================================== */
+    .galeria-acervo__lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(20, 16, 14, 0.95);
+      backdrop-filter: blur(5px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
 
-.galeria-acervo__info-extra {
-  font-size: 0.8rem;
-  color: #6b665f;
-}
+    .galeria-acervo__lightbox.aberto {
+      display: flex;
+    }
 
-.galeria-acervo__creditos {
-  font-size: 0.78rem;
-  color: #7a756e;
-  font-style: italic;
-}
+    .galeria-acervo__lightbox-topo {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      z-index: 1010;
+    }
 
-/* ==========================================================
-   LIGHTBOX (IMAGEM INTEIRA SEM CORTES)
-   ========================================================== */
-.galeria-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: rgba(15, 14, 13, 0.88);
-  backdrop-filter: blur(6px);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-  box-sizing: border-box;
-}
+    .galeria-acervo__fechar {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #f7f1e8;
+      font-size: 2rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
 
-.galeria-lightbox.is-aberto {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
+    .galeria-acervo__fechar:hover {
+      background: #b23b30;
+      transform: scale(1.05);
+    }
 
-.galeria-lightbox__card {
-  position: relative;
-  width: min(680px, 92vw);
-  max-height: 90vh;
-  overflow-y: auto;
-  background: #1c1a18;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 28px 30px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-  color: #f7f1e8;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  box-sizing: border-box;
-  transform: translateY(10px);
-  transition: transform 0.25s ease;
-}
+    .galeria-acervo__figura {
+      max-width: 85vw;
+      max-height: 88vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.galeria-lightbox.is-aberto .galeria-lightbox__card {
-  transform: translateY(0);
-}
+    .galeria-acervo__figura img {
+      max-width: 85vw;
+      max-height: 58vh;
+      object-fit: contain; /* Exibe a imagem inteira sem recortar nenhuma ponta */
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+      border-radius: 2px;
+      background: #12100e;
+    }
 
-.galeria-lightbox__tag-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-left: 3px solid #b23b30;
-  padding-left: 8px;
-}
+    .galeria-acervo__figura figcaption {
+      color: #f7f1e8;
+      font-size: 0.95rem;
+      text-align: left;
+      width: 100%;
+      max-width: 680px;
+      margin-top: 20px;
+      line-height: 1.6;
+      background: rgba(31, 28, 26, 0.85);
+      padding: 18px 22px;
+      border-radius: 6px;
+      border-left: 3px solid #b23b30;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+    }
 
-.galeria-lightbox__categoria {
-  color: #b23b30;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
+    .galeria-acervo__contador {
+      display: inline-block;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      color: #b23b30;
+      margin-bottom: 4px;
+    }
 
-.galeria-lightbox__titulo {
-  font-family: Georgia, "Playfair Display", serif;
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 2px 0 0;
-  line-height: 1.25;
-}
+    .galeria-acervo__titulo-detalhado {
+      font-family: Georgia, 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f7f1e8;
+      margin: 2px 0 8px;
+    }
 
-.galeria-lightbox__preview-img {
-  width: 100% !important;
-  max-height: 60vh !important;
-  object-fit: contain !important;
-  background: #121110 !important;
-  border-radius: 6px !important;
-}
+    .galeria-acervo__descricao-texto {
+      color: #d1c9be;
+      font-size: 0.92rem;
+      margin: 0;
+      font-weight: 400;
+    }
 
-.galeria-lightbox__descricao {
-  font-size: 0.88rem;
-  color: rgba(247, 241, 232, 0.85);
-  line-height: 1.6;
-  margin: 4px 0 0;
-}
+    .galeria-acervo__credito-lightbox {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(247, 241, 232, 0.15);
+      font-size: 0.78rem;
+      color: #a8a095;
+      font-style: italic;
+    }
 
-.galeria-lightbox__divisor {
-  border: 0;
-  border-top: 1px dashed rgba(247, 241, 232, 0.2);
-  margin: 4px 0;
-}
+    .galeria-acervo__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #2e5c53;
+      border: none;
+      color: #f7f1e8;
+      font-size: 1.4rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
 
-.galeria-lightbox__credito {
-  font-size: 0.78rem;
-  color: rgba(247, 241, 232, 0.5);
-  font-style: italic;
-}
+    .galeria-acervo__nav:hover {
+      background: #397066;
+      transform: translateY(-50%) scale(1.08);
+    }
 
-.galeria-lightbox__fechar {
-  position: fixed;
-  top: 24px;
-  right: 24px;
-  z-index: 10000;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(247, 241, 232, 0.25);
-  border-radius: 50%;
-  background: rgba(31, 31, 31, 0.85);
-  color: #f7f1e8;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+    .galeria-acervo__nav--anterior {
+      left: 24px;
+    }
 
-.galeria-lightbox__fechar:hover {
-  background: #b23b30;
-  border-color: #b23b30;
-  transform: scale(1.05);
-}
+    .galeria-acervo__nav--proximo {
+      right: 24px;
+    }
 
-.galeria-lightbox__anterior,
-.galeria-lightbox__proxima {
-  position: fixed;
-  top: 50%;
-  z-index: 10000;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(247, 241, 232, 0.2);
-  border-radius: 50%;
-  background: #2e5c53;
-  color: #f7f1e8;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+    /* RESPONSIVIDADE EM TELAS MENORES */
+    @media (max-width: 860px) {
+      .galeria-acervo__mosaico {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
 
-.galeria-lightbox__anterior { left: 24px; }
-.galeria-lightbox__proxima { right: 24px; }
+      .galeria-acervo__item[data-index] {
+        grid-column: auto;
+        grid-row: auto;
+        height: 240px;
+      }
 
-.galeria-lightbox__anterior:hover,
-.galeria-lightbox__proxima:hover {
-  background: #3a756a;
-  transform: translateY(-50%) scale(1.08);
-}
+      .galeria-acervo__nav {
+        width: 40px;
+        height: 40px;
+      }
 
-body.galeria-lightbox-aberta {
-  overflow: hidden;
-}
+      .galeria-acervo__nav--anterior {
+        left: 12px;
+      }
 
-/* RESPONSIVIDADE */
-@media (max-width: 860px) {
-  .galeria-acervo-secao {
-    padding: 24px 16px;
-  }
+      .galeria-acervo__nav--proximo {
+        right: 12px;
+      }
 
-  .galeria-acervo__mosaico {
-    grid-template-columns: 1fr !important;
-    grid-template-rows: auto !important;
-  }
-
-  .galeria-acervo__item[data-index] {
-    grid-column: span 1 !important;
-    grid-row: auto !important;
-    height: 220px;
-  }
-}
-
+      .galeria-acervo__figura figcaption {
+        padding: 14px 16px;
+        font-size: 0.88rem;
+      }
+    }
+    
  .acervo-card {
    background: var(--cinza-claro);
    aspect-ratio: 3/4;

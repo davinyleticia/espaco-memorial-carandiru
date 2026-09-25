@@ -104,98 +104,75 @@ order: 1
     </div>
   </div>
 
-<!-- GALERIA DE ACERVO MEMORIAL DO CARANDIRU -->
-<section class="galeria-acervo-secao" id="galeria-mosaico">
-
-  <header class="galeria-acervo__cabecalho">
-    <div class="galeria-acervo__titulos">
-      <h2>Nosso <em>acervo</em></h2>
-      <p>Registros históricos e peças do acervo do Memorial do Carandiru.</p>
-    </div>
-
-    <a href="carandiru-pagina2.html" class="galeria-acervo__link-top">
-      VER GALERIA COMPLETA &rarr;
-    </a>
-  </header>
-
-  <div class="galeria-acervo__mosaico">
-
-    <button type="button" class="galeria-acervo__item" data-index="0" title="Clique para ampliar">
-      <span class="galeria-acervo__tag-num">#01</span>
-      <img
-        src="../_images/Fotos/carandiru_escultura_cabeca_capuz_azul.jpeg"
-        alt="Escultura de uma cabeça encapuzada em tecido azul"
-      >
-      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
-    </button>
-
-    <button type="button" class="galeria-acervo__item" data-index="1" title="Clique para ampliar">
-      <span class="galeria-acervo__tag-num">#02</span>
-      <img
-        src="../_images/Fotos/carandiru_maquete_tatil_sao_jorge.jpeg"
-        alt="Maquete tátil em relevo de São Jorge e o dragão"
-      >
-      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
-    </button>
-
-    <button type="button" class="galeria-acervo__item" data-index="2" title="Clique para ampliar">
-      <span class="galeria-acervo__tag-num">#03</span>
-      <img
-        src="../_images/Fotos/carandiru_painel_cartas_reivindicacoes.jpeg"
-        alt="Painel com cartas e reivindicações de sobreviventes"
-      >
-      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
-    </button>
-
-    <button type="button" class="galeria-acervo__item" data-index="3" title="Clique para ampliar">
-      <span class="galeria-acervo__tag-num">#04</span>
-      <img
-        src="../_images/Fotos/carandiru_painel_exposicao_esporte.jpeg"
-        alt="Painel da exposição sobre esporte no complexo"
-      >
-      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
-    </button>
-
-    <button type="button" class="galeria-acervo__item" data-index="4" title="Clique para ampliar">
-      <span class="galeria-acervo__tag-num">#05</span>
-      <img
-        src="../_images/Fotos/carandiru_porta_cela_salmo_david.jpeg"
-        alt="Porta de cela com o Salmo de Davi pintado"
-      >
-      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
-    </button>
-
-    <button type="button" class="galeria-acervo__item" data-index="5" title="Clique para ampliar">
-      <span class="galeria-acervo__tag-num">#06</span>
-      <img
-        src="../_images/Fotos/carandiru_quadro_populacao_carceraria_pv04.jpeg"
-        alt="Quadro de controle da população carcerária do Pavilhão 4"
-      >
-      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
-    </button>
-
-    <button type="button" class="galeria-acervo__item" data-index="6" title="Clique para ampliar">
-      <span class="galeria-acervo__tag-num">#07</span>
-      <img
-        src="../_images/Fotos/carandiru_porta_cela_olho.jpeg"
-        alt="Porta de cela pintada com um olho"
-      >
-      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
-    </button>
-
+<section class="galeria-acervo" id="galeria">
+  <div class="galeria-acervo__cabecalho">
+    <h2>Nosso <em>acervo</em></h2>
+    <p>Confira fotos e registros do acervo do Memorial do Carandiru.</p>
+    <span class="galeria-acervo__creditos">Registros fotográficos por Vinícius Santos (ETEC São Mateus)</span>
   </div>
 
-  <footer class="galeria-acervo__rodape">
-    <div class="galeria-acervo__info-extra">
-      Exibindo prévia resumida do acervo (7 itens catalogados).
-    </div>
+  <div class="galeria-acervo__mosaico">
+    <button type="button" class="galeria-acervo__item" data-index="0">
+      <span class="galeria-acervo__tag-num">#01</span>
+      <img src="carandiru_escultura_cabeca_capuz_azul.jpeg" alt="Escultura de uma cabeça encapuzada em tecido azul">
+      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+    </button>
 
-    <span class="galeria-acervo__creditos">
-      Registros por Vinícius Santos (1° EM Marketing 2026 | Etec São Mateus)
-    </span>
-  </footer>
+    <button type="button" class="galeria-acervo__item" data-index="1">
+      <span class="galeria-acervo__tag-num">#02</span>
+      <img src="carandiru_maquete_tatil_sao_jorge.jpeg" alt="Maquete tátil em relevo de São Jorge e o dragão">
+      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+    </button>
 
+    <button type="button" class="galeria-acervo__item" data-index="2">
+      <span class="galeria-acervo__tag-num">#03</span>
+      <img src="carandiru_painel_cartas_reivindicacoes.jpeg" alt="Painel com cartas e reivindicações de sobreviventes">
+      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+    </button>
+
+    <button type="button" class="galeria-acervo__item" data-index="3">
+      <span class="galeria-acervo__tag-num">#04</span>
+      <img src="carandiru_painel_exposicao_esporte.jpeg" alt="Painel da exposição sobre esporte no complexo">
+      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+    </button>
+
+    <button type="button" class="galeria-acervo__item" data-index="4">
+      <span class="galeria-acervo__tag-num">#05</span>
+      <img src="carandiru_porta_cela_salmo_david.jpeg" alt="Porta de cela com o Salmo de Davi pintado">
+      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+    </button>
+
+    <button type="button" class="galeria-acervo__item" data-index="5">
+      <span class="galeria-acervo__tag-num">#06</span>
+      <img src="carandiru_quadro_populacao_carceraria_pv04.jpeg" alt="Quadro de controle da população carcerária do Pavilhão 4">
+      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+    </button>
+
+    <button type="button" class="galeria-acervo__item" data-index="6">
+      <span class="galeria-acervo__tag-num">#07</span>
+      <img src="carandiru_porta_cela_olho.jpeg" alt="Porta de cela pintada com um olho">
+      <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
+    </button>
+  </div>
 </section>
+
+<!-- Lightbox Modal -->
+<div class="galeria-acervo__lightbox" id="galeriaLightbox">
+  <div class="galeria-acervo__lightbox-topo">
+    <button type="button" class="galeria-acervo__fechar" id="galeriaFechar" aria-label="Fechar">&times;</button>
+  </div>
+  <button type="button" class="galeria-acervo__nav galeria-acervo__nav--anterior" id="galeriaAnterior" aria-label="Foto anterior">&#10094;</button>
+  <button type="button" class="galeria-acervo__nav galeria-acervo__nav--proximo" id="galeriaProximo" aria-label="Próxima foto">&#10095;</button>
+  <figure class="galeria-acervo__figura">
+    <img src="" alt="" id="galeriaImagemGrande">
+    <figcaption>
+      <span class="galeria-acervo__contador" id="galeriaContador"></span>
+      <div class="galeria-acervo__titulo-detalhado" id="galeriaTituloDetalhado"></div>
+      <p class="galeria-acervo__descricao-texto" id="galeriaLegenda"></p>
+      <div class="galeria-acervo__credito-lightbox">Fotografia por Vinícius Santos(2026)</div>
+    </figcaption>
+  </figure>
+</div>
 
   <!-- ACERVO -->
   <section class="secao" id="acervo">
