@@ -671,42 +671,33 @@
   transform: translateX(2px);
 }
 
-/* LAYOUT DE MOSAICO EM 3 COLUNAS / 6 FRAÇÕES DE LINHA */
 .galeria-acervo__mosaico {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr 1fr !important;
+  grid-template-rows: repeat(6, 105px) !important;
+  gap: 14px !important;
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  flex: 1;
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  grid-template-rows: repeat(6, minmax(110px, 1fr)) !important;
-  gap: 14px !important;
 }
 
-/* CARDS DO MOSAICO */
-.galeria-acervo__item {
-  position: relative;
-  display: block;
+.galeria-acervo__mosaico {
+  display: grid !important;
+  /* Coluna 1 mais larga (2fr); Colunas 2 e 3 com metades da largura (1fr cada) */
+  grid-template-columns: 2fr 1fr 1fr !important;
+  /* Divide a altura em 6 frações iguais */
+  grid-template-rows: repeat(6, 105px) !important;
+  gap: 14px !important;
+  max-width: 1280px;
   width: 100%;
-  height: 100%;
-  padding: 0;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  background: #1e1c1a;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s ease, border-color 0.25s ease;
-  text-align: left;
+  margin: 0 auto;
 }
 
 .galeria-acervo__item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; 
   display: block;
-  transition: transform 0.4s ease, opacity 0.3s ease;
-  opacity: 0.92;
 }
 
 .galeria-acervo__tag-num {
@@ -766,40 +757,46 @@
   background: #b23b30;
 }
 
-/* POSICIONAMENTO FIEL À IMAGEM DE REFERÊNCIA */
-
-/* COLUNA 1: #01 (maior / 4 unidades) e #05 (menor / 2 unidades) */
+.galeria-acervo__mosaico > *:nth-child(1),
 .galeria-acervo__item[data-index="0"] {
   grid-column: 1 !important;
-  grid-row: 1 / span 4 !important;
+  grid-row: 1 / span 4 !important; 
 }
+
+.galeria-acervo__mosaico > *:nth-child(5),
 .galeria-acervo__item[data-index="4"] {
   grid-column: 1 !important;
-  grid-row: 5 / span 2 !important;
+  grid-row: 5 / span 2 !important; 
 }
 
-/* COLUNA 2: #02 (menor / 2 unidades) e #04 (maior / 4 unidades) */
+.galeria-acervo__mosaico > *:nth-child(2),
 .galeria-acervo__item[data-index="1"] {
   grid-column: 2 !important;
-  grid-row: 1 / span 2 !important;
-}
-.galeria-acervo__item[data-index="3"] {
-  grid-column: 2 !important;
-  grid-row: 3 / span 4 !important;
+  grid-row: 1 / span 2 !important; 
 }
 
-/* COLUNA 3: #03, #06 e #07 (3 cards de tamanhos iguais / 2 unidades cada) */
+.galeria-acervo__mosaico > *:nth-child(4),
+.galeria-acervo__item[data-index="3"] {
+  grid-column: 2 !important;
+  grid-row: 3 / span 4 !important; 
+}
+
+.galeria-acervo__mosaico > *:nth-child(3),
 .galeria-acervo__item[data-index="2"] {
   grid-column: 3 !important;
   grid-row: 1 / span 2 !important;
 }
+
+.galeria-acervo__mosaico > *:nth-child(6),
 .galeria-acervo__item[data-index="5"] {
   grid-column: 3 !important;
   grid-row: 3 / span 2 !important;
 }
+
+.galeria-acervo__mosaico > *:nth-child(7),
 .galeria-acervo__item[data-index="6"] {
   grid-column: 3 !important;
-  grid-row: 5 / span 2 !important;
+  grid-row: 5 / span 2 !important; /
 }
 
 .galeria-acervo__rodape {
@@ -897,15 +894,12 @@
   line-height: 1.25;
 }
 
-/* EXIBIÇÃO DA FOTO POR INTEIRO (SEM CORTE) */
 .galeria-lightbox__preview-img {
   width: 100%;
-  max-height: 55vh;
-  object-fit: contain; /* Garante que a foto completa apareça sem cortes */
+  max-height: 60vh;
+  object-fit: contain !important; 
   background: #121110;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 4px;
 }
 
 .galeria-lightbox__descricao {
