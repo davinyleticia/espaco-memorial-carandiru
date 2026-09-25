@@ -120,43 +120,43 @@ order: 1
     <div class="galeria-acervo__mosaico">
       <button type="button" class="galeria-acervo__item" data-index="0" title="Clique para ampliar">
         <span class="galeria-acervo__tag-num">#01</span>
-        <img src="carandiru_escultura_cabeca_capuz_azul.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2301+Escultura+de+Cabe%C3%A7a+Encapuzada';" alt="Escultura de uma cabeça encapuzada em tecido azul">
+        <img src="../_images/Fotos/carandiru_escultura_cabeca_capuz_azul.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2301+Escultura+de+Cabe%C3%A7a+Encapuzada';" alt="Escultura de uma cabeça encapuzada em tecido azul">
         <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
       </button>
 
       <button type="button" class="galeria-acervo__item" data-index="1" title="Clique para ampliar">
         <span class="galeria-acervo__tag-num">#02</span>
-        <img src="carandiru_maquete_tatil_sao_jorge.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2302+Maquete+T%C3%A1til+S%C3%A3o+Jorge';" alt="Maquete tátil em relevo de São Jorge e o dragão">
+        <img src="../_images/Fotos/carandiru_maquete_tatil_sao_jorge.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2302+Maquete+T%C3%A1til+S%C3%A3o+Jorge';" alt="Maquete tátil em relevo de São Jorge e o dragão">
         <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
       </button>
 
       <button type="button" class="galeria-acervo__item" data-index="2" title="Clique para ampliar">
         <span class="galeria-acervo__tag-num">#03</span>
-        <img src="carandiru_painel_cartas_reivindicacoes.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2303+Painel+de+Cartas+e+Reivindica%C3%A7%C3%B5es';" alt="Painel com cartas e reivindicações de sobreviventes">
+        <img src="../_images/Fotos/carandiru_painel_cartas_reivindicacoes.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2303+Painel+de+Cartas+e+Reivindica%C3%A7%C3%B5es';" alt="Painel com cartas e reivindicações de sobreviventes">
         <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
       </button>
 
       <button type="button" class="galeria-acervo__item" data-index="3" title="Clique para ampliar">
         <span class="galeria-acervo__tag-num">#04</span>
-        <img src="carandiru_painel_exposicao_esporte.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2304+Exposi%C3%A7%C3%A3o+sobre+Esporte';" alt="Painel da exposição sobre esporte no complexo">
+        <img src="../_images/Fotos/carandiru_painel_exposicao_esporte.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2304+Exposi%C3%A7%C3%A3o+sobre+Esporte';" alt="Painel da exposição sobre esporte no complexo">
         <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
       </button>
 
       <button type="button" class="galeria-acervo__item" data-index="4" title="Clique para ampliar">
         <span class="galeria-acervo__tag-num">#05</span>
-        <img src="carandiru_porta_cela_salmo_david.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2305+Porta+de+Cela+Salmo+de+Davi';" alt="Porta de cela com o Salmo de Davi pintado">
+        <img src="../_images/Fotos/carandiru_porta_cela_salmo_david.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2305+Porta+de+Cela+Salmo+de+Davi';" alt="Porta de cela com o Salmo de Davi pintado">
         <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
       </button>
 
       <button type="button" class="galeria-acervo__item" data-index="5" title="Clique para ampliar">
         <span class="galeria-acervo__tag-num">#06</span>
-        <img src="carandiru_quadro_populacao_carceraria_pv04.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2306+Quadro+Popula%C3%A7%C3%A3o+Pavilh%C3%A3o+4';" alt="Quadro de controle da população carcerária do Pavilhão 4">
+        <img src="../_images/Fotos/carandiru_quadro_populacao_carceraria_pv04.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2306+Quadro+Popula%C3%A7%C3%A3o+Pavilh%C3%A3o+4';" alt="Quadro de controle da população carcerária do Pavilhão 4">
         <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
       </button>
 
       <button type="button" class="galeria-acervo__item" data-index="6" title="Clique para ampliar">
         <span class="galeria-acervo__tag-num">#07</span>
-        <img src="carandiru_porta_cela_olho.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2307+Porta+de+Cela+Pintura+Olho';" alt="Porta de cela pintada com um olho">
+        <img src="../_images/Fotos/carandiru_porta_cela_olho.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2a2725/f7f1e8?text=%2307+Porta+de+Cela+Pintura+Olho';" alt="Porta de cela pintada com um olho">
         <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
       </button>
     </div>
