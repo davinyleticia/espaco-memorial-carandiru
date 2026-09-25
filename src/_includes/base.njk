@@ -301,9 +301,6 @@
     </div>
   </section>
 
-
-
-
   <script>
     window.addEventListener('DOMContentLoaded', (event) => {
         new PagefindUI({ 
@@ -353,6 +350,222 @@
       observer.observe(el);
     });
   </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const itensGaleria = document.querySelectorAll(
+      ".galeria-acervo__item"
+    );
+
+    if (!itensGaleria.length) return;
+
+    const imagens = Array.from(itensGaleria).map((item) => {
+      const img = item.querySelector("img");
+
+      return {
+        src: img ? img.src : "",
+        alt: img ? img.alt : "",
+      };
+    });
+
+    let indiceAtual = 0;
+
+    /*
+     * Cria o lightbox apenas quando a galeria existir.
+     * Assim ele não interfere nas outras páginas do site.
+     */
+    const lightbox = document.createElement("div");
+
+    lightbox.className = "galeria-lightbox";
+
+    lightbox.innerHTML = `
+      <div class="galeria-lightbox__conteudo" role="dialog" aria-modal="true" aria-label="Visualização da imagem">
+        
+        <button
+          type="button"
+          class="galeria-lightbox__fechar"
+          aria-label="Fechar imagem"
+        >
+          &times;
+        </button>
+
+        <button
+          type="button"
+          class="galeria-lightbox__anterior"
+          aria-label="Imagem anterior"
+        >
+          &#10094;
+        </button>
+
+        <figure class="galeria-lightbox__figura">
+          <img
+            class="galeria-lightbox__imagem"
+            src=""
+            alt=""
+          >
+
+          <figcaption class="galeria-lightbox__legenda">
+            <span class="galeria-lightbox__contador"></span>
+            <span class="galeria-lightbox__descricao"></span>
+          </figcaption>
+        </figure>
+
+        <button
+          type="button"
+          class="galeria-lightbox__proxima"
+          aria-label="Próxima imagem"
+        >
+          &#10095;
+        </button>
+
+      </div>
+    `;
+
+    document.body.appendChild(lightbox);
+
+    const imagemLightbox = lightbox.querySelector(
+      ".galeria-lightbox__imagem"
+    );
+
+    const contador = lightbox.querySelector(
+      ".galeria-lightbox__contador"
+    );
+
+    const descricao = lightbox.querySelector(
+      ".galeria-lightbox__descricao"
+    );
+
+    const botaoFechar = lightbox.querySelector(
+      ".galeria-lightbox__fechar"
+    );
+
+    const botaoAnterior = lightbox.querySelector(
+      ".galeria-lightbox__anterior"
+    );
+
+    const botaoProxima = lightbox.querySelector(
+      ".galeria-lightbox__proxima"
+    );
+
+    /*
+     * Atualiza a imagem exibida.
+     */
+    function atualizarImagem() {
+      const item = imagens[indiceAtual];
+
+      if (!item) return;
+
+      imagemLightbox.src = item.src;
+      imagemLightbox.alt = item.alt;
+
+      contador.textContent =
+        `${String(indiceAtual + 1).padStart(2, "0")} / ${String(imagens.length).padStart(2, "0")}`;
+
+      descricao.textContent = item.alt || "Imagem do acervo";
+    }
+
+    /*
+     * Abre o lightbox.
+     */
+    function abrirGaleria(indice) {
+      indiceAtual = indice;
+
+      atualizarImagem();
+
+      lightbox.classList.add("is-aberto");
+
+      document.body.classList.add("galeria-lightbox-aberta");
+
+      botaoFechar.focus();
+    }
+
+    /*
+     * Fecha o lightbox.
+     */
+    function fecharGaleria() {
+      lightbox.classList.remove("is-aberto");
+
+      document.body.classList.remove("galeria-lightbox-aberta");
+    }
+
+    /*
+     * Vai para a imagem anterior.
+     */
+    function imagemAnterior() {
+      indiceAtual =
+        (indiceAtual - 1 + imagens.length) % imagens.length;
+
+      atualizarImagem();
+    }
+
+    /*
+     * Vai para a próxima imagem.
+     */
+    function proximaImagem() {
+      indiceAtual =
+        (indiceAtual + 1) % imagens.length;
+
+      atualizarImagem();
+    }
+
+    /*
+     * Clique nas imagens da galeria.
+     */
+    itensGaleria.forEach((item, indice) => {
+      item.addEventListener("click", () => {
+        abrirGaleria(indice);
+      });
+    });
+
+    /*
+     * Botões de navegação.
+     */
+    botaoFechar.addEventListener("click", fecharGaleria);
+
+    botaoAnterior.addEventListener(
+      "click",
+      imagemAnterior
+    );
+
+    botaoProxima.addEventListener(
+      "click",
+      proximaImagem
+    );
+
+    /*
+     * Clique no fundo escuro fecha a imagem.
+     */
+    lightbox.addEventListener("click", (evento) => {
+      if (evento.target === lightbox) {
+        fecharGaleria();
+      }
+    });
+
+    /*
+     * Teclado:
+     * ESC   = fechar
+     * ←     = anterior
+     * →     = próxima
+     */
+    document.addEventListener("keydown", (evento) => {
+      if (!lightbox.classList.contains("is-aberto")) {
+        return;
+      }
+
+      if (evento.key === "Escape") {
+        fecharGaleria();
+      }
+
+      if (evento.key === "ArrowLeft") {
+        imagemAnterior();
+      }
+
+      if (evento.key === "ArrowRight") {
+        proximaImagem();
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
