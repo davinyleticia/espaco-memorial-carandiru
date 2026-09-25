@@ -108,7 +108,7 @@ order: 1
   <div class="galeria-acervo__cabecalho">
     <h2>Nosso <em>acervo</em></h2>
     <p>Confira fotos e registros do acervo do Memorial do Carandiru.</p>
-    <span class="galeria-acervo__creditos">Registros fotográficos por Vinícius Santos (ETEC São Mateus)</span>
+    <span class="galeria-acervo__creditos">Registros por Vinícius Santos (1° EM Marketing 2026 | Etec São Mateus)</span>
   </div>
 
   <div class="galeria-acervo__mosaico">
