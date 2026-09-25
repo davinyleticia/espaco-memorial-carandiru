@@ -322,8 +322,7 @@
         });
     });
   </script>
-
-
+  
   <script>
     function ativarEvento(el, ano, titulo, texto) {
       document.querySelectorAll('.evento').forEach(e => e.classList.remove('ativo'));
@@ -334,69 +333,50 @@
     }
 
     // Animação suave ao rolar
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.numero-item, .editorial, .acervo-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(el);
-    });
-  </script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
   const itensGaleria = document.querySelectorAll(".galeria-acervo__item");
   if (!itensGaleria.length) return;
 
-  // Dados completos catalogados para o modal do acervo
   const dadosAcervo = [
     {
       categoria: "REGISTRO DE ACERVO #01 • 1 DE 7",
       titulo: "Escultura de Cabeça Encapuzada",
-      descricao: "Obra tridimensional confeccionada em tecido de tom azul e materiais adaptados. A escultura integra a coleção de artes visuais do acervo e simboliza sentimentos de invisibilidade, enclausuramento e opressão vivenciados no cotidiano carcerário da Casa de Detenção.",
+      descricao: "Obra tridimensional confeccionada em tecido de tom azul e materiais adaptados. A escultura integra a coleção de artes visuais do acervo e simboliza sentimentos de invisibilidade, enclausuramento e opressão vivenciados no cotidiano carcerário.",
       credito: "Fotografia por Vinícius Santos (2026)"
     },
     {
       categoria: "REGISTRO DE ACERVO #02 • 2 DE 7",
-      titulo: "Maquete Tátil São Jorge",
+      titulo: "Maquete Tátil em Relevo de São Jorge e o Dragão",
       descricao: "Maquete tátil em relevo retratando São Jorge e o dragão, desenvolvida como peça de acessibilidade e representação religiosa do acervo memorial.",
       credito: "Fotografia por Vinícius Santos (2026)"
     },
     {
       categoria: "REGISTRO DE ACERVO #03 • 3 DE 7",
-      titulo: "Painel de Cartas e Reivindicações",
+      titulo: "Painel com Cartas e Reivindicações de Sobreviventes",
       descricao: "Painel expositivo reunindo cartas originais, relatos e reivindicações registradas por sobreviventes e familiares.",
       credito: "Fotografia por Vinícius Santos (2026)"
     },
     {
       categoria: "REGISTRO DE ACERVO #04 • 4 DE 7",
-      titulo: "Exposição sobre Esporte",
+      titulo: "Painel da Exposição sobre Esporte no Complexo",
       descricao: "Painel da exposição que documenta as práticas esportivas, torneios internos e a convivência entre os detentos no complexo.",
       credito: "Fotografia por Vinícius Santos (2026)"
     },
     {
       categoria: "REGISTRO DE ACERVO #05 • 5 DE 7",
-      titulo: "Porta de Cela Salmo de Davi",
+      titulo: "Porta de Cela com o Salmo de Davi Pintado",
       descricao: "Porta de cela preservada contendo inscrições bíblicas e versículos do Salmo de Davi pintados à mão pelos detentos.",
       credito: "Fotografia por Vinícius Santos (2026)"
     },
     {
       categoria: "REGISTRO DE ACERVO #06 • 6 DE 7",
-      titulo: "Quadro População Pavilhão 4",
-      descricao: "Quadro oficial de controle e registro da população carcerária do Pavilhão 4, peça histórica de organização administrative.",
+      titulo: "Quadro de Controle da População Carcerária do Pavilhão 4",
+      descricao: "Quadro oficial de controle e registro da população carcerária do Pavilhão 4, peça histórica de organização administrativa.",
       credito: "Fotografia por Vinícius Santos (2026)"
     },
     {
       categoria: "REGISTRO DE ACERVO #07 • 7 DE 7",
-      titulo: "Porta de Cela Pintura Olho",
+      titulo: "Porta de Cela Pintada com um Olho",
       descricao: "Porta de cela original com pintura artística de um olho em vigilância, elemento expressivo da arte carcerária do Carandiru.",
       credito: "Fotografia por Vinícius Santos (2026)"
     }
@@ -404,7 +384,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let indiceAtual = 0;
 
-  // Montagem do container Lightbox com o Card
   const lightbox = document.createElement("div");
   lightbox.className = "galeria-lightbox";
   lightbox.innerHTML = `
@@ -452,9 +431,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (imgDom) {
       elImg.src = imgDom.src;
       elImg.alt = imgDom.alt;
-      elImg.style.display = "block";
-    } else {
-      elImg.style.display = "none";
     }
   }
 
