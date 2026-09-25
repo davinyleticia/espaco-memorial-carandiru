@@ -114,7 +114,7 @@ order: 1
   <div class="galeria-acervo__mosaico">
     <button type="button" class="galeria-acervo__item" data-index="0">
       <span class="galeria-acervo__tag-num">#01</span>
-      <img src="carandiru_escultura_cabeca_capuz_azul.jpeg" alt="Escultura de uma cabeça encapuzada em tecido azul">
+      <img src="../_images/Fotos/carandiru_escultura_cabeca_capuz_azul.jpeg" alt="Escultura de uma cabeça encapuzada em tecido azul">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
 
@@ -155,6 +155,25 @@ order: 1
     </button>
   </div>
 </section>
+
+<!-- Lightbox Modal -->
+<div class="galeria-acervo__lightbox" id="galeriaLightbox">
+  <div class="galeria-acervo__lightbox-topo">
+    <button type="button" class="galeria-acervo__fechar" id="galeriaFechar" aria-label="Fechar">&times;</button>
+  </div>
+  <button type="button" class="galeria-acervo__nav galeria-acervo__nav--anterior" id="galeriaAnterior" aria-label="Foto anterior">&#10094;</button>
+  <button type="button" class="galeria-acervo__nav galeria-acervo__nav--proximo" id="galeriaProximo" aria-label="Próxima foto">&#10095;</button>
+  <figure class="galeria-acervo__figura">
+    <img src="" alt="" id="galeriaImagemGrande">
+    <figcaption>
+      <span class="galeria-acervo__contador" id="galeriaContador"></span>
+      <div class="galeria-acervo__titulo-detalhado" id="galeriaTituloDetalhado"></div>
+      <p class="galeria-acervo__descricao-texto" id="galeriaLegenda"></p>
+      <div class="galeria-acervo__credito-lightbox">Registros por Vinícius Santos (1° EM Marketing 2026 | Etec São Mateus)</div>
+    </figcaption>
+  </figure>
+</div>
+
 
 <!-- Lightbox Modal -->
 <div class="galeria-acervo__lightbox" id="galeriaLightbox">

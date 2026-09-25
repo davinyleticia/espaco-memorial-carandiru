@@ -603,22 +603,30 @@
 .galeria-acervo {
       position: relative;
       background-color: #f7f1e8;
-      padding: 64px 24px 72px;
+      padding: 20px 24px;
       font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+      height: 100vh;           /* Força a seção a ter o tamanho exato da tela */
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centraliza verticalmente na tela */
+      overflow: hidden;        /* Elimina barras de rolagem */
     }
 
     .galeria-acervo__cabecalho {
+      width: 100%;
       max-width: 1200px;
-      margin: 0 auto 40px;
+      margin: 0 auto 16px;
       text-align: left;
     }
 
     .galeria-acervo__cabecalho h2 {
       font-family: Georgia, 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 2.3rem;
+      font-size: 1.8rem;
       color: #1f1f1f;
-      margin: 0 0 10px;
+      margin: 0 0 4px;
       letter-spacing: -0.02em;
     }
 
@@ -628,7 +636,7 @@
     }
 
     .galeria-acervo__cabecalho p {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       color: #5a5752;
       margin: 0;
       font-weight: 400;
@@ -636,24 +644,27 @@
 
     .galeria-acervo__creditos {
       display: block;
-      margin-top: 10px;
-      font-size: 0.85rem;
+      margin-top: 4px;
+      font-size: 0.8rem;
       color: #7a756e;
       font-style: italic;
     }
 
     /* ==========================================================
-       MOSAICO DE 3 COLUNAS E 6 LINHAS
+       MOSAICO DINÂMICO DE 3 COLUNAS E 6 LINHAS PROPORCIONAIS
        ========================================================== */
     .galeria-acervo__mosaico {
+      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      /* Coluna 1 mais larga (1.8fr), Colunas 2 e 3 iguais (1fr cada) */
-      grid-template-columns: 1.8fr 1fr 1fr;
-      /* Divisão em 6 frações de linha de 110px */
-      grid-template-rows: repeat(6, 110px);
-      gap: 16px;
+      grid-template-columns: 1.8fr 1fr 1fr; /* Coluna 1 mais larga que a 2ª e 3ª */
+      grid-template-rows: repeat(6, 1fr);   /* 6 linhas proporcionais à altura disponível */
+      gap: 12px;
+      /* Calcula a altura exata restante descontando o cabeçalho */
+      height: calc(100vh - 140px);
+      max-height: 580px;
+      min-height: 350px;
     }
 
     .galeria-acervo__item {
@@ -681,56 +692,56 @@
     }
 
     /* ==========================================================
-       POSICIONAMENTO EXATO DOS CARDS NO GRID
+       POSICIONAMENTO EXATO DAS FOTOS
        ========================================================== */
 
-    /* COLUNA 1: 2 FOTOS (1ª Maior [4 linhas] / 2ª Menor [2 linhas]) */
+    /* COLUNA 1: #01 (Grande - 4 linhas) e #05 (Pequena - 2 linhas) */
     .galeria-acervo__item[data-index="0"] {
       grid-column: 1;
-      grid-row: 1 / span 4; /* #01 */
+      grid-row: 1 / span 4;
     }
     .galeria-acervo__item[data-index="4"] {
       grid-column: 1;
-      grid-row: 5 / span 2; /* #05 */
+      grid-row: 5 / span 2;
     }
 
-    /* COLUNA 2: 2 FOTOS (1ª Menor [2 linhas] / 2ª Maior [4 linhas]) */
+    /* COLUNA 2: #02 (Pequena - 2 linhas) e #04 (Grande - 4 linhas) */
     .galeria-acervo__item[data-index="1"] {
       grid-column: 2;
-      grid-row: 1 / span 2; /* #02 */
+      grid-row: 1 / span 2;
     }
     .galeria-acervo__item[data-index="3"] {
       grid-column: 2;
-      grid-row: 3 / span 4; /* #04 */
+      grid-row: 3 / span 4;
     }
 
-    /* COLUNA 3: 3 FOTOS COM TAMANHOS IGUAIS (2 linhas cada) */
+    /* COLUNA 3: #03, #06 e #07 (Iguais - 2 linhas cada) */
     .galeria-acervo__item[data-index="2"] {
       grid-column: 3;
-      grid-row: 1 / span 2; /* #03 */
+      grid-row: 1 / span 2;
     }
     .galeria-acervo__item[data-index="5"] {
       grid-column: 3;
-      grid-row: 3 / span 2; /* #06 */
+      grid-row: 3 / span 2;
     }
     .galeria-acervo__item[data-index="6"] {
       grid-column: 3;
-      grid-row: 5 / span 2; /* #07 */
+      grid-row: 5 / span 2;
     }
 
-    /* Tag de numeração de acervo */
+    /* Tags e Lupa */
     .galeria-acervo__tag-num {
       position: absolute;
-      top: 12px;
-      left: 12px;
+      top: 10px;
+      left: 10px;
       z-index: 2;
       background: rgba(31, 31, 31, 0.75);
       backdrop-filter: blur(4px);
       color: #f7f1e8;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.08em;
-      padding: 4px 8px;
+      padding: 3px 7px;
       border-radius: 2px;
       border-left: 2px solid #b23b30;
       transition: background 0.3s ease;
@@ -738,32 +749,30 @@
 
     .galeria-acervo__lupa {
       position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 32px;
-      height: 32px;
+      top: 10px;
+      right: 10px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       background: #2e5c53;
       color: #f7f1e8;
-      font-size: 1.1rem;
+      font-size: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
       transform: scale(0.8);
-      transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    /* Efeitos de HOVER */
     .galeria-acervo__item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
       border-color: #2e5c53;
     }
 
     .galeria-acervo__item:hover img {
-      transform: scale(1.07);
+      transform: scale(1.05);
       opacity: 1;
     }
 
@@ -778,7 +787,7 @@
     }
 
     /* ==========================================================
-       MODAL LIGHTBOX (FOTO 100% INTEIRA SEM CORTES)
+       MODAL LIGHTBOX
        ========================================================== */
     .galeria-acervo__lightbox {
       display: none;
@@ -799,8 +808,8 @@
 
     .galeria-acervo__lightbox-topo {
       position: absolute;
-      top: 24px;
-      right: 32px;
+      top: 20px;
+      right: 24px;
       z-index: 1010;
     }
 
@@ -809,19 +818,17 @@
       border: none;
       color: #f7f1e8;
       font-size: 2rem;
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s ease;
     }
 
     .galeria-acervo__fechar:hover {
       background: #b23b30;
-      transform: scale(1.05);
     }
 
     .galeria-acervo__figura {
@@ -835,8 +842,8 @@
 
     .galeria-acervo__figura img {
       max-width: 85vw;
-      max-height: 58vh;
-      object-fit: contain; /* Exibe a imagem inteira sem recortar nenhuma ponta */
+      max-height: 55vh;
+      object-fit: contain;
       box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
       border-radius: 2px;
       background: #12100e;
@@ -844,50 +851,47 @@
 
     .galeria-acervo__figura figcaption {
       color: #f7f1e8;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       text-align: left;
       width: 100%;
       max-width: 680px;
-      margin-top: 20px;
-      line-height: 1.6;
+      margin-top: 16px;
+      line-height: 1.5;
       background: rgba(31, 28, 26, 0.85);
-      padding: 18px 22px;
+      padding: 16px 20px;
       border-radius: 6px;
       border-left: 3px solid #b23b30;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       box-sizing: border-box;
     }
 
     .galeria-acervo__contador {
       display: inline-block;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: #b23b30;
-      margin-bottom: 4px;
     }
 
     .galeria-acervo__titulo-detalhado {
       font-family: Georgia, 'Playfair Display', serif;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #f7f1e8;
-      margin: 2px 0 8px;
+      margin: 2px 0 6px;
     }
 
     .galeria-acervo__descricao-texto {
       color: #d1c9be;
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       margin: 0;
-      font-weight: 400;
     }
 
     .galeria-acervo__credito-lightbox {
-      margin-top: 12px;
-      padding-top: 10px;
+      margin-top: 10px;
+      padding-top: 8px;
       border-top: 1px dashed rgba(247, 241, 232, 0.15);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: #a8a095;
       font-style: italic;
     }
@@ -899,59 +903,35 @@
       background: #2e5c53;
       border: none;
       color: #f7f1e8;
-      font-size: 1.4rem;
-      width: 48px;
-      height: 48px;
+      font-size: 1.3rem;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.2s ease, transform 0.2s ease;
     }
 
-    .galeria-acervo__nav:hover {
-      background: #397066;
-      transform: translateY(-50%) scale(1.08);
-    }
+    .galeria-acervo__nav--anterior { left: 20px; }
+    .galeria-acervo__nav--proximo { right: 20px; }
 
-    .galeria-acervo__nav--anterior {
-      left: 24px;
-    }
-
-    .galeria-acervo__nav--proximo {
-      right: 24px;
-    }
-
-    /* RESPONSIVIDADE EM TELAS MENORES */
     @media (max-width: 860px) {
+      .galeria-acervo {
+        height: auto;
+        max-height: none;
+        overflow: visible;
+      }
       .galeria-acervo__mosaico {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        height: auto;
+        max-height: none;
       }
-
       .galeria-acervo__item[data-index] {
         grid-column: auto;
         grid-row: auto;
-        height: 240px;
-      }
-
-      .galeria-acervo__nav {
-        width: 40px;
-        height: 40px;
-      }
-
-      .galeria-acervo__nav--anterior {
-        left: 12px;
-      }
-
-      .galeria-acervo__nav--proximo {
-        right: 12px;
-      }
-
-      .galeria-acervo__figura figcaption {
-        padding: 14px 16px;
-        font-size: 0.88rem;
+        height: 220px;
       }
     }
     
