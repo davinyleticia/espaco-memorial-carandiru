@@ -203,8 +203,6 @@
 
       <div  id="search"></div>
 
-
-
         <!-- <div class="header-search" id="search">
         <input type="text" placeholder="">
         <button>
@@ -301,9 +299,6 @@
     </div>
   </section>
 
-
-
-
   <script>
     window.addEventListener('DOMContentLoaded', (event) => {
         new PagefindUI({ 
@@ -325,34 +320,70 @@
         });
     });
   </script>
-
-
   <script>
-    function ativarEvento(el, ano, titulo, texto) {
-      document.querySelectorAll('.evento').forEach(e => e.classList.remove('ativo'));
-      el.classList.add('ativo');
-      document.getElementById('td-ano').textContent = ano;
-      document.getElementById('td-titulo').textContent = titulo;
-      document.getElementById('td-texto').textContent = texto;
-    }
+(function () {
+  var itensAcervo = [
+    { titulo: 'Escultura de Cabeça Encapuzada', descricao: 'Obra tridimensional confeccionada em tecido de tom azul e materiais adaptados. A escultura integra a coleção de artes visuais do acervo e simboliza sentimentos de invisibilidade, enclausuramento e opressão vivenciados no cotidiano carcerário da Casa de Detenção.' },
+    { titulo: 'Maquete Tátil de São Jorge e o Dragão', descricao: 'Peça escultórica tátil em relevo desenvolvida para proporcionar acessibilidade sensorial a visitantes céticos e com baixa visão. A imagem de São Jorge possui grande devoção popular no ambiente prisional, associada à proteção espiritual e à superação de adversidades.' },
+    { titulo: 'Painel de Cartas e Reivindicações', descricao: 'Compilação de documentos originais, manuscritos, bilhetes e cartas datografadas por internos e familiares. O acervo registra denúncias de superlotação, cobranças por assistência jurídica e relatos históricos produzidos no período que antecedeu e sucedeu o massacre de 1992.' },
+    { titulo: 'Painel da Exposição sobre Práticas Esportivas', descricao: 'Expositor temático reunindo artigos originais como luvas de boxe, troféus de torneios internos e flâmulas organizadas pelos próprios detentos. As atividades esportivas eram elementos centrais de convivência, disciplina e organização comunitária nos pavilhões.' },
+    { titulo: 'Porta de Cela com Salmo de Davi', descricao: 'Porta original retirada de uma das galerias do complexo. Preserva a pintura artesanal com versículos bíblicos do Salmo de Davi, inscrita à mão por um interno como expressão de fé, conforto espiritual e preservação da identidade durante o cumprimento da pena.' },
+    { titulo: 'Quadro de Controle Populacional - Pavilhão 4', descricao: 'Painel oficial de madeira utilizado pela Diretoria do Serviço de Vigilância da Casa de Detenção. O quadro servia para fazer a contagem manual diária, controle de transferências e mapeamento da população carcerária alojada nas celas e andares do Pavilhão 4.' },
+    { titulo: 'Porta de Cela com Pintura do Olho', descricao: 'Elemento arquitetônico preservado que exibe um olho expressivo pintado sobre a estrutura metálica próximo ao visor da cela. A pintura reflete o tema da vigilância constante — tanto do Estado sobre os detentos quanto do olhar vigilante dos reclusos sobre o corredor.' }
+  ];
 
-    // Animação suave ao rolar
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
+  var botoes = document.querySelectorAll('.galeria-acervo__item');
+  var lightbox = document.getElementById('galeriaLightbox');
+  var imagemGrande = document.getElementById('galeriaImagemGrande');
+  var tituloDetalhado = document.getElementById('galeriaTituloDetalhado');
+  var legenda = document.getElementById('galeriaLegenda');
+  var contador = document.getElementById('galeriaContador');
+  var fechar = document.getElementById('galeriaFechar');
+  var anterior = document.getElementById('galeriaAnterior');
+  var proximo = document.getElementById('galeriaProximo');
+  var indiceAtual = 0;
 
-    document.querySelectorAll('.numero-item, .editorial, .acervo-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(el);
-    });
-  </script>
+  function abrirLightbox(indice) {
+    indiceAtual = indice;
+    var img = botoes[indiceAtual].querySelector('img');
+    var item = itensAcervo[indiceAtual];
+    imagemGrande.src = img.src;
+    imagemGrande.alt = img.alt;
+    tituloDetalhado.textContent = item.titulo;
+    legenda.textContent = item.descricao;
+    contador.textContent = 'REGISTRO DE ACERVO #' + (indiceAtual + 1 < 10 ? '0' : '') + (indiceAtual + 1) + ' • ' + (indiceAtual + 1) + ' de ' + botoes.length;
+    lightbox.classList.add('aberto');
+  }
+
+  function fecharLightbox() {
+    lightbox.classList.remove('aberto');
+  }
+
+  function irPara(passo) {
+    indiceAtual = (indiceAtual + passo + botoes.length) % botoes.length;
+    abrirLightbox(indiceAtual);
+  }
+
+  botoes.forEach(function (botao, indice) {
+    botao.addEventListener('click', function () { abrirLightbox(indice); });
+  });
+
+  fechar.addEventListener('click', fecharLightbox);
+  anterior.addEventListener('click', function () { irPara(-1); });
+  proximo.addEventListener('click', function () { irPara(1); });
+
+  lightbox.addEventListener('click', function (evento) {
+    if (evento.target === lightbox) { fecharLightbox(); }
+  });
+
+  document.addEventListener('keydown', function (evento) {
+    if (!lightbox.classList.contains('aberto')) return;
+    if (evento.key === 'Escape') fecharLightbox();
+    if (evento.key === 'ArrowLeft') irPara(-1);
+    if (evento.key === 'ArrowRight') irPara(1);
+  });
+})();
+</script>
 
 </body>
 </html>
