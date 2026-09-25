@@ -120,37 +120,37 @@ order: 1
 
     <button type="button" class="galeria-acervo__item" data-index="1">
       <span class="galeria-acervo__tag-num">#02</span>
-      <img src="carandiru_maquete_tatil_sao_jorge.jpeg" alt="Maquete tátil em relevo de São Jorge e o dragão">
+      <img src="../_images/Fotos/carandiru_maquete_tatil_sao_jorge.jpeg" alt="Maquete tátil em relevo de São Jorge e o dragão">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
 
     <button type="button" class="galeria-acervo__item" data-index="2">
       <span class="galeria-acervo__tag-num">#03</span>
-      <img src="carandiru_painel_cartas_reivindicacoes.jpeg" alt="Painel com cartas e reivindicações de sobreviventes">
+      <img src="../_images/Fotos/carandiru_painel_cartas_reivindicacoes.jpeg" alt="Painel com cartas e reivindicações de sobreviventes">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
 
     <button type="button" class="galeria-acervo__item" data-index="3">
       <span class="galeria-acervo__tag-num">#04</span>
-      <img src="carandiru_painel_exposicao_esporte.jpeg" alt="Painel da exposição sobre esporte no complexo">
+      <img src="../_images/Fotos/carandiru_painel_exposicao_esporte.jpeg" alt="Painel da exposição sobre esporte no complexo">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
 
     <button type="button" class="galeria-acervo__item" data-index="4">
       <span class="galeria-acervo__tag-num">#05</span>
-      <img src="carandiru_porta_cela_salmo_david.jpeg" alt="Porta de cela com o Salmo de Davi pintado">
+      <img src="../_images/Fotos/carandiru_porta_cela_salmo_david.jpeg" alt="Porta de cela com o Salmo de Davi pintado">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
 
     <button type="button" class="galeria-acervo__item" data-index="5">
       <span class="galeria-acervo__tag-num">#06</span>
-      <img src="carandiru_quadro_populacao_carceraria_pv04.jpeg" alt="Quadro de controle da população carcerária do Pavilhão 4">
+      <img src="../_images/Fotos/carandiru_quadro_populacao_carceraria_pv04.jpeg" alt="Quadro de controle da população carcerária do Pavilhão 4">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
 
     <button type="button" class="galeria-acervo__item" data-index="6">
       <span class="galeria-acervo__tag-num">#07</span>
-      <img src="carandiru_porta_cela_olho.jpeg" alt="Porta de cela pintada com um olho">
+      <img src="../_images/Fotos/carandiru_porta_cela_olho.jpeg" alt="Porta de cela pintada com um olho">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
   </div>
