@@ -1,25 +1,14 @@
 ---
 layout: post.njk
-title: Massacre do Carandiru
-subtitulo: 2 de outubro de 1992 — Pavilhão 9
-categoria: Evento histórico
-lead: Em 2 de outubro de 1992, uma rebelião no Pavilhão 9 do Complexo Penitenciário do Carandiru resultou na morte de 111 detentos durante a intervenção da Polícia Militar do Estado de São Paulo — um dos maiores massacres carcerários da história do Brasil e do mundo.
-imagem: /assets/imagens/massacre-carandiru.jpg
-imagem_alt: Vista do Pavilhão 9 do Complexo Penitenciário do Carandiru
+title: Acessibilidade Integrada
+subtitulo: 
+categoria: 
+lead: "(Alunos: Detalhar a estrutura física para os visitantes: rotas acessíveis e sinalização)."
+imagem: 
+imagem_alt: 
 temas:
-  - Direitos humanos
-  - Sistema prisional
-  - Violência policial
-  - São Paulo
-  - Justiça
-  - Memória
+
 referencias:
-  - autor: Dráuzio Varella
-    titulo: Estação Carandiru
-    editora: Companhia das Letras, 1999
-  - autor: Relatório da Comissão Teotônio Vilela
-    titulo: Direitos Humanos no Brasil
-    editora: "1993"
   - autor: CIDH — Corte Interamericana
     titulo: Caso Carandiru vs. Brasil
     editora: "2023"

@@ -1,51 +1,61 @@
-# 11ty-Serene
+# Espaço Memorial Carandiru
 
-A minimal theme for a landing page, featuring a simple structure.
+Site institucional do Espaço Memorial Carandiru, um espaço de preservação da memória histórica do antigo Complexo Penitenciário do Carandiru, dedicado aos direitos humanos e à reflexão sobre o sistema prisional brasileiro.
 
-Built with [11ty](https://www.11ty.dev/) and [Sass](https://sass-lang.com/).
+O projeto reúne a linha do tempo histórica, o destaque do Memorial, a galeria do acervo e informações para visitação. As páginas secundárias são desenvolvidas pelos estudantes.
 
-Made by [CLCK](https://github.com/CLCK0622).
+## Tecnologias
 
-<img width="2528" height="1696" alt="image" src="https://github.com/user-attachments/assets/4cb8e646-6c38-49db-b80d-8f8685677eb4" />
+- [Eleventy (11ty)](https://www.11ty.dev/): gerador de site estático
+- Nunjucks: templates (`base.njk`)
+- [Pagefind](https://pagefind.app/): busca no site
+- Netlify: hospedagem e deploy
 
-## Install (all scripts are using `pnpm` by default)
+## Estrutura
+
+```
+_images/        imagens e logos (Fotos/, logos/)
+assets/         styles.css
+_includes/      layouts (base.njk)
+index.md        página inicial
+galeria.md      galeria completa
+museologia.md   páginas dos cards
+```
+
+Cada página `.md` usa o layout `base.njk` e define o próprio endereço pelo campo `permalink`.
+
+## Como rodar
+
+Instale as dependências:
 
 ```
 pnpm install
 ```
 
-## Build
+Gere o site:
 
 ```
 pnpm run build
 ```
 
-## Start
+Para desenvolver com atualização automática:
 
 ```
 pnpm run watch:css
 pnpm run start
 ```
 
-![Alt](https://repobeats.axiom.co/api/embed/8b0541affca62356c769560c9e76935889b4096f.svg "Repobeats analytics image")
+## Como criar uma nova página
 
-<!-- ## Star History
+Crie um arquivo `.md` na raiz do projeto com este cabeçalho:
 
-[![Star History Chart](https://api.star-history.com/svg?repos=CLCK0622/11ty-Serene&type=Date)](https://www.star-history.com/#CLCK0622/11ty-Serene&Date) -->
+```
+---
+title: "Título da página"
+layout: "base.njk"
+permalink: "/nome-da-pagina/"
+templateEngineOverride: njk
+---
+```
 
-
-    <script src="https://giscus.app/client.js"
-            data-repo="CLCK0622/11ty-Serene"
-            data-repo-id="R_kgDOMgVOMw"
-            data-category="Announcements"
-            data-category-id="DIC_kwDOMgVOM84ClgHH"
-            data-mapping="url"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="bottom"
-            data-theme="preferred_color_scheme"
-            data-lang="en"
-            crossorigin="anonymous"
-            async>
-    </script>
+Escreva o conteúdo abaixo do cabeçalho e depois rode o build.
