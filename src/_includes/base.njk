@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
@@ -11,15 +11,14 @@
   <script src="/pagefind/pagefind-ui.js"></script>
 
   <meta property="og:title" content="{{ title | safe }}" />
-  <meta property="og:description" content="Write here..." />
+  <meta property="og:description" content="Espaço Memorial Carandiru: um lugar de história, reflexão e memória." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-     <link rel="stylesheet" href="https://espaco-memorial-carandiru.netlify.app/assets/styles.css">
 
-
-     <style>
+  <style>
     #search .pagefind-ui__search-container {
       display: block !important;
       position: relative !important;
@@ -28,15 +27,14 @@
 
     #search .pagefind-ui__search-input {
       height: 54px !important;
-      border-radius: 50px !important; 
+      border-radius: 50px !important;
       border: 1.5px solid #dcdcdc !important;
-      padding: 0 60px 0 24px !important;
+      padding: 0 60px 0 20px !important;
       background-color: #ffffff !important;
       font-family: 'DM Sans', sans-serif !important;
       font-size: 16px !important;
       color: #333333 !important;
       outline: none !important;
-
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c93b2b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E") !important;
       background-repeat: no-repeat !important;
       background-position: calc(100% - 24px) center !important;
@@ -44,10 +42,10 @@
       box-shadow: none !important;
     }
 
-    #search .pagefind-ui__search-icon {
+    #search .pagefind-ui__search-icon,
+    #search svg.pagefind-ui__search-icon,
+    .pagefind-ui__search-icon {
       display: none !important;
-      opacity: 0 !important;
-      visibility: hidden !important;
     }
 
     #search .pagefind-ui__search-clear {
@@ -57,65 +55,42 @@
       margin: 0 !important;
     }
 
-#search .pagefind-ui__search-icon,
-#search svg.pagefind-ui__search-icon,
-.pagefind-ui__search-icon {
-    display: none !important;
-}
-
-#search .pagefind-ui__search-input {
-    padding-left: 20px !important; 
-}
-
-.pagefind-ui__form.svelte-e9gkc3:before {
-    background-color: transparent !important }
-
-  </style> 
+    .pagefind-ui__form.svelte-e9gkc3:before {
+      background-color: transparent !important;
+    }
+  </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="header-inner">
       <div class="header-logos">
-        <a href="carandiru-pagina1.html">
-          <img src="http://espaco-memorial-carandiru.netlify.app/_images/logos/logoMemorial_preto.png" alt="Espaço Memória Carandiru" style="height: 48px; display: block;">
+        <a href="/">
+          <img src="/_images/logos/logoMemorial_preto.png" alt="Espaço Memória Carandiru">
         </a>
       </div>
 
-      <div  id="search"></div>
-
-        <!-- <div class="header-search" id="search">
-        <input type="text" placeholder="">
-        <button>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </button>
-      </div> -->
-      
-      <!-- /.header-search -->
-    </div><!-- /.header-inner -->
+      <div id="search"></div>
+    </div>
   </header>
 
   <!-- NAV -->
   <nav class="menu1">
-    <a href="https://espaco-memorial-carandiru.netlify.app" class="ativo">Início</a>
-    <a href="#">História</a>
-    <a href="#">Acervo e cultura</a>
-    <a href="#visitar">Visitar</a>
+    <a href="/" class="ativo">Início</a>
+    <a href="/#historia">História</a>
+    <a href="/#acervo">Acervo e cultura</a>
+    <a href="/#visitar">Visitar</a>
   </nav>
-    <!-- <div class="box-search nav-box">-->
-    <!--<div class="box" id="search"></div>-->
-  <!--</div> -->
 
   <div class="content-wrapper">
     <div class="box" data-pagefind-body>
       {{ content | safe }}
     </div>
+  </div>
 
-<!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-container">
       <div class="footer-grid">
@@ -127,144 +102,154 @@
         <div>
           <h4>Navegação</h4>
           <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">História</a></li>
-            <li><a href="#">Acervo e cultura</a></li>
-            <li><a href="#">Visitar</a></li>
-            <li><a href="#">Imprensa</a></li>
+            <li><a href="/">Início</a></li>
+            <li><a href="/#historia">História</a></li>
+            <li><a href="/#acervo">Acervo e cultura</a></li>
+            <li><a href="/#visitar">Visitar</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2024 Espaço Memória Carandiru</span>
-        <div style="display:flex;gap:20px;">
+        <span>© 2026 Espaço Memória Carandiru</span>
+        <div class="footer-bottom-links">
           <a href="#">Política de privacidade</a>
           <a href="#">Acessibilidade</a>
           <a href="#">Mapa do site</a>
         </div>
-      </div><!-- /.footer-bottom -->
-    </div><!-- /.footer-container -->
+      </div>
+    </div>
   </footer>
 
+  <!-- BUSCA (Pagefind) -->
   <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ 
-            element: "#search", 
-            showImages: false,
-            translations: {
-                placeholder: "Buscar no site...",
-                clear_search: "Limpar",
-                load_more: "Ver mais resultados",
-                search_label: "Busca",
-                filters_label: "Filtros",
-                zero_results: "Nenhum resultado encontrado para [SEARCH_TERM]",
-                many_results: "[COUNT] resultados encontrados para [SEARCH_TERM]",
-                one_result: "[COUNT] resultado encontrado para [SEARCH_TERM]",
-                alt_search: "Nenhum resultado para [SEARCH_TERM]. Mostrando resultados para [DIFFERENT_TERM] no lugar.",
-                search_suggestion: "Nenhum resultado para [SEARCH_TERM]. Tente um dos seguintes termos:",
-                searching: "Buscando por [SEARCH_TERM]..."
-            }
-        });
+    window.addEventListener('DOMContentLoaded', function () {
+      new PagefindUI({
+        element: "#search",
+        showImages: false,
+        translations: {
+          placeholder: "Buscar no site...",
+          clear_search: "Limpar",
+          load_more: "Ver mais resultados",
+          search_label: "Busca",
+          filters_label: "Filtros",
+          zero_results: "Nenhum resultado encontrado para [SEARCH_TERM]",
+          many_results: "[COUNT] resultados encontrados para [SEARCH_TERM]",
+          one_result: "[COUNT] resultado encontrado para [SEARCH_TERM]",
+          alt_search: "Nenhum resultado para [SEARCH_TERM]. Mostrando resultados para [DIFFERENT_TERM] no lugar.",
+          search_suggestion: "Nenhum resultado para [SEARCH_TERM]. Tente um dos seguintes termos:",
+          searching: "Buscando por [SEARCH_TERM]..."
+        }
+      });
     });
   </script>
+
+  <!-- GALERIA / LIGHTBOX -->
   <script>
-(function () {
-  var itensAcervo = [
-    { titulo: 'Escultura de Cabeça Encapuzada', descricao: 'Obra tridimensional confeccionada em tecido de tom azul e materiais adaptados. A escultura integra a coleção de artes visuais do acervo e simboliza sentimentos de invisibilidade, enclausuramento e opressão vivenciados no cotidiano carcerário da Casa de Detenção.' },
-    { titulo: 'Maquete Tátil de São Jorge e o Dragão', descricao: 'Peça escultórica tátil em relevo desenvolvida para proporcionar acessibilidade sensorial a visitantes céticos e com baixa visão. A imagem de São Jorge possui grande devoção popular no ambiente prisional, associada à proteção espiritual e à superação de adversidades.' },
-    { titulo: 'Painel de Cartas e Reivindicações', descricao: 'Compilação de documentos originais, manuscritos, bilhetes e cartas datografadas por internos e familiares. O acervo registra denúncias de superlotação, cobranças por assistência jurídica e relatos históricos produzidos no período que antecedeu e sucedeu o massacre de 1992.' },
-    { titulo: 'Painel da Exposição sobre Práticas Esportivas', descricao: 'Expositor temático reunindo artigos originais como luvas de boxe, troféus de torneios internos e flâmulas organizadas pelos próprios detentos. As atividades esportivas eram elementos centrais de convivência, disciplina e organização comunitária nos pavilhões.' },
-    { titulo: 'Porta de Cela com Salmo de Davi', descricao: 'Porta original retirada de uma das galerias do complexo. Preserva a pintura artesanal com versículos bíblicos do Salmo de Davi, inscrita à mão por um interno como expressão de fé, conforto espiritual e preservação da identidade durante o cumprimento da pena.' },
-    { titulo: 'Quadro de Controle Populacional - Pavilhão 4', descricao: 'Painel oficial de madeira utilizado pela Diretoria do Serviço de Vigilância da Casa de Detenção. O quadro servia para fazer a contagem manual diária, controle de transferências e mapeamento da população carcerária alojada nas celas e andares do Pavilhão 4.' },
-    { titulo: 'Porta de Cela com Pintura do Olho', descricao: 'Elemento arquitetônico preservado que exibe um olho expressivo pintado sobre a estrutura metálica próximo ao visor da cela. A pintura reflete o tema da vigilância constante — tanto do Estado sobre os detentos quanto do olhar vigilante dos reclusos sobre o corredor.' }
-  ];
+    (function () {
+      var itensAcervo = [
+        { titulo: 'Escultura de Cabeça Encapuzada', descricao: 'Obra tridimensional confeccionada em tecido de tom azul e materiais adaptados. A escultura integra a coleção de artes visuais do acervo e simboliza sentimentos de invisibilidade, enclausuramento e opressão vivenciados no cotidiano carcerário da Casa de Detenção.' },
+        { titulo: 'Maquete Tátil de São Jorge e o Dragão', descricao: 'Peça escultórica tátil em relevo desenvolvida para proporcionar acessibilidade sensorial a visitantes cegos e com baixa visão. A imagem de São Jorge possui grande devoção popular no ambiente prisional, associada à proteção espiritual e à superação de adversidades.' },
+        { titulo: 'Painel de Cartas e Reivindicações', descricao: 'Compilação de documentos originais, manuscritos, bilhetes e cartas datilografadas por internos e familiares. O acervo registra denúncias de superlotação, cobranças por assistência jurídica e relatos históricos produzidos no período que antecedeu e sucedeu o massacre de 1992.' },
+        { titulo: 'Painel da Exposição sobre Práticas Esportivas', descricao: 'Expositor temático reunindo artigos originais como luvas de boxe, troféus de torneios internos e flâmulas organizadas pelos próprios detentos. As atividades esportivas eram elementos centrais de convivência, disciplina e organização comunitária nos pavilhões.' },
+        { titulo: 'Porta de Cela com Salmo de Davi', descricao: 'Porta original retirada de uma das galerias do complexo. Preserva a pintura artesanal com versículos bíblicos do Salmo de Davi, inscrita à mão por um interno como expressão de fé, conforto espiritual e preservação da identidade durante o cumprimento da pena.' },
+        { titulo: 'Quadro de Controle Populacional - Pavilhão 4', descricao: 'Painel oficial de madeira utilizado pela Diretoria do Serviço de Vigilância da Casa de Detenção. O quadro servia para fazer a contagem manual diária, controle de transferências e mapeamento da população carcerária alojada nas celas e andares do Pavilhão 4.' },
+        { titulo: 'Porta de Cela com Pintura do Olho', descricao: 'Elemento arquitetônico preservado que exibe um olho expressivo pintado sobre a estrutura metálica próximo ao visor da cela. A pintura reflete o tema da vigilância constante, tanto do Estado sobre os detentos quanto do olhar vigilante dos reclusos sobre o corredor.' }
+      ];
 
-  var botoes = document.querySelectorAll('.galeria-acervo__item');
-  var lightbox = document.getElementById('galeriaLightbox');
-  var imagemGrande = document.getElementById('galeriaImagemGrande');
-  var tituloDetalhado = document.getElementById('galeriaTituloDetalhado');
-  var legenda = document.getElementById('galeriaLegenda');
-  var contador = document.getElementById('galeriaContador');
-  var fechar = document.getElementById('galeriaFechar');
-  var anterior = document.getElementById('galeriaAnterior');
-  var proximo = document.getElementById('galeriaProximo');
-  var indiceAtual = 0;
+      var botoes = document.querySelectorAll('.galeria-acervo__item');
+      var lightbox = document.getElementById('galeriaLightbox');
+      if (!botoes.length || !lightbox) return;
 
-  function abrirLightbox(indice) {
-    indiceAtual = indice;
-    var img = botoes[indiceAtual].querySelector('img');
-    var item = itensAcervo[indiceAtual];
-    imagemGrande.src = img.src;
-    imagemGrande.alt = img.alt;
-    tituloDetalhado.textContent = item.titulo;
-    legenda.textContent = item.descricao;
-    contador.textContent = 'REGISTRO DE ACERVO #' + (indiceAtual + 1 < 10 ? '0' : '') + (indiceAtual + 1) + ' • ' + (indiceAtual + 1) + ' de ' + botoes.length;
-    lightbox.classList.add('aberto');
-  }
+      var imagemGrande = document.getElementById('galeriaImagemGrande');
+      var tituloDetalhado = document.getElementById('galeriaTituloDetalhado');
+      var legenda = document.getElementById('galeriaLegenda');
+      var contador = document.getElementById('galeriaContador');
+      var fechar = document.getElementById('galeriaFechar');
+      var anterior = document.getElementById('galeriaAnterior');
+      var proximo = document.getElementById('galeriaProximo');
+      var indiceAtual = 0;
 
-  function fecharLightbox() {
-    lightbox.classList.remove('aberto');
-  }
+      function abrirLightbox(indice) {
+        indiceAtual = indice;
+        var img = botoes[indiceAtual].querySelector('img');
+        var item = itensAcervo[indiceAtual];
+        imagemGrande.src = img.src;
+        imagemGrande.alt = img.alt;
+        tituloDetalhado.textContent = item.titulo;
+        legenda.textContent = item.descricao;
+        contador.textContent = 'REGISTRO DE ACERVO #' + (indiceAtual + 1 < 10 ? '0' : '') + (indiceAtual + 1) + ' • ' + (indiceAtual + 1) + ' de ' + botoes.length;
+        lightbox.classList.add('aberto');
+      }
 
-  function irPara(passo) {
-    indiceAtual = (indiceAtual + passo + botoes.length) % botoes.length;
-    abrirLightbox(indiceAtual);
-  }
+      function fecharLightbox() {
+        lightbox.classList.remove('aberto');
+      }
 
-  botoes.forEach(function (botao, indice) {
-    botao.addEventListener('click', function () { abrirLightbox(indice); });
-  });
+      function irPara(passo) {
+        abrirLightbox((indiceAtual + passo + botoes.length) % botoes.length);
+      }
 
-  fechar.addEventListener('click', fecharLightbox);
-  anterior.addEventListener('click', function () { irPara(-1); });
-  proximo.addEventListener('click', function () { irPara(1); });
+      botoes.forEach(function (botao, indice) {
+        botao.addEventListener('click', function () { abrirLightbox(indice); });
+      });
 
-  lightbox.addEventListener('click', function (evento) {
-    if (evento.target === lightbox) { fecharLightbox(); }
-  });
+      fechar.addEventListener('click', fecharLightbox);
+      anterior.addEventListener('click', function () { irPara(-1); });
+      proximo.addEventListener('click', function () { irPara(1); });
 
-  document.addEventListener('keydown', function (evento) {
-    if (!lightbox.classList.contains('aberto')) return;
-    if (evento.key === 'Escape') fecharLightbox();
-    if (evento.key === 'ArrowLeft') irPara(-1);
-    if (evento.key === 'ArrowRight') irPara(1);
-  });
-})();
-</script>
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) fecharLightbox();
+      });
 
+      document.addEventListener('keydown', function (e) {
+        if (!lightbox.classList.contains('aberto')) return;
+        if (e.key === 'Escape') fecharLightbox();
+        if (e.key === 'ArrowLeft') irPara(-1);
+        if (e.key === 'ArrowRight') irPara(1);
+      });
+    })();
+  </script>
+
+  <!-- LINHA DO TEMPO -->
   <script>
-(function () {
-  var eventos = document.querySelectorAll('#timeline .evento');
-  if (!eventos.length) return;
+    (function () {
+      var itens = document.querySelectorAll('#tlTrilho .tl-item');
+      if (!itens.length) return;
 
-  var elAno = document.getElementById('td-ano');
-  var elTitulo = document.getElementById('td-titulo');
-  var elTexto = document.getElementById('td-texto');
-  var elLink = document.getElementById('td-link');
+      var trilho = document.getElementById('tlTrilho');
+      var barra = document.getElementById('tlBarra');
+      var dAno = document.getElementById('tlDAno');
+      var dTitulo = document.getElementById('tlDTitulo');
+      var dTexto = document.getElementById('tlDTexto');
+      var dLink = document.getElementById('tlDLink');
 
-  function ativar(evento, rolar) {
-    eventos.forEach(function (e) { e.classList.remove('ativo'); });
-    evento.classList.add('ativo');
-    elAno.textContent = evento.querySelector('.ano').textContent;
-    elTitulo.textContent = evento.dataset.titulo;
-    elTexto.textContent = evento.dataset.texto;
-    elLink.href = evento.getAttribute('href');
-    if (rolar) {
-      var trilho = document.getElementById('timeline');
-      var alvo = evento.offsetLeft - (trilho.clientWidth - evento.offsetWidth) / 2;
-      trilho.scrollTo({ left: alvo, behavior: 'smooth' });
-    }
-  }
+      function ativar(i, rolar) {
+        var el = itens[i];
+        itens.forEach(function (x) { x.classList.remove('ativo'); });
+        el.classList.add('ativo');
+        dAno.textContent = el.querySelector('.tl-ano').textContent;
+        dTitulo.textContent = el.dataset.titulo;
+        dTexto.textContent = el.dataset.texto;
+        dLink.href = el.getAttribute('href');
+        barra.style.width = ((i + 1) / itens.length * 100) + '%';
+        if (rolar) {
+          trilho.scrollTo({
+            left: el.offsetLeft - (trilho.clientWidth - el.offsetWidth) / 2,
+            behavior: 'smooth'
+          });
+        }
+      }
 
-  eventos.forEach(function (evento) {
-    evento.addEventListener('click', function (e) {
-      e.preventDefault();
-      ativar(evento, true);
-    });
-  });
+      itens.forEach(function (el, i) {
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+          ativar(i, true);
+        });
+      });
 
-  ativar(document.querySelector('#timeline .evento.ativo') || eventos[0], false);
-})();
-</script>
+      ativar(0, false);
+    })();
+  </script>
 </body>
+
 </html>
