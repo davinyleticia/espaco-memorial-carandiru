@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --preto: #111111;
   --branco: #f5f0e8;

@@ -125,7 +125,7 @@ templateEngineOverride: njk
         <h2>Um Espaço para Refletir</h2>
         <p>O Espaço Memorial transforma os vestígios e as histórias do antigo complexo do Carandiru em uma experiência de visitação. Objetos, documentos e registros deixam de ser apenas lembranças guardadas e passam a dialogar com quem visita, convidando à reflexão sobre o passado.</p>
         <p>Mais do que lembrar a tragédia de 1992, o espaço aproxima o visitante da história do lugar como um todo, sem reduzi-lo a um único acontecimento. Memória, reflexão e educação caminham juntas para que esse passado seja compreendido.</p>
-        <a href="carandiru-pagina2.html">Ver acervo completo →</a>
+        <a href="/espaco-memorial-carandiru/src/blog/salvaguarda-da-memoria.md">Ver acervo completo →</a>
       </div>
     </div>
 
@@ -137,7 +137,7 @@ templateEngineOverride: njk
         <h2>Imagens do <em>Memorial</em></h2>
         <p>Registros históricos e peças do acervo do Memorial do Carandiru.</p>
       </div>
-      <a href="carandiru-pagina2.html" class="ver-mais">Ver galeria completa →</a>
+      <a href="/espaco-memorial-carandiru/src/blog/salvaguarda-da-memoria.md" class="ver-mais">Ver galeria completa →</a>
     </div>
 
     <div class="galeria-acervo__mosaico">
@@ -205,7 +205,7 @@ templateEngineOverride: njk
   </div>
 
     <div class="acervo-grid">
-    <a class="acervo-card" href="carandiru-pagina2.html?item=espaco">
+    <a class="acervo-card" href="/espaco-memorial-carandiru/src/blog/territorio-e-o-local.md">
       <img src="/_images/Fotos/carandiru_painel_exposicao_esporte.jpeg" alt="Painel de exposição no ambiente expositivo do Memorial" loading="lazy">
       <div class="acervo-card__texto">
         <span class="acervo-card__cat">O território e o local</span>
@@ -213,7 +213,7 @@ templateEngineOverride: njk
       </div>
     </a>
 
-    <a class="acervo-card" href="carandiru-pagina2.html?item=museologia">
+    <a class="acervo-card" href="/espaco-memorial-carandiru/src/blog/atuacao-academica.md">
       <img src="/_images/Fotos/carandiru_painel_cartas_reivindicacoes.jpeg" alt="Painel com cartas e documentos pesquisados pelos estudantes" loading="lazy">
       <div class="acervo-card__texto">
         <span class="acervo-card__cat">A atuação acadêmica</span>
@@ -221,7 +221,7 @@ templateEngineOverride: njk
       </div>
     </a>
 
-    <a class="acervo-card" href="carandiru-pagina2.html?item=acessibilidade">
+    <a class="acervo-card" href="/espaco-memorial-carandiru/src/blog/inclusao-e-estrutura.md">
       <img src="/_images/Fotos/carandiru_maquete_tatil_sao_jorge.jpeg" alt="Maquete tátil em relevo de São Jorge e o dragão" loading="lazy">
       <div class="acervo-card__texto">
         <span class="acervo-card__cat">Inclusão e estrutura</span>
@@ -229,7 +229,7 @@ templateEngineOverride: njk
       </div>
     </a>
 
-    <a class="acervo-card" href="carandiru-pagina2.html?item=conservacao">
+    <a class="acervo-card" href="/espaco-memorial-carandiru/src/blog/salvaguarda-da-memoria.md">
       <img src="/_images/Fotos/carandiru_porta_cela_salmo_david.jpeg" alt="Porta de cela original preservada pelo Memorial" loading="lazy">
       <div class="acervo-card__texto">
         <span class="acervo-card__cat">Salvaguarda da memória</span>
