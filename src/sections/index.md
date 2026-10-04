@@ -3,6 +3,7 @@ title: "Espaco Memorial Carandiru"
 layout: "base.njk"
 permalink: "/"
 order: 1
+templateEngineOverride: njk
 ---
 <!-- HERO -->
 <section class="hero">
