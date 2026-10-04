@@ -18,12 +18,10 @@ order: 1
       <div class="hero-btns">
         <a href="#visitar" class="btn-principal">Visitar o espaço</a>
       </div>
-      </div><!-- /.hero-content-inner -->
+      </div>
     </div>
-    <div class="hero-scroll">Rolar</div>
   </section>
 
- <!-- LINHA DO TEMPO -->
   <section class="secao" id="historia">
     <div class="secao-header">
       <h2 class="secao-titulo">Linha do tempo <span>histórica</span></h2>
@@ -32,57 +30,66 @@ order: 1
 
     <div class="timeline-wrapper">
       <div class="timeline-track" id="timeline">
+
         <a class="evento ativo" href="carandiru-pagina2.html?ev=1833"
-          onclick="ativarEvento(this,'1833','As Primeiras Raízes e a Antiga Cadeia','A história das unidades de reclusão em São Paulo começou a tomar forma com estruturas mais antigas na cidade, servindo como embrião para o planejamento de um sistema prisional centralizado que futuramente daria origem ao Carandiru.');return false;">
+           data-titulo="As Primeiras Cadeias e o Início do Sistema"
+           data-texto="A história do sistema prisional paulista começa em 1833 com a antiga Cadeia Pública da cidade. O espaço inicial refletia a estrutura da época para abrigar presos e organizar trabalhos forçados, sendo o embrião do que anos mais tarde viria a se tornar o complexo do Carandiru.">
           <div class="ano">1833</div>
           <h3>Origens</h3>
           <p>O início da organização do sistema prisional na capital paulista</p>
         </a>
 
         <a class="evento" href="carandiru-pagina2.html?ev=1904"
-          onclick="ativarEvento(this,'1904','O Concurso de Arquitetura e Planejamento','Para acompanhar o crescimento urbano da cidade, o governo promoveu um concurso para projetar um espaço moderno e adequado para a época, buscando trazer preceitos de higiene e organização para a zona norte.');return false;">
+           data-titulo="O Projeto do Novo Presídio no Carandiru"
+           data-texto="Com a crescente superlotação das cadeias centrais, o governo realizou um concurso de arquitetura em 1904 para projetar uma nova penitenciária isolada na zona norte, planejada para ser um modelo higienista e correcional de acordo com os moldes da época.">
           <div class="ano">1904</div>
           <h3>Planejamento</h3>
           <p>O projeto arquitetônico para uma nova penitenciária</p>
         </a>
 
         <a class="evento" href="carandiru-pagina2.html?ev=1920"
-          onclick="ativarEvento(this,'1920','A Inauguração e o Modelo de Época','O complexo abriu suas portas com foco em preceitos científicos e sanitários defendidos por especialistas da época, buscando ser um marco de modernidade e reforma social.');return false;">
+           data-titulo="Abertura do Complexo Penitenciário"
+           data-texto="Inaugurado em 1920 com capacidade para 1.200 presos, o complexo foi erguido sob a influência de teorias científicas e médicas da época, buscando isolar e reformar os detentos em uma vasta área de 100 mil metros quadrados.">
           <div class="ano">1920</div>
           <h3>Inauguração</h3>
           <p>Abertura do complexo com foco em padrões modernos</p>
         </a>
 
         <a class="evento" href="carandiru-pagina2.html?ev=1956"
-          onclick="ativarEvento(this,'1956','Crescimento e Novos Pavilhões','O complexo passou por ampliações estruturais para absorver a demanda da capital, recebendo novos pavilhões e homenageando figuras da medicina legal paulista.');return false;">
+           data-titulo="Crescimento e a Lotação Crônica"
+           data-texto="O complexo seguiu se expandindo nas décadas seguintes com a entrega de novos pavilhões, como o Pavilhão 2 e, em 1961, o Pavilhão 9. O rápido crescimento populacional de São Paulo logo transformou o projeto original em um cenário crônico de superlotação e abandono estrutural.">
           <div class="ano">1956</div>
           <h3>Expansão</h3>
           <p>Entrega de novos pavilhões e aprofundamento estrutural</p>
         </a>
 
         <a class="evento" href="carandiru-pagina2.html?ev=1978"
-          onclick="ativarEvento(this,'1978','Desafios de Lotação e Debates Públicos','Com o aumento constante da população urbana e carcerária, os desafios estruturais se intensificaram, gerando debates na sociedade sobre os rumos do sistema penal.');return false;">
+           data-titulo="A Crise e a Superlotação Extrema"
+           data-texto="Com milhares de homens confinados em condições degradantes e violações cotidianas de direitos, o Carandiru acumulou rebeliões, tensão constante e denúncias graves de organizações de direitos humanos sobre a desumanidade do sistema carcerário.">
           <div class="ano">1978</div>
           <h3>Desafios</h3>
           <p>Crescimento da população e discussões sobre o sistema</p>
         </a>
-        
+
         <a class="evento" href="carandiru-pagina2.html?ev=1992"
-          onclick="ativarEvento(this,'1992','Um Marco de Transformação e Direitos Humanos','O doloroso episódio no Pavilhão 9 transformou-se em uma cicatriz profunda na história de São Paulo, impulsionando discussões essenciais e urgentes sobre direitos humanos, justiça e cidadania no país.');return false;">
+           data-titulo="A Ação Militar no Pavilhão 9"
+           data-texto="Em 2 de outubro de 1992, uma intervenção da Polícia Militar para conter uma rebelião no Pavilhão 9 resultou na morte de 111 detentos. O episódio chocou o Brasil e o mundo, tornando-se o caso mais grave e emblemático da violência do Estado e da crise prisional brasileira.">
           <div class="ano">1992</div>
           <h3>Reflexão</h3>
           <p>O fatídico evento no Pavilhão 9 e o debate nacional</p>
         </a>
 
         <a class="evento" href="carandiru-pagina2.html?ev=2002"
-          onclick="ativarEvento(this,'2002','A Desativação e a Chegada do Parque','O encerramento das atividades do complexo encerrou um ciclo difícil, abrindo caminho para a demolição dos prédios e a devolução daquela grande área para a comunidade.');return false;">
+           data-titulo="Desativação e Implosão"
+           data-texto="Diante da pressão nacional e internacional e do esgotamento total do modelo, o Carandiru foi finalmente desativado e parcialmente implodido em 2002. A demolição dos pavilhões encerrou um dos capítulos mais sombrios do sistema penal do país.">
           <div class="ano">2002</div>
           <h3>Renovação</h3>
           <p>Desativação dos pavilhões e o nascimento do Parque</p>
         </a>
 
         <a class="evento" href="carandiru-pagina2.html?ev=hoje"
-          onclick="ativarEvento(this,'Hoje','O Espaço Memorial e a Preservação da Memória','Hoje, o Espaço Memorial atua como um local de preservação histórica, salvando documentos, relatos e imagens para educar as novas gerações na construção de uma sociedade mais justa e acolhedora.');return false;">
+           data-titulo="O Parque e a Preservação da Memória"
+           data-texto="A área onde ficava o presídio foi transformada no Parque da Juventude, enquanto o Espaço Memorial foi mantido para preservar a memória das vítimas, expor a dura realidade do cárcere e servir de alerta permanente para que tragédias assim nunca mais se repitam.">
           <div class="ano">Hoje</div>
           <h3>Memória</h3>
           <p>Atuação do Espaço Memorial na educação e cidadania</p>
@@ -90,10 +97,10 @@ order: 1
       </div>
 
       <div class="timeline-detalhe" id="timeline-detalhe">
-        <div class="td-ano" id="td-ano">1920</div>
+        <div class="td-ano" id="td-ano"></div>
         <div>
-          <div class="td-titulo" id="td-titulo">Abertura do Complexo com Foco em Padrões Modernos</div>
-          <div class="td-texto" id="td-texto">O complexo abriu suas portas com foco em preceitos científicos e sanitários defendidos por especialistas da época, buscando ser um marco de modernidade e reforma social para a cidade de São Paulo.</div>
+          <div class="td-titulo" id="td-titulo"></div>
+          <div class="td-texto" id="td-texto"></div>
           <a href="carandiru-pagina2.html" class="td-link" id="td-link">Ler mais sobre este período →</a>
         </div>
       </div>
