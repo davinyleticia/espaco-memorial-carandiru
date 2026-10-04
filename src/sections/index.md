@@ -198,52 +198,38 @@ order: 1
     <a href="carandiru-pagina2.html" class="ver-mais">Ver acervo completo →</a>
   </div>
 
-  <div class="acervo-grid">
-
-    <article class="acervo-card">
-      <div class="acervo-card__img">
-        <img src="/_images/Fotos/carandiru_painel_exposicao_esporte.jpeg" alt="Painel de exposição no ambiente expositivo do Memorial" loading="lazy">
-      </div>
-      <div class="acervo-card__corpo">
+    <div class="acervo-grid">
+    <a class="acervo-card" href="carandiru-pagina2.html?item=espaco">
+      <img src="/_images/Fotos/carandiru_painel_exposicao_esporte.jpeg" alt="Painel de exposição no ambiente expositivo do Memorial" loading="lazy">
+      <div class="acervo-card__texto">
         <span class="acervo-card__cat">O território e o local</span>
         <h3>Apresentação do Espaço</h3>
-        <p>O Espaço Memorial fica no território do antigo complexo do Carandiru, hoje integrado ao Parque da Juventude. O visitante circula entre o parque e o ambiente expositivo, onde objetos, painéis e registros contam a história no lugar em que ela aconteceu.</p>
       </div>
-    </article>
+    </a>
 
-    <article class="acervo-card">
-      <div class="acervo-card__img">
-        <img src="/_images/Fotos/carandiru_painel_cartas_reivindicacoes.jpeg" alt="Painel com cartas e documentos pesquisados pelos estudantes" loading="lazy">
-      </div>
-      <div class="acervo-card__corpo">
+    <a class="acervo-card" href="carandiru-pagina2.html?item=museologia">
+      <img src="/_images/Fotos/carandiru_painel_cartas_reivindicacoes.jpeg" alt="Painel com cartas e documentos pesquisados pelos estudantes" loading="lazy">
+      <div class="acervo-card__texto">
         <span class="acervo-card__cat">A atuação acadêmica</span>
         <h3>Laboratório de Museologia</h3>
-        <p>A expografia, a pesquisa e a mediação do Memorial foram desenvolvidas pelos estudantes da ETEC Parque da Juventude. O espaço funciona como um laboratório vivo do curso, onde a teoria da museologia vira prática diante do público.</p>
       </div>
-    </article>
+    </a>
 
-    <article class="acervo-card">
-      <div class="acervo-card__img">
-        <img src="/_images/Fotos/carandiru_maquete_tatil_sao_jorge.jpeg" alt="Maquete tátil em relevo de São Jorge e o dragão" loading="lazy">
-      </div>
-      <div class="acervo-card__corpo">
+    <a class="acervo-card" href="carandiru-pagina2.html?item=acessibilidade">
+      <img src="/_images/Fotos/carandiru_maquete_tatil_sao_jorge.jpeg" alt="Maquete tátil em relevo de São Jorge e o dragão" loading="lazy">
+      <div class="acervo-card__texto">
         <span class="acervo-card__cat">Inclusão e estrutura</span>
         <h3>Acessibilidade Integrada</h3>
-        <p>O espaço foi pensado para receber todos os públicos, com rampas, elevadores, rotas acessíveis e sinalização que garantem autonomia na visita. Recursos como a maquete tátil ampliam a experiência de pessoas com deficiência visual.</p>
       </div>
-    </article>
+    </a>
 
-    <article class="acervo-card">
-      <div class="acervo-card__img">
-        <img src="/_images/Fotos/carandiru_porta_cela_salmo_david.jpeg" alt="Porta de cela original preservada pelo Memorial" loading="lazy">
-      </div>
-      <div class="acervo-card__corpo">
+    <a class="acervo-card" href="carandiru-pagina2.html?item=conservacao">
+      <img src="/_images/Fotos/carandiru_porta_cela_salmo_david.jpeg" alt="Porta de cela original preservada pelo Memorial" loading="lazy">
+      <div class="acervo-card__texto">
         <span class="acervo-card__cat">Salvaguarda da memória</span>
         <h3>Cuidados e Conservação</h3>
-        <p>Os fragmentos e documentos históricos do Carandiru passam por higienização, catalogação e acondicionamento adequado. Esse trabalho contínuo evita que o material se deteriore com o tempo e o mantém disponível para estudo e memória.</p>
       </div>
-    </article>
-
+    </a>
   </div>
 </section>
 
