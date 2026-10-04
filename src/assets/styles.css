@@ -684,84 +684,62 @@ nav a.ativo {
 }
 
 .acervo-card {
-  background: var(--cinza-claro);
-  aspect-ratio: 3/4;
-  position: relative;
+  background: #fff;
+  border: 1px solid #e4dfd5;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  cursor: pointer;
-  text-decoration: none;
-  display: block;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.acervo-card img {
+.acervo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.acervo-card__img {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #1e1c1a;
+}
+
+.acervo-card__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .4s ease;
-  filter: grayscale(30%);
+  display: block;
+  transition: transform .5s ease;
 }
 
-.acervo-card:hover img {
+.acervo-card:hover .acervo-card__img img {
   transform: scale(1.06);
-  filter: grayscale(0%);
 }
 
-.acervo-card .card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 55%);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 20px;
-  opacity: 0;
-  transition: opacity .3s;
+.acervo-card__corpo {
+  padding: 22px 20px 26px;
 }
 
-.acervo-card:hover .card-overlay {
-  opacity: 1;
-}
-
-.acervo-card .card-overlay .cat {
+.acervo-card__cat {
+  display: block;
   font-size: 10px;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: #ff8a7a;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.acervo-card .card-overlay h3 {
-  font-family: var(--fonte-titulo);
-  font-size: 18px;
-  color: #fff;
+  color: var(--teal);
   font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.acervo-card h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 20px;
   line-height: 1.2;
+  margin-bottom: 10px;
 }
 
-.acervo-card .placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-  color: #bbb;
-  background: #e8e4dc;
-}
-
-.acervo-card .placeholder svg {
-  width: 36px;
-  height: 36px;
-  opacity: .4;
-}
-
-.acervo-card .placeholder span {
-  font-size: 11px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  opacity: .5;
+.acervo-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
 }
 
 /* ─── VISITAR ─── */
@@ -1271,14 +1249,6 @@ footer ul li a:hover {
 
   .tl-d-ano {
     font-size: 56px;
-  }
-
-  .acervo-card {
-    aspect-ratio: 4/3;
-  }
-
-  .acervo-card .card-overlay {
-    opacity: 1;
   }
 }
 
