@@ -355,11 +355,11 @@ nav a.ativo {
   grid-template-columns: 1fr 1fr;
   background: var(--preto);
   max-width: 1200px;
-  margin: 0 auto 80px;
+  margin: 0 auto 64px;
 }
 
 .editorial-img {
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Carandiru_-_SP.jpg/800px-Carandiru_-_SP.jpg') center/cover no-repeat;
+  background: url('/_images/Fotos/carandiru_mural_fotos_detentos_celas.jpeg') center/cover no-repeat;
   min-height: 400px;
   position: relative;
 }
@@ -433,8 +433,8 @@ nav a.ativo {
 
 /* ─── GALERIA DO ACERVO ─── */
 .galeria-acervo {
-  background-color: #f7f1e8;
-  padding: 80px 24px;
+  background: none;
+  padding: 0;
 }
 
 .galeria-acervo__inner {
@@ -453,7 +453,7 @@ nav a.ativo {
 .galeria-acervo__cabecalho h2 {
   font-family: var(--fonte-titulo);
   font-weight: 900;
-  font-size: 38px;
+  font-size: 28px;
   line-height: 1;
   letter-spacing: -.02em;
   color: var(--preto);
@@ -673,10 +673,29 @@ nav a.ativo {
   justify-content: center;
 }
 
-.galeria-acervo__nav--anterior { left: 20px; }
-.galeria-acervo__nav--proximo { right: 20px; }
+.galeria-acervo__nav--anterior {
+  left: 20px;
+}
 
-/* ─── ACERVO E CULTURA ─── */
+.galeria-acervo__nav--proximo {
+  right: 20px;
+}
+
+/* ─── MEMORIAL (destaque + galeria) ─── */
+.memorial {
+  background-color: #f7f1e8;
+  padding: 80px 24px;
+}
+
+.memorial__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.memorial .editorial {
+  max-width: none;
+}
+
 /* ─── ACERVO E CULTURA ─── */
 .acervo-grid {
   display: grid;
@@ -1293,6 +1312,10 @@ footer ul li a:hover {
 
   .editorial-texto {
     padding: 40px 24px;
+  }
+
+  .memorial {
+    padding: 50px 20px;
   }
 
   .visitar h2 {

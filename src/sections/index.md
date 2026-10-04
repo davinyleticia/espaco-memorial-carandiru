@@ -27,7 +27,6 @@ templateEngineOverride: njk
 <section class="secao" id="historia">
   <div class="secao-header">
     <h2 class="secao-titulo">Linha do tempo <span>histórica</span></h2>
-    <a href="carandiru-pagina2.html" class="ver-mais">Ver história completa →</a>
   </div>
 
   <div class="tl">
@@ -111,19 +110,22 @@ templateEngineOverride: njk
   </div>
 </section>
 
-<!-- EDITORIAL -->
-<div class="editorial">
-  <div class="editorial-img"></div>
-  <div class="editorial-texto">
-    <div class="editorial-tag">Em destaque</div>
-    <h2>O Massacre de 1992 e a busca por justiça</h2>
-    <p>O episódio de 2 de outubro de 1992 permanece como um dos momentos mais sombrios da história penal brasileira.
-      Mais de três décadas depois, famílias das vítimas ainda aguardam respostas e reparações. O Espaço Memória
-      preserva depoimentos, documentos e objetos que contam essa história sob a perspectiva de quem a viveu.</p>
-    <p>Explore nossa coleção de documentos originais, fotografias de época e testemunhos que compõem o acervo do
-      Memorial.</p>
-    <a href="carandiru-pagina2.html">Ver acervo completo →</a>
-  </div>
+<!-- MEMORIAL: DESTAQUE + GALERIA -->
+<section class="memorial" id="memorial">
+  <div class="memorial__inner">
+
+    <div class="secao-header">
+      <h2 class="secao-titulo">O <span>Memorial</span></h2>
+    </div>
+
+    <div class="editorial">
+      <div class="editorial-img"></div>
+      <div class="editorial-texto">
+        <div class="editorial-tag">Destaque</div>
+        <h2>Um Espaço para Refletir</h2>
+        <p>O Espaço Memorial transforma os vestígios e as histórias do antigo complexo do Carandiru em uma experiência de visitação. Objetos, documentos e registros deixam de ser apenas lembranças guardadas e passam a dialogar com quem visita, convidando à reflexão sobre o passado.</p>
+        <p>Mais do que lembrar a tragédia de 1992, o espaço aproxima o visitante da história do lugar como um todo, sem reduzi-lo a um único acontecimento. Memória, reflexão e educação caminham juntas para que esse passado seja compreendido.</p>
+      </div>
 </div>
 
 <!-- GALERIA -->
@@ -196,7 +198,6 @@ templateEngineOverride: njk
 <section class="secao" id="acervo">
   <div class="secao-header">
     <h2 class="secao-titulo">Conheça o <span>espaço</span></h2>
-    <a href="carandiru-pagina2.html" class="ver-mais">Ver acervo completo →</a>
   </div>
 
     <div class="acervo-grid">
