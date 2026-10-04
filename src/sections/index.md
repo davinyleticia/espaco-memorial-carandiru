@@ -127,54 +127,50 @@ order: 1
 
 <!-- GALERIA -->
 <section class="galeria-acervo" id="galeria">
-  <div class="galeria-acervo__cabecalho">
-    <h2>Nosso <em>acervo</em></h2>
-    <p>Confira fotos e registros do acervo do Memorial do Carandiru.</p>
-    <span class="galeria-acervo__creditos">Registros por Vinícius Santos (2026)</span>
-  </div>
+  <div class="galeria-acervo__inner">
+    <div class="galeria-acervo__topo">
+      <div class="galeria-acervo__cabecalho">
+        <h2>Nosso <em>acervo</em></h2>
+        <p>Registros históricos e peças do acervo do Memorial do Carandiru.</p>
+      </div>
+      <a href="carandiru-pagina2.html" class="ver-mais">Ver galeria completa →</a>
+    </div>
 
-  <div class="galeria-acervo__mosaico">
+    <div class="galeria-acervo__mosaico">
     <button type="button" class="galeria-acervo__item" data-index="0">
-      <span class="galeria-acervo__tag-num">#01</span>
       <img src="/_images/Fotos/carandiru_escultura_cabeca_capuz_azul.jpeg" alt="Escultura de uma cabeça encapuzada em tecido azul" loading="lazy">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
-
     <button type="button" class="galeria-acervo__item" data-index="1">
-      <span class="galeria-acervo__tag-num">#02</span>
       <img src="/_images/Fotos/carandiru_maquete_tatil_sao_jorge.jpeg" alt="Maquete tátil em relevo de São Jorge e o dragão" loading="lazy">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
-
     <button type="button" class="galeria-acervo__item" data-index="2">
-      <span class="galeria-acervo__tag-num">#03</span>
       <img src="/_images/Fotos/carandiru_painel_cartas_reivindicacoes.jpeg" alt="Painel com cartas e reivindicações de sobreviventes" loading="lazy">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
-
     <button type="button" class="galeria-acervo__item" data-index="3">
-      <span class="galeria-acervo__tag-num">#04</span>
       <img src="/_images/Fotos/carandiru_painel_exposicao_esporte.jpeg" alt="Painel da exposição sobre esporte no complexo" loading="lazy">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
-
     <button type="button" class="galeria-acervo__item" data-index="4">
-      <span class="galeria-acervo__tag-num">#05</span>
       <img src="/_images/Fotos/carandiru_porta_cela_salmo_david.jpeg" alt="Porta de cela com o Salmo de Davi pintado" loading="lazy">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
-
     <button type="button" class="galeria-acervo__item" data-index="5">
-      <span class="galeria-acervo__tag-num">#06</span>
       <img src="/_images/Fotos/carandiru_quadro_populacao_carceraria_pv04.jpeg" alt="Quadro de controle da população carcerária do Pavilhão 4" loading="lazy">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
-
     <button type="button" class="galeria-acervo__item" data-index="6">
-      <span class="galeria-acervo__tag-num">#07</span>
       <img src="/_images/Fotos/carandiru_porta_cela_olho.jpeg" alt="Porta de cela pintada com um olho" loading="lazy">
       <span class="galeria-acervo__lupa" aria-hidden="true">+</span>
     </button>
+    </div>
+
+    <div class="galeria-acervo__rodape">
+      <span>Exibindo prévia resumida do acervo (7 itens catalogados).</span>
+      <span>Registros por Vinícius Santos (2026)</span>
+    </div>
   </div>
 </section>
 
