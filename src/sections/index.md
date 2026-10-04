@@ -168,13 +168,12 @@ order: 1
     </div>
 
     <div class="galeria-acervo__rodape">
-      <span>Exibindo prévia resumida do acervo (7 itens catalogados).</span>
-      <span>Registros por Vinícius Santos (2026)</span>
+      <span>Exibindo prévia resumida do acervo.</span>
+      <span>Registros por Vinicius Santo – 1º Ano de Marketing (ETEC São Mateus)</span>
     </div>
   </div>
 </section>
 
-<!-- Lightbox Modal -->
 <div class="galeria-acervo__lightbox" id="galeriaLightbox">
   <div class="galeria-acervo__lightbox-topo">
     <button type="button" class="galeria-acervo__fechar" id="galeriaFechar" aria-label="Fechar">&times;</button>

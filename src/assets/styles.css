@@ -110,7 +110,7 @@ nav a.ativo {
   inset: 0;
   background:
     linear-gradient(to right, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.65) 45%, rgba(10, 10, 10, 0.15) 100%),
-    url('/_images/carandiru_porta_cela_sao_jorge_inteir.jpeg') center / cover no-repeat;
+    url('/_images/Fotos/carandiru_porta_cela_sao_jorge_inteir.jpeg') center / cover no-repeat;
 }
 
 .hero-content {

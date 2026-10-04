@@ -177,7 +177,7 @@
         imagemGrande.alt = img.alt;
         tituloDetalhado.textContent = item.titulo;
         legenda.textContent = item.descricao;
-        contador.textContent = 'REGISTRO DE ACERVO #' + (indiceAtual + 1 < 10 ? '0' : '') + (indiceAtual + 1) + ' • ' + (indiceAtual + 1) + ' de ' + botoes.length;
+        contador.textContent = (indiceAtual + 1) + ' de ' + botoes.length;
         lightbox.classList.add('aberto');
       }
 
