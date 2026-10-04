@@ -125,8 +125,9 @@ templateEngineOverride: njk
         <h2>Um Espaço para Refletir</h2>
         <p>O Espaço Memorial transforma os vestígios e as histórias do antigo complexo do Carandiru em uma experiência de visitação. Objetos, documentos e registros deixam de ser apenas lembranças guardadas e passam a dialogar com quem visita, convidando à reflexão sobre o passado.</p>
         <p>Mais do que lembrar a tragédia de 1992, o espaço aproxima o visitante da história do lugar como um todo, sem reduzi-lo a um único acontecimento. Memória, reflexão e educação caminham juntas para que esse passado seja compreendido.</p>
+        <a href="carandiru-pagina2.html">Ver acervo completo →</a>
       </div>
-</div>
+    </div>
 
 <!-- GALERIA -->
 <section class="galeria-acervo" id="galeria">
@@ -172,9 +173,12 @@ templateEngineOverride: njk
 
     <div class="galeria-acervo__rodape">
       <span>Exibindo prévia resumida do acervo.</span>
-      <span>Registros por Vinicius Santo – 1º Ano de Marketing (ETEC São Mateus)</span>
+      <span>Registros por Vinícius Santos – 1º Ano de Marketing (ETEC São Mateus)</span>
     </div>
   </div>
+</section>
+
+</div>
 </section>
 
 <div class="galeria-acervo__lightbox" id="galeriaLightbox">
@@ -194,10 +198,10 @@ templateEngineOverride: njk
   </figure>
 </div>
 
-<!-- ACERVO E CULTURA -->
+<!-- POR DENTRO DO MEMORIAL -->
 <section class="secao" id="acervo">
   <div class="secao-header">
-    <h2 class="secao-titulo">Conheça o <span>espaço</span></h2>
+    <h2 class="secao-titulo">Por dentro do <span>Memorial</span></h2>
   </div>
 
     <div class="acervo-grid">

@@ -1222,9 +1222,6 @@ footer ul li a:hover {
 }
 
 @media (max-width: 860px) {
-  .galeria-acervo {
-    padding: 50px 20px;
-  }
 
   .galeria-acervo__topo {
     flex-direction: column;
