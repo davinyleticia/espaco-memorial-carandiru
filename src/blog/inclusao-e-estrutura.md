@@ -3,7 +3,7 @@ layout: post.njk
 title: Acessibilidade Integrada
 subtitulo: 
 categoria: 
-lead: 
+lead: "(Alunos: Detalhar a estrutura física para os visitantes: rotas acessíveis e sinalização)."
 imagem: 
 imagem_alt: 
 temas:

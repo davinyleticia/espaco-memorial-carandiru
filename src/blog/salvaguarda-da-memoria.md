@@ -3,7 +3,7 @@ layout: post.njk
 title: Cuidados e Conservação
 subtitulo: 
 categoria: 
-lead:  (Alunos: Explicar curioso como é feito o trabalho de higienização, catalogação e preservação dos fragmentos e documentos históricos do Carandiru para que eles não se deteriorem com o tempo).
+lead:  "(Alunos: Explicar curioso como é feito o trabalho de higienização, catalogação e preservação dos fragmentos e documentos históricos do Carandiru para que eles não se deteriorem com o tempo)."
 imagem: 
 imagem_alt:
 temas:

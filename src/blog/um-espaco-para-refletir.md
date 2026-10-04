@@ -3,7 +3,7 @@ layout: post.njk
 title: Um Espaço para Refletir
 subtitulo: 2 de outubro de 1992 — Pavilhão 9
 categoria: Evento histórico
-lead: (Alunos: Escrever sobre como o Espaço Memorial transforma os vestígios e histórias do antigo complexo em uma experiência de visitação, destacando a importância da memória, da reflexão e da educação sobre o passado do Carandiru. Abordar também como o espaço busca aproximar o visitante dessa história sem reduzir o local apenas ao acontecimento da tragédia.)
+lead: "(Alunos: Escrever sobre como o Espaço Memorial transforma os vestígios e histórias do antigo complexo em uma experiência de visitação, destacando a importância da memória, da reflexão e da educação sobre o passado do Carandiru. Abordar também como o espaço busca aproximar o visitante dessa história sem reduzir o local apenas ao acontecimento da tragédia.)"
 imagem: 
 imagem_alt: 
 temas:

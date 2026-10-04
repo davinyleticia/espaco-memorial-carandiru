@@ -3,7 +3,7 @@ layout: post.njk
 title: Apresentação do Espaço
 subtitulo: 
 categoria: Evento histórico
-lead: (Alunos: Escrever sobre a localização no antigo complexo, a integração com o Parque da Juventude e o ambiente expositivo).
+lead: "(Alunos: Escrever sobre a localização no antigo complexo, a integração com o Parque da Juventude e o ambiente expositivo)."
 imagem: 
 imagem_alt: 
 temas:

@@ -3,7 +3,7 @@ layout: post.njk
 title: Laboratório de Museologia
 subtitulo: 
 categoria: 
-lead: (Alunos: Escrever destacando que a expografia, a pesquisa e a mediação foram desenvolvidas pelos estudantes da ETEC Parque da Juventude, funcionando como laboratório vivo do curso).
+lead: "(Alunos: Escrever destacando que a expografia, a pesquisa e a mediação foram desenvolvidas pelos estudantes da ETEC Parque da Juventude, funcionando como laboratório vivo do curso)."
 imagem: 
 imagem_alt: 
 temas:
