@@ -134,7 +134,7 @@ templateEngineOverride: njk
   <div class="galeria-acervo__inner">
     <div class="galeria-acervo__topo">
       <div class="galeria-acervo__cabecalho">
-        <h2>Nosso <em>acervo</em></h2>
+        <h2>Imagens do <em>Memorial</em></h2>
         <p>Registros históricos e peças do acervo do Memorial do Carandiru.</p>
       </div>
       <a href="carandiru-pagina2.html" class="ver-mais">Ver galeria completa →</a>
