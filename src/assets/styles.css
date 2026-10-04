@@ -700,7 +700,6 @@ nav a.ativo {
   max-width: none;
 }
 
-/* ─── ACERVO E CULTURA ─── */
 .acervo-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
