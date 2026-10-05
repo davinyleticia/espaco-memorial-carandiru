@@ -211,7 +211,7 @@ templateEngineOverride: njk
       </div>
     </a>
 
-    <a class="acervo-card" href="/blog/atuacao-academica.md">
+    <a class="acervo-card" href="/blog/atuacao-academica/">
       <img src="/_images/Fotos/carandiru_painel_cartas_reivindicacoes.jpeg" alt="Painel com cartas e documentos pesquisados pelos estudantes" loading="lazy">
       <div class="acervo-card__texto">
         <span class="acervo-card__cat">A atuação acadêmica</span>
@@ -219,7 +219,7 @@ templateEngineOverride: njk
       </div>
     </a>
 
-    <a class="acervo-card" href="/blog/inclusao-e-estrutura.md">
+    <a class="acervo-card" href="/blog/inclusao-e-estrutura/">
       <img src="/_images/Fotos/carandiru_maquete_tatil_sao_jorge.jpeg" alt="Maquete tátil em relevo de São Jorge e o dragão" loading="lazy">
       <div class="acervo-card__texto">
         <span class="acervo-card__cat">Inclusão e estrutura</span>
@@ -227,7 +227,7 @@ templateEngineOverride: njk
       </div>
     </a>
 
-    <a class="acervo-card" href="/blog/salvaguarda-da-memoria.md">
+    <a class="acervo-card" href="/blog/salvaguarda-da-memoria/">
       <img src="/_images/Fotos/carandiru_porta_cela_salmo_david.jpeg" alt="Porta de cela original preservada pelo Memorial" loading="lazy">
       <div class="acervo-card__texto">
         <span class="acervo-card__cat">Salvaguarda da memória</span>
