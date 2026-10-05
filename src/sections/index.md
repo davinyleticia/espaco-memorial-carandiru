@@ -203,7 +203,7 @@ templateEngineOverride: njk
   </div>
 
     <div class="acervo-grid">
-    <a class="acervo-card" href="/espaco-memorial-carandiru/src/blog/territorio-e-o-local.md">
+    <a class="acervo-card" href="/blog/territorio-e-o-local/">
       <img src="/_images/Fotos/carandiru_painel_exposicao_esporte.jpeg" alt="Painel de exposição no ambiente expositivo do Memorial" loading="lazy">
       <div class="acervo-card__texto">
         <span class="acervo-card__cat">O território e o local</span>
@@ -211,7 +211,7 @@ templateEngineOverride: njk
       </div>
     </a>
 
-    <a class="acervo-card" href="/espaco-memorial-carandiru/src/blog/atuacao-academica.md">
+    <a class="acervo-card" href="/blog/atuacao-academica.md">
       <img src="/_images/Fotos/carandiru_painel_cartas_reivindicacoes.jpeg" alt="Painel com cartas e documentos pesquisados pelos estudantes" loading="lazy">
       <div class="acervo-card__texto">
         <span class="acervo-card__cat">A atuação acadêmica</span>
@@ -219,7 +219,7 @@ templateEngineOverride: njk
       </div>
     </a>
 
-    <a class="acervo-card" href="/espaco-memorial-carandiru/src/blog/inclusao-e-estrutura.md">
+    <a class="acervo-card" href="/blog/inclusao-e-estrutura.md">
       <img src="/_images/Fotos/carandiru_maquete_tatil_sao_jorge.jpeg" alt="Maquete tátil em relevo de São Jorge e o dragão" loading="lazy">
       <div class="acervo-card__texto">
         <span class="acervo-card__cat">Inclusão e estrutura</span>
@@ -227,7 +227,7 @@ templateEngineOverride: njk
       </div>
     </a>
 
-    <a class="acervo-card" href="/espaco-memorial-carandiru/src/blog/salvaguarda-da-memoria.md">
+    <a class="acervo-card" href="/blog/salvaguarda-da-memoria.md">
       <img src="/_images/Fotos/carandiru_porta_cela_salmo_david.jpeg" alt="Porta de cela original preservada pelo Memorial" loading="lazy">
       <div class="acervo-card__texto">
         <span class="acervo-card__cat">Salvaguarda da memória</span>
@@ -265,13 +265,16 @@ templateEngineOverride: njk
         </div>
       </div>
     </div>
-    <div class="mapa-placeholder">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-      <span>Ver no mapa</span>
-      <span style="font-size:10px;opacity:.5;">Av. Cruzeiro do Sul, 2630</span>
+    <div class="mapa-container">
+      <iframe
+        src="https://www.google.com/maps?q=Av.+Cruzeiro+do+Sul,+2630,+São+Paulo+-+SP&output=embed"
+        width="100%"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </div>
 </section>
