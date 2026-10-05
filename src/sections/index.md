@@ -12,8 +12,7 @@ templateEngineOverride: njk
     <div class="hero-content-inner">
       <h1>Um lugar de <em>história</em>,<br><em>reflexão</em> e memória</h1>
       <p>O Memorial Carandiru preserva a memória do Complexo Penitenciário do Carandiru e dos acontecimentos de 2 de outubro de 1992.
-        Como Laboratório de Museologia da ETEC Parque da Juventude, o espaço também promove pesquisa, experimentação e formação dos estudantes,
-        aproximando a prática museológica da preservação da memória, dos direitos humanos e do debate sobre as transformações sociais no Brasil.
+        Como Laboratório de Museologia da ETEC Parque da Juventude, promove pesquisa, formação e práticas museológicas voltadas à preservação da memória e dos direitos humanos.
       </p>
       <div class="hero-btns">
         <a href="#visitar" class="btn-principal">Visitar o espaço</a>
@@ -136,7 +135,7 @@ templateEngineOverride: njk
         <h2>Imagens do <em>Memorial</em></h2>
         <p>Registros históricos e peças do acervo do Memorial do Carandiru.</p>
       </div>
-      <a href="/espaco-memorial-carandiru/src/blog/salvaguarda-da-memoria.md" class="ver-mais">Ver galeria completa →</a>
+     <a href="/blog/salvaguarda-da-memoria/" class="ver-mais">Ver projeto completo →</a>
     </div>
 
     <div class="galeria-acervo__mosaico">
