@@ -11,10 +11,9 @@ templateEngineOverride: njk
   <div class="hero-content">
     <div class="hero-content-inner">
       <h1>Um lugar de <em>história</em>,<br><em>reflexão</em> e memória</h1>
-      <p>O Memorial Carandiru preserva a história do Complexo
-        Penitenciário do Carandiru e dos eventos de 2 de outubro
-        de 1992, promovendo o debate sobre o sistema prisional,
-        os direitos humanos e a transformação social no Brasil.
+      <p>O Memorial Carandiru preserva a memória do Complexo Penitenciário do Carandiru e dos acontecimentos de 2 de outubro de 1992.
+        Como Laboratório de Museologia da FATEC Parque da Juventude, o espaço também promove pesquisa, experimentação e formação dos estudantes,
+        aproximando a prática museológica da preservação da memória, dos direitos humanos e do debate sobre as transformações sociais no Brasil.
       </p>
       <div class="hero-btns">
         <a href="#visitar" class="btn-principal">Visitar o espaço</a>
